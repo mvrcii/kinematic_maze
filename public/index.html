@@ -17,31 +17,28 @@
         <div>
             <h1 id="heading">VR Dashboard</h1>
         </div>
-        <div id="upload-button">
-            <input type="file" id="csvFileInput" accept=".csv" style="display: none;"/>
-            <label for="csvFileInput" class="fa fa-file-csv fa-fade" aria-hidden="true"></label>
-        </div>
+<!--        <div id="upload-button">-->
+<!--            <input type="file" id="csvFileInput" accept=".csv" style="display: none;"/>-->
+<!--            <label for="csvFileInput" class="fa fa-file-csv fa-fade" aria-hidden="true"></label>-->
+<!--        </div>-->
 
     </div>
+
     <div id="main-container">
         <div id="graphs" class="tab-content">
             <!-- Graphs will be injected here -->
         </div>
 
         <div id="animation" class="tab-content">
-            <div id="axe-container" class="inner-container">
-                <h3>Axe Mapping</h3>
-                <div class="axes">
-                    Test
-                </div>
-            </div>
-            <div id="visualization" class="inner-container">
-                <canvas id="threeCanvas"></canvas>
-            </div>
+            <ul id="csvFileList">
+                <li><a href="#" data-csv="data/lukas.csv">CSV File 1</a></li>
+                <li><a href="#" data-csv="data/lukas.bsor.csv">CSV File 2</a></li>
+                <!-- more list items for each CSV file -->
+            </ul>
         </div>
     </div>
 </div>
-<script src="bundle.js"></script>
+<script type="module" src="bundle.js"></script>
 <script>
     // JavaScript function to switch tabs
     function openTab(evt, tabName) {

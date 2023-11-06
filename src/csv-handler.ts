@@ -1,71 +1,77 @@
 import Papa from 'papaparse';
 import THREE from "three";
-import {setupVisualization} from "./index";
 
-export function setupCSVUploadHandler(): void {
-    const fileInput = document.getElementById('csvFileInput') as HTMLInputElement;
+export class CSVUploadHandler {
+    fileInput: HTMLInputElement
+    parsedCSVData?: ParsedData
 
-    fileInput.addEventListener('change', (event) => {
-        const files = (event.target as HTMLInputElement).files;
+    constructor() {
+        this.fileInput = document.getElementById('csvFileInput') as HTMLInputElement;
 
-        if (files && files.length > 0) {
-            const file = files[0];
-            console.log('File selected:', file.name);
+        this._setupCSVUploadHandler()
+    }
 
-            Papa.parse(file, {
-                header: true,
-                dynamicTyping: true,
-                complete: (results) => {
-                    console.log('Parsed results:', results.data);
+    _setupCSVUploadHandler(): void {
+        this.fileInput?.addEventListener('change', (event) => {
+            const files = (event.target as HTMLInputElement).files;
 
-                    // Convert parsed CSV data into our structured format
-                    const parsedData = parseCSVData(results.data);
-                    setupVisualization(parsedData)
-                },
-                error: (error) => {
-                    console.error('Error parsing CSV:', error.message);
-                }
-            });
-        }
-    });
-}
+            if (files && files.length > 0) {
+                const file = files[0];
+                console.log('File selected:', file.name);
 
+                Papa.parse(file, {
+                    header: true,
+                    dynamicTyping: true,
+                    complete: (results) => {
+                        console.log('Parsed results:', results.data);
 
-function parseCSVData(rawData: any[]): ParsedData {
-    const processedData: ParsedData = {};
+                        // Convert parsed CSV data into our structured format
+                        this.parsedCSVData = this.parseCSVData(results.data);
+                    },
+                    error: (error) => {
+                        console.error('Error parsing CSV:', error.message);
+                    }
+                });
+            }
+        });
+    }
 
-    rawData.forEach(item => {
-        const timestamp = parseFloat(item.timestamp);
-        if (!processedData[timestamp]) {
-            processedData[timestamp] = [];
-        }
+    parseCSVData(rawData: any[]): ParsedData {
+        const processedData: ParsedData = {};
 
-        const hmd: VRDeviceObject = {
-            position: new THREE.Vector3(item.hmd_x, item.hmd_y, item.hmd_z),
-            rotation: new THREE.Quaternion(item.hmd_qx, item.hmd_qy, item.hmd_qz, item.hmd_qw)
-        };
+        rawData.forEach(item => {
+            const timestamp = parseFloat(item.timestamp);
+            if (!processedData[timestamp]) {
+                processedData[timestamp] = [];
+            }
 
-        const leftController: VRDeviceObject = {
-            position: new THREE.Vector3(item.left_x, item.left_y, item.left_z),
-            rotation: new THREE.Quaternion(item.left_qx, item.left_qy, item.left_qz, item.left_qw)
-        };
+            const hmd: VRDeviceObject = {
+                position: new THREE.Vector3(item.hmd_x, item.hmd_y, item.hmd_z),
+                rotation: new THREE.Quaternion(item.hmd_qx, item.hmd_qy, item.hmd_qz, item.hmd_qw)
+            };
 
-        const rightController: VRDeviceObject = {
-            position: new THREE.Vector3(item.right_x, item.right_y, item.right_z),
-            rotation: new THREE.Quaternion(item.right_qx, item.right_qy, item.right_qz, item.right_qw)
-        };
+            const leftController: VRDeviceObject = {
+                position: new THREE.Vector3(item.left_x, item.left_y, item.left_z),
+                rotation: new THREE.Quaternion(item.left_qx, item.left_qy, item.left_qz, item.left_qw)
+            };
 
-        const vrDeviceData: VRDeviceData = {
-            timestamp,
-            hmd,
-            leftController,
-            rightController
-        };
+            const rightController: VRDeviceObject = {
+                position: new THREE.Vector3(item.right_x, item.right_y, item.right_z),
+                rotation: new THREE.Quaternion(item.right_qx, item.right_qy, item.right_qz, item.right_qw)
+            };
 
-        processedData[timestamp].push(vrDeviceData);
-    });
+            const vrDeviceData: VRDeviceData = {
+                timestamp,
+                hmd,
+                leftController,
+                rightController
+            };
 
-    return processedData;
+            processedData[timestamp].push(vrDeviceData);
+        });
+
+        return processedData;
+    }
 }
 
 

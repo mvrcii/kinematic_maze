@@ -8,6 +8,10 @@ body, html {
     color: #f0f0f0;
 }
 
+a {
+    color: #f0f0f0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -26,6 +30,7 @@ body, html {
 }
 
 /* ====== Animation TAB ====== */
+
 #animation {
     width: inherit;
     display: flex;
@@ -35,14 +40,13 @@ body, html {
 
 #axe-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 20vw;
     margin: 10px;
 }
 
 #axe-container h3 {
-    margin: 0;
     text-align: center;
     margin: 10px;
     width: inherit;
@@ -68,6 +72,23 @@ body, html {
     width: 100%;
     height: 100%;
     background-color: #eee;
+}
+
+#axe-container .controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#timeline {
+    width: 100%;
+}
+
+#axe-container .controls .controls--timer-and-button {
+    display: flex;
+    gap: 10px;
 }
 
 /* ====== Graph TAB ====== */
