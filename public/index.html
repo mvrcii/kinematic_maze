@@ -1,137 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>VR Dashboard</title>
-
-  <script>
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i=0;i<vars.length;i++) {
-            const pair = vars[i].split("=");
-            if (pair[0] == variable) {
-            return pair[1];
-            }
-        }
-    }
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-        
-      player1 = MotionVisualization("samples/" + getQueryVariable("foo") + "/original.csv", "threeCanvas1");
-      player2 = MotionVisualization("samples/" + getQueryVariable("foo") + "/fixed.csv", "threeCanvas2");
-    });
-
-    // var foo = getQueryVariable("foo");
-    // if(getQueryVariable("foo")) {
-    //   alert(foo);
-    // }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>VR Dashboard</title>
 </head>
 <body>
 
 
-  <div id="axe-container" class="inner-container">
+<div id="axe-container" class="inner-container">
     <div class="controls">
         <div class="controls--progressbar">
-         
-        </div>
-    </div>
-  </div>
 
-<div class="container-fluid">
-  <div class="row min-vh-100 flex-column flex-md-row">
-    
-    <aside class="col-md-2 p-0 bg-dark flex-shrink-1">
-      <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-        <div class="collapse navbar-collapse ">
-          <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-            <li class="nav-item">
-              <a class="nav-link pl-0" href="?foo=VR%20NET">VR NET</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link pl-0" href="?foo=BOXRR">BOXRR</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link pl-0" href="#">Half life Alyx</a>
-            </li>
-          </ul>
         </div>
-      </nav>
-    </aside>
-    
-    <main class="col bg-faded py-3 flex-grow-1">
-      <h1 class="text-center">VR Dashboard</h1>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">ORIGINAL</div>
-            <div class="mapping-container">
-              <div class="row">
-                <div class="col-md-6" id="#ToDo">
-                 <!-- hier kommen die Quaternionen und Achsen rein-->
-                </div>
-                <div class="col-md-6" id="#ToDo">
-                  <!-- hier kommen die Quaternionen und Achsen rein-->
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-                <div class="controls--timer-and-button">
-                  <button type="button" id="playPause" class="btn btn-primary">▶∥</button>
-                  <span id="timer"></span>
-                </div>
-                <div id="visualization1" class="inner-container">
-                    <canvas id="threeCanvas1"></canvas>
-                </div>
-            </div>
-        </div>
-      </div>
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">FIXED</div>
-            <div class="mapping-container">
-                <div class="col-md-6" id="#ToDo">
-                 <!-- hier kommen die Quaternionen und Achsen rein-->
-                </div>
-                <div class="col-md-6" id="#ToDo">
-                  <!-- hier kommen die Quaternionen und Achsen rein-->
-                </div>
-              </div>
-            
-            <div class="card-body">
-                <div class="controls--timer-and-button">
-                  <button type="button" id="playPause" class="btn btn-primary">▶∥</button>
-                  <span id="timer"></span>
-                </div>
-                <div id="visualization2" class="inner-container">
-                    <canvas id="threeCanvas2"></canvas>
-                </div>
-            </div>
-         
-        </div>
-      </div>
     </div>
-    
-    </main>
-    
-  </div>
 </div>
 
+<div class="container-fluid">
+    <div class="row flex-column flex-md-row vh-100">
+
+        <aside class="col-md-2 p-0 bg-dark flex-shrink-1 vh-100">
+            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                <div class="collapse navbar-collapse ">
+                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="?dataset=IVRUADST">IVRUADST</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="?dataset=liebers_1">Liebers #1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="?dataset=liebers_2">Liebers #2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="?dataset=liebers_3">Liebers #3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="?dataset=r_miller">R. Miller</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="col bg-faded py-3 flex-grow-1 vh-100">
+            <h1 class="text-center h-auto">VR Dashboard</h1>
+            <div class="h-auto d-flex justify-content-center align-items-center mb-3 controls--timer-and-button">
+                <button type="button" id="playPause" class="btn btn-primary">▶∥</button>
+                <span id="timer"></span>
+            </div>
+            <div class="row h-75">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">ORIGINAL</div>
+                        <div class="mapping-container">
+                            <div class="row">
+                                <div class="col-md-6" id="#ToDo1">
+                                    <!-- hier kommen die Quaternionen und Achsen rein-->
+                                </div>
+                                <div class="col-md-6" id="#ToDo2">
+                                    <!-- hier kommen die Quaternionen und Achsen rein-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="visualization1">
+                                <canvas id="threeCanvas1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">FIXED</div>
+                        <div class="mapping-container">
+                            <div class="col-md-6" id="#ToDo3">
+                                <!-- hier kommen die Quaternionen und Achsen rein-->
+                            </div>
+                            <div class="col-md-6" id="#ToDo4">
+                                <!-- hier kommen die Quaternionen und Achsen rein-->
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <div id="visualization2">
+                                <canvas id="threeCanvas2"></canvas>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</div>
+
+<script type="module" src="bundle.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // $(document).ready(function () {
+    //     var canvas = document.getElementById("threeCanvas1");
+    //     canvas.width = $("#parent").width();
+    //     canvas.height = $("#parent").height();
+    // });
+
+</script>
 <style>
-  .mapping-container {
-    padding: 1rem;
-    background-color: #f8f9fa; /* Eine helle Hintergrundfarbe, ähnlich wie card-body in Bootstrap */
-    border-bottom: 1px solid #e7e7e7; /* Eine Linie, um es vom card-body abzugrenzen */
-  }
-  
+    .mapping-container {
+        padding: 1rem;
+        background-color: #f8f9fa; /* Eine helle Hintergrundfarbe, ähnlich wie card-body in Bootstrap */
+        border-bottom: 1px solid #e7e7e7; /* Eine Linie, um es vom card-body abzugrenzen */
+    }
 </style>
 </body>
 </html>
