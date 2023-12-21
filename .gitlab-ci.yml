@@ -1,13 +1,9 @@
 image: node:16 # Using Node.js version 16
 
-stages:
-  - build
-  - deploy
-
-build:
+pages:
   tags:
     - docker
-  stage: build
+  stage: deploy
   script:
     - npx pnpm install # Install dependencies using npx
     - npx pnpm run build # Build the website
