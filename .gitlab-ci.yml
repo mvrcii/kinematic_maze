@@ -1,5 +1,8 @@
 image: node:latest
 
+tags:
+  - docker
+
 stages:
   - build
   - deploy
