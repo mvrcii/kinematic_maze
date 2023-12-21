@@ -1,13 +1,12 @@
 image: node:latest
 
-tags:
-  - docker
-
 stages:
   - build
   - deploy
 
 build:
+  tags:
+    - docker
   stage: build
   script:
     - npm install -g pnpm # Install pnpm
@@ -18,6 +17,8 @@ build:
       - public
 
 pages:
+  tags:
+    - docker
   stage: deploy
   script:
     - mv dist public
