@@ -1,4 +1,4 @@
-image: node:latest
+image: node:16 # Using Node.js version 16
 
 stages:
   - build
@@ -9,9 +9,8 @@ build:
     - docker
   stage: build
   script:
-    - npm install -g pnpm # Install pnpm
-    - pnpm install # Install dependencies
-    - pnpm run build # Build the website
+    - npx pnpm install # Install dependencies using npx
+    - npx pnpm run build # Build the website
   artifacts:
     paths:
       - public
