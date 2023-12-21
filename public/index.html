@@ -1,95 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>VR Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>VR Dashboard</title>
 </head>
 <body>
-
+<!--
 <div class="container-fluid">
-    <div class="row flex-column flex-md-row vh-100">
+  <div class="row flex-column flex-md-row vh-100">
 
-        <aside class="col-md-2 p-0 bg-dark flex-shrink-1 vh-100">
-            <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                <div class="collapse navbar-collapse ">
-                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="?dataset=IVRUADST">IVRUADST</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="?dataset=liebers_1">Liebers #1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="?dataset=liebers_2">Liebers #2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="?dataset=liebers_3">Liebers #3</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-0" href="?dataset=r_miller">R. Miller</a>
-                        </li>
-                    </ul>
+      <aside class="col-md-2 p-0 bg-dark flex-shrink-1 vh-100">
+          <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+              <div class="collapse navbar-collapse ">
+                  <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                      <li class="nav-item">
+                          <a class="nav-link pl-0" href="?dataset=IVRUADST">IVRUADST</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link pl-0" href="?dataset=liebers_1">Liebers #1</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link pl-0" href="?dataset=liebers_2">Liebers #2</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link pl-0" href="?dataset=liebers_3">Liebers #3</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link pl-0" href="?dataset=r_miller">R. Miller</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      </aside>
+-->
+<h1 class="text-center h-auto" id="dataset_title">VR Dashboard</h1>
+<h2 class="text-center h-auto" id="dataset_title">Fixed Datasets:</h2>
+
+<div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow ">
+                  <canvas id="threeCanvas1" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
                 </div>
-            </nav>
-        </aside>
-
-        <main class="col bg-faded py-3 flex-grow-1 vh-100">
-            <h1 class="text-center h-auto" id="dataset_title">VR Dashboard</h1>
-            <div class="h-auto d-flex justify-content-center align-items-center mb-3 controls--timer-and-button">
-                <progress id="timeline" max="1"></progress>
-                <button type="button" id="playPause" class="btn btn-primary">▶∥</button>
-                <span id="timer"></span>
+              </div>
             </div>
-            <div class="row h-75">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">ORIGINAL</div>
-                        <div class="mapping-container">
-                            <div class="row">
-                                <div class="col-md-6" id="#ToDo1">
-                                    <!-- hier kommen die Quaternionen und Achsen rein-->
-                                </div>
-                                <div class="col-md-6" id="#ToDo2">
-                                    <!-- hier kommen die Quaternionen und Achsen rein-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div id="visualization1">
-                                <canvas id="threeCanvas1"></canvas>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <canvas id="threeCanvas2" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">FIXED</div>
-                        <div class="mapping-container">
-                            <div class="col-md-6" id="#ToDo3">
-                                <!-- hier kommen die Quaternionen und Achsen rein-->
-                            </div>
-                            <div class="col-md-6" id="#ToDo4">
-                                <!-- hier kommen die Quaternionen und Achsen rein-->
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div id="visualization2">
-                                <canvas id="threeCanvas2"></canvas>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+              </div>
             </div>
-
-        </main>
-
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <canvas id="threeCanvas3" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <canvas id="threeCanvas4" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <canvas id="threeCanvas5" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <canvas id="threeCanvas6" class="threeCanvas"></canvas>
+              <div class="card-body">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+                  
+                  <h2 class="text-center h-auto" id="dataset_title">Original Datasets:</h2>
+
+                  <div class="album py-5 bg-light">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow ">
+                                      <canvas id="threeCanvas_orig1" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                  <canvas id="threeCanvas_orig2" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                  <canvas id="threeCanvas_orig3" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                  <canvas id="threeCanvas_orig4" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                  
+                  
+                                  <canvas id="threeCanvas_orig5" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                  <canvas id="threeCanvas_orig6" class="threeCanvas"></canvas>
+                                  <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+
 
 <script type="module" src="bundle.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
