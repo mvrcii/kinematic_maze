@@ -31,7 +31,6 @@ export class MotionVisualization {
     constructor(csvPath: string, canvasID: string) {
         this.csvPath = csvPath
         this.scene = new THREE.Scene();
-        console.log(csvPath)
         this.reactor = new Reactor()
         this.reactor.registerEvent('step');
         this.reactor.registerEvent('sweep');
@@ -93,8 +92,6 @@ export class MotionVisualization {
 
                     this.meshes[objectName] = meshGroup;
                     this.mixers[objectName] = new THREE.AnimationMixer(this.meshes[objectName]);
-                    console.log(this.mixers)
-                    console.log(objectName)
                 },
                 (xhr) => {
                 },
@@ -254,14 +251,17 @@ export class MotionVisualization {
     }
 
     isEverythingLoadedAndReady() {
+        console.log(this.mixers)
         return "HMD" in this.mixers;
     }
 
     progress() {
+        // console.log(this.actions)
         return this.actions["HMD"].time / this.state["currentSessionDuration"];
     }
 
     getCurrentTimestamp() {
+        // console.log(this.actions)
         return this.actions["HMD"].time * 1000;
     }
 
