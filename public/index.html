@@ -9,15 +9,6 @@
 </head>
 <body>
 
-
-<div id="axe-container" class="inner-container">
-    <div class="controls">
-        <div class="controls--progressbar">
-
-        </div>
-    </div>
-</div>
-
 <div class="container-fluid">
     <div class="row flex-column flex-md-row vh-100">
 
@@ -48,6 +39,7 @@
         <main class="col bg-faded py-3 flex-grow-1 vh-100">
             <h1 class="text-center h-auto">VR Dashboard</h1>
             <div class="h-auto d-flex justify-content-center align-items-center mb-3 controls--timer-and-button">
+                <progress id="timeline" max="1"></progress>
                 <button type="button" id="playPause" class="btn btn-primary">▶∥</button>
                 <span id="timer"></span>
             </div>
