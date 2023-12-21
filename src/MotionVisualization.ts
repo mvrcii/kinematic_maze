@@ -28,7 +28,7 @@ export class MotionVisualization {
     actions: { [key: string]: any } = {};
     state: { [key: string]: any } = {};
 
-    constructor(csvPath: string) {
+    constructor(csvPath: string, canvasID: string) {
         this.csvPath = csvPath
         //this.fileInput = document.getElementById('csvFileInput') as HTMLInputElement;
         this.scene = new THREE.Scene();
@@ -38,7 +38,7 @@ export class MotionVisualization {
         this.reactor.registerEvent('sweep');
 
 
-        const canvasElement = document.getElementById('threeCanvas') as HTMLCanvasElement;
+        const canvasElement = document.getElementById(canvasID) as HTMLCanvasElement;
         this.renderer = new THREE.WebGLRenderer({canvas: canvasElement});
         this.dom = this.renderer.domElement
 
