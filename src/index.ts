@@ -17,6 +17,7 @@ function getQueryVariable(variable: string, defaultDataset: string) {
 function initializeApp() {
     const defaultDataset = 'liebers_2';
     const dataset = getQueryVariable('dataset', defaultDataset);
+    
 
     // // Set the title to the selected dataset
     // const titleElement = document.getElementById('dataset_title');
@@ -39,7 +40,7 @@ function initializeApp() {
     const player4 = new MotionVisualization("samples/IVRUADST/fixed.csv", "threeCanvas4");
     players.push(player4);
     
-    const player5 = new MotionVisualization("samples/bsor/lukas.csv", "threeCanvas5");
+    const player5 = new MotionVisualization("samples/Vrnet/Vrnet_traffic_cop.csv", "threeCanvas5");
     players.push(player5);
     
     const player6 = new MotionVisualization("samples/r_miller/fixed.csv", "threeCanvas6");
@@ -57,16 +58,15 @@ function initializeApp() {
     const player4_orig = new MotionVisualization("samples/IVRUADST/original.csv", "threeCanvas_orig4");
     players.push(player4_orig);
     
-    const player5_orig = new MotionVisualization("samples/bsor/lukas.bsor.csv", "threeCanvas_orig5");
+    const player5_orig = new MotionVisualization("samples/bsor/..csv", "threeCanvas_orig5");
     players.push(player5_orig);
     
     const player6_orig = new MotionVisualization("samples/r_miller/original.csv", "threeCanvas_orig6");
     players.push(player6_orig);
         
     for (const player of players) {
-    const controller = new PlaybackController(player, player);
+    const controller = new PlaybackController(player);
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', initializeApp);

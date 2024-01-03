@@ -8,34 +8,7 @@
   <title>VR Dashboard</title>
 </head>
 <body>
-<!--
-<div class="container-fluid">
-  <div class="row flex-column flex-md-row vh-100">
 
-      <aside class="col-md-2 p-0 bg-dark flex-shrink-1 vh-100">
-          <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-              <div class="collapse navbar-collapse ">
-                  <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                      <li class="nav-item">
-                          <a class="nav-link pl-0" href="?dataset=IVRUADST">IVRUADST</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link pl-0" href="?dataset=liebers_1">Liebers #1</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link pl-0" href="?dataset=liebers_2">Liebers #2</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link pl-0" href="?dataset=liebers_3">Liebers #3</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link pl-0" href="?dataset=r_miller">R. Miller</a>
-                      </li>
-                  </ul>
-              </div>
-          </nav>
-      </aside>
--->
 <h1 class="text-center h-auto" id="dataset_title">VR Dashboard</h1>
 <h2 class="text-center h-auto" id="dataset_title">Fixed Datasets:</h2>
 
@@ -44,9 +17,60 @@
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4 box-shadow ">
+              <!-- liebers1 dataset -->
                   <canvas id="threeCanvas1" class="threeCanvas"></canvas>
+                  <div id="axe-container" class="inner-container">
+                  <div class="controls">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="controls--progressbar">
+                          <progress id="timeline" max="1"></progress>
+                        </div>
+                      </div>
+                          <div class="controls--timer-and-button">
+                              <span id="timer"></span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              
+
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>LiebersLabStudy21</h4>
+                <p>The LiebersLabStudy21 dataset focuses on VR users per-
+                  forming specific bowling and archery motions.</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/" class="button-link" target="_blank">Paper</a>
+                    </div>
+                  </div>
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUB</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td>Euler (deg;XYZ;intr.) </td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>rel. (ms)</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>CSV</td>
+                  </tr>
+                </table>
                 <div class="d-flex justify-content-between align-items-center">
                 </div>
               </div>
@@ -54,9 +78,58 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+              <!-- liebers2 dataset -->
               <canvas id="threeCanvas2" class="threeCanvas"></canvas>
+              <div id="axe-container" class="inner-container">
+                <div class="controls">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="controls--progressbar">
+                        <progress id="timeline" max="1"></progress>
+                      </div>
+                    </div>
+                        <div class="controls--timer-and-button">
+                            <span id="timer"></span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>LiebersBeatSaber23</h4>
+                <p>The LiebersBeatSaber23 dataset of 15 users is based on the
+                  game Beatsaber and is aimed at user identification through motion.</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/" class="button-link" target="_blank">Paper</a>
+                    </div>
+                  </div>
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUB</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td>Euler (deg;XYZ;intr.)/Quat. </td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>90 Hz (presumably fixed)</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>CSV</td>
+                  </tr>
+                </table>
                 <div class="d-flex justify-content-between align-items-center">
                 </div>
               </div>
@@ -64,9 +137,46 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+              <!-- liebers3 dataset -->
+              <!-- unvollständige CSV datei bei fixed.csv-->
               <canvas id="threeCanvas3" class="threeCanvas"></canvas>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>LiebersHand22</h4>
+                <p>The ‘LiebersHand22’ dataset [2] includes interactions of 16 users
+                  with various interface elements in AR and VR environments
+                  for motion-based user identification</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality" class="button-link" target="_blank">Paper</a>
+                    </div>
+                  </div>
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUB</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td> Euler (deg;XYZ;intr.)/Quat. </td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>rel. (s and ms)</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>TSV</td>
+                  </tr>
+                </table>
                 <div class="d-flex justify-content-between align-items-center">
                 </div>
               </div>
@@ -74,9 +184,45 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+              <!-- IVRUADST dataset -->
               <canvas id="threeCanvas4" class="threeCanvas"></canvas>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>MooreCrossDomain23</h4>
+                <p> MooreCrossDomain23 includes motion data of 45 VR users
+                  performing assembly tasks, also intended for user identification re-
+                  search</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW" class="button-link" target="_blank">Paper</a>
+                    </div>
+                  </div>
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUB</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td> Euler (deg;XYZ;intr.)/Quat./Rot. Mat.</td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>el. (s)</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>CSV</td>
+                  </tr>
+                </table>
                 <div class="d-flex justify-content-between align-items-center">
                 </div>
               </div>
@@ -84,9 +230,45 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+              <!-- Vr.net dataset -->
               <canvas id="threeCanvas5" class="threeCanvas"></canvas>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>Vr.net </h4>
+                <p>VR.net was designed for cybersickness research and provides
+                  16 users playing various VR games.</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a href="https://vrnet.ahlab.org" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a href="https://arxiv.org/abs/2306.03381" class="button-link" target="_blank">Paper 1</a>
+                    </div>
+                    
+                  </div> 
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUF</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td>Trans. Mat.</td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>abs. (unix)</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>CSV</td>
+                  </tr>
+                </table>
                 <div class="d-flex justify-content-between align-items-center">
                 </div>
               </div>
@@ -94,9 +276,50 @@
           </div>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
+              <!-- r_miller dataset -->
+              <!-- kleiner Sprung bei Zeile index 63 ca. bei right hand x und z-->
               <canvas id="threeCanvas6" class="threeCanvas"></canvas>
               <div class="card-body">
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h4>RMillerBall22</h4>
+                <p>RMillerBall22 captures the motions of 41 users performing
+                  ball throwing actions in VR, segregated by user, device, session,
+                  and peripheral.</p>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="https://github.com/Terascale-All-sensing-Research-Studio/VR-Biometric-Authentication" class="button-link" target="_blank">Dataset</a>
+                    </div>
+                    <div class="col-md-4">
+                      <a href="https://ieeexplore.ieee.org/document/9756791" class="button-link" target="_blank">Paper 1</a>
+                    </div>
+                    <div class="col-md-4">
+                      <a href="https://ieeexplore.ieee.org/document/9756745" class="button-link" target="_blank">Paper 2</a>
+                    </div>
+                  </div> 
+                  <hr>
+                <table>
+                  <tr>
+                    <td>Coordinate Syst.:</td>
+                    <td>RUB</td>
+                  </tr>
+                  <tr>
+                    <td>Rotation Repr.:</td>
+                    <td>Qiaternion</td>
+                  </tr>
+                  <tr>
+                    <td>Units:</td>
+                    <td>Meter</td>
+                  </tr>
+                  <tr>
+                    <td>Time:</td>
+                    <td>fixed to 45 fps</td>
+                  </tr>
+                  <tr>
+                    <td>File Format:</td>
+                    <td>Custom</td>
+                  </tr>
+                </table>
+                
                 <div class="d-flex justify-content-between align-items-center">
               </div>
             </div>
@@ -104,79 +327,89 @@
         </div>
       </div>
     </div>
+</div>
                   
-                  <h2 class="text-center h-auto" id="dataset_title">Original Datasets:</h2>
+<h2 class="text-center h-auto" id="dataset_title">Original Datasets:</h2>
 
-                  <div class="album py-5 bg-light">
-                          <div class="container">
-                            <div class="row">
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow ">
-                                      <canvas id="threeCanvas_orig1" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                  <canvas id="threeCanvas_orig2" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                  <canvas id="threeCanvas_orig3" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                  <canvas id="threeCanvas_orig4" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                  
-                  
-                                  <canvas id="threeCanvas_orig5" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="col-md-4">
-                                <div class="card mb-4 box-shadow">
-                                  <canvas id="threeCanvas_orig6" class="threeCanvas"></canvas>
-                                  <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+<div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow ">
+                <!-- liebers1 dataset -->
+                    <canvas id="threeCanvas_orig1" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <hr>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <!-- liebers2 dataset -->
+                <canvas id="threeCanvas_orig2" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <!-- liebers3 dataset -->
+                <canvas id="threeCanvas_orig3" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <!-- IVRUADST dataset -->
+                <canvas id="threeCanvas_orig4" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <!-- bsor dataset -->
+                <canvas id="threeCanvas_orig5" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <!-- r_miller dataset -->
+                <canvas id="threeCanvas_orig6" class="threeCanvas"></canvas>
+                <div class="card-body">
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
-
-
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content"></div>
+</div>
 
 
 
@@ -184,5 +417,84 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    let prove = false;
+  
+    cards.forEach((card) => {
+      card.addEventListener('click', () => {
+        if (!prove) {
+            prove = true;
+            card.classList.add('enlarged');
+            card.style.position = 'fixed';
+            card.style.zIndex = '1000';
+            card.style.top = '50%';
+            card.style.left = '50%';
+            card.style.width = '80vw';
+            card.style.height = '80vh';
+            card.style.transform = 'translate(-50%, -50%)';
+            card.style.display = 'flex';
+            card.style.flexDirection = 'row'; 
+            card.style.alignItems = 'stretch';
+
+            canvases = card.querySelectorAll('.threeCanvas')
+            canvases.forEach((canvas) => {
+              canvas.classList.add('enlarged')
+              canvas.classList.add('canvas')
+              canvas.classList.remove('threeCanvas')
+              canvas.style.flex = '1';
+              canvas.style.height = '80%';
+              canvas.style.width = '60%';
+              canvas.style.marginLeft = '2%'
+            });
+
+            header = card.querySelector('h4');
+            header.style.order = '-1';
+            
+            table = card.querySelector('table');
+            table.style.flex = '1';
+            table.style.width = '30%'; 
+            table.style.height = 'auto';
+            table.style.marginLeft = 'auto'; 
+            table.style.marginTop = '2%'; 
+            
+        } else if (prove & card.classList.contains('enlarged')){
+            card.style.cssText = '';
+            card.classList.remove('enlarged');
+            canvases = card.querySelectorAll('.canvas')
+            canvases.forEach((canvas) => {
+              canvas.style = ''
+              canvas.classList.remove('enlarged')
+              canvas.classList.remove('canvas')
+              canvas.classList.add('threeCanvas')
+            });
+            table = card.querySelector('table');
+              table.style = ''
+
+            prove = false;
+        } else {
+          return;
+        }
+      });
+    });
+  });
+
+</script>-->
+
+<!-- <style>
+  .enlarged {
+    position: fixed;
+    z-index: 1000; /* Stellt sicher, dass das Canvas über den anderen Elementen liegt */
+    top: 50%;
+    left: 50%;
+    width: 100px; /* 80% der Bildschirmbreite */
+    height: 200px; /* 80% der Bildschirmhöhe */
+    transform: translate(-50%, -50%); /* Zentriert das Canvas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional, fügt einen Schlagschatten hinzu */
+  }
+</style> -->
+
 </body>
 </html>

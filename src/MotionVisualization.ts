@@ -476,9 +476,14 @@ export class MotionVisualization {
     }
 
     onWindowResize() {
-        this.camera.aspect = this.dom.offsetWidth / (window.innerHeight - 150);
+        
+        console.debug(this.dom.offsetHeight)
+        console.debug(this.dom.offsetWidth)
+        console.debug(this.dom)
+        
         const parent = this.dom.parentNode as HTMLElement
         this.renderer.setSize(parent.offsetWidth, parent.offsetHeight);
+        this.camera.aspect = (this.dom.offsetHeight ) / (this.dom.offsetWidth );
         this.camera.updateProjectionMatrix();
         this.cameraControls.update()
     }

@@ -19,7 +19,7 @@ export class PlaybackController {
     timerElement: TimerElement
     timelineElement: TimelineElement
 
-    constructor(motionVis: MotionVisualization, motionVis2: MotionVisualization) {
+    constructor(motionVis: MotionVisualization) {
         this.playButton = document.querySelector("#playPause") as HTMLButtonElement;
         this.timerElement = new TimerElement(document.querySelector("#timer") as HTMLElement);
         this.timelineElement = new TimelineElement(document.querySelector("#timeline") as HTMLProgressElement);
