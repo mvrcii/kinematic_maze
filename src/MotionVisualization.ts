@@ -11,6 +11,7 @@ function sleep(ms: any) {
 
 export class MotionVisualization {
     csvPath: string;
+    playerIdx: number;
 
     isAutoRotateEnabled = true;
 
@@ -28,14 +29,15 @@ export class MotionVisualization {
     actions: { [key: string]: any } = {};
     state: { [key: string]: any } = {};
 
-    constructor(csvPath: string, canvasID: string) {
+    constructor(csvPath: string, playerIdx: number) {
         this.csvPath = csvPath
         this.scene = new THREE.Scene();
         this.reactor = new Reactor()
         this.reactor.registerEvent('step');
         this.reactor.registerEvent('sweep');
+        this.playerIdx = playerIdx;
 
-
+        const canvasID = `threeCanvas` + playerIdx;
         const canvasElement = document.getElementById(canvasID) as HTMLCanvasElement;
         this.renderer = new THREE.WebGLRenderer({canvas: canvasElement});
         this.dom = this.renderer.domElement
@@ -62,6 +64,10 @@ export class MotionVisualization {
         this.state = {}
 
         this.setup()
+    }
+
+    getPlayerIdx() {
+        return this.playerIdx;
     }
 
     async setup() {
@@ -251,7 +257,7 @@ export class MotionVisualization {
     }
 
     isEverythingLoadedAndReady() {
-        console.log(this.mixers)
+        // console.log(this.mixers)
         return "HMD" in this.mixers;
     }
 
@@ -476,11 +482,6 @@ export class MotionVisualization {
     }
 
     onWindowResize() {
-        
-        console.debug(this.dom.offsetHeight)
-        console.debug(this.dom.offsetWidth)
-        console.debug(this.dom)
-        
         const parent = this.dom.parentNode as HTMLElement
         this.renderer.setSize(parent.offsetWidth, parent.offsetHeight);
         this.camera.aspect = (this.dom.offsetHeight ) / (this.dom.offsetWidth );
