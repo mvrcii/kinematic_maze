@@ -123,7 +123,7 @@ export class MotionVisualization {
         this.cameraControls.screenSpacePanning = false;
         this.cameraControls.autoRotate = false;
         this.cameraControls.autoRotateSpeed = 0.15;
-        this.cameraControls.target.set(0, 1, 0);
+        this.cameraControls.target.set(0, 1.2, 0);
 
         const radius = 3;
         const theta = Math.PI / 4; // 45 degrees in radians
