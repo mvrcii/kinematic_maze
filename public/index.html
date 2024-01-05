@@ -12,7 +12,7 @@
 <h1 class="text-center h-auto">VR Dashboard</h1>
 <h2 class="text-center h-auto">Fixed Datasets:</h2>
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <div class="row">
 
@@ -383,13 +383,13 @@
     </div>
 </div>
 
-<h2 class="text-center h-auto">Original Datasets:</h2>
+<h2 class="text-center h-auto">Common Pitfalls:</h2>
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <div class="row">
 
-            <!-- TBD: Negative 1 -->
+            <!-- Negative 1: Swapped Coordinate System -> RUF / RUB -->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas7" class="threeCanvas"></canvas>
@@ -404,12 +404,19 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                         </div>
+
+                        <hr>
+                        <h4>Coordinate System</h4>
+                        <p>This animation illustrates the impact of accidentally swapping the coordinate system from RUB
+                            to RUF on the motion.</p>
+                        <hr>
                     </div>
+
+
                 </div>
             </div>
 
-            <!-- liebers2 dataset -->
-            <!-- TBD: Negative 2 -->
+            <!-- Negative 2: Wrong mapping 'zyx' when loaded as euler -->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas8" class="threeCanvas"></canvas>
@@ -429,8 +436,7 @@
                 </div>
             </div>
 
-            <!-- liebers3 dataset -->
-            <!-- TBD: Negative 3 -->
+            <!-- Negative 3: Wrong intrinsic / extrinsic euler angles -->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas9" class="threeCanvas"></canvas>
