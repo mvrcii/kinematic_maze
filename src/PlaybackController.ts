@@ -16,13 +16,13 @@ export class PlaybackController {
     motionVis: MotionVisualization
 
     playButton: HTMLButtonElement | null
-    timerElement: TimerElement
+    // timerElement: TimerElement
     timelineElement: TimelineElement
 
     constructor(motionVis: MotionVisualization) {
         const playerIdx = motionVis.getPlayerIdx();
         this.playButton = document.querySelector("#playPause" + playerIdx) as HTMLButtonElement;
-        this.timerElement = new TimerElement(document.querySelector("#timer" + playerIdx) as HTMLElement);
+        // this.timerElement = new TimerElement(document.querySelector("#timer" + playerIdx) as HTMLElement);
         this.timelineElement = new TimelineElement(document.querySelector("#timeline" + playerIdx) as HTMLProgressElement);
 
         this.playButton?.addEventListener("click", (event) => this.playPause());
@@ -41,7 +41,7 @@ export class PlaybackController {
 
     onStep() {
         if (this.motionVis.isEverythingLoadedAndReady()) {
-            this.timerElement.update(new Date(this.getCurrentSceneTimestamp()));
+            // this.timerElement.update(new Date(this.getCurrentSceneTimestamp()));
             this.timelineElement.update(this.motionVis.progress());
         }
         

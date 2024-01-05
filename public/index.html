@@ -5,40 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>VR Dashboard</title>
+    <title>XR Motion Dashboard</title>
 </head>
 <body>
 
-  <a href="index_reusable.html"
-                                   class="button-link" target="_blank"> index_reusable</a>
-                            </div>
+<a href="index_reusable.html"
+   class="button-link" target="_blank"> index_reusable</a>
+</div>
 
-<h1 class="text-center h-auto">VR Dashboard</h1>
-<h2 class="text-center h-auto">Fixed Datasets:</h2>
+<h1 class="text-center h-auto">XR Motion Dashboard</h1>
+<!--<h2 class="text-center h-auto">Fixed Datasets:</h2>-->
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <div class="row">
 
             <!-- liebers1 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-4 box-shadow ">
+                <div class="card mb-5 box-shadow">
                     <canvas id="threeCanvas1" class="threeCanvas"></canvas>
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline1" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer1"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline1" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
                         <h4>LiebersLabStudy21</h4>
-                        <p>The LiebersLabStudy21 dataset focuses on VR users per-
-                            forming specific bowling and archery motions.</p>
+                        <p><b>Task:</b> This dataset focuses on users performing specific bowling and archery motions.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -81,27 +77,19 @@
 
             <!-- liebers2 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-4 box-shadow">
+                <div class="card mb-5 box-shadow">
                     <canvas id="threeCanvas2" class="threeCanvas"></canvas>
-                    <div class="inner-container">
-                        <div class="controls">
-
-                        </div>
-                    </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline2" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer2"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline2" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
                         <h4>LiebersBeatSaber23</h4>
-                        <p>The LiebersBeatSaber23 dataset of 15 users is based on the
-                            game Beatsaber and is aimed at user identification through motion.</p>
+                        <p><b>Task:</b> This dataset focuses on users playing the
+                            game <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user identification through motion.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -145,23 +133,19 @@
             <!-- liebers3 dataset -->
             <!-- unvollständige CSV datei bei fixed.csv-->
             <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-4 box-shadow">
+                <div class="card mb-5 box-shadow">
                     <canvas id="threeCanvas3" class="threeCanvas"></canvas>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline3" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer3"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline3" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
                         <h4>LiebersHand22</h4>
-                        <p>The ‘LiebersHand22’ dataset [2] includes interactions of 16 users
-                            with various interface elements in AR and VR environments
-                            for motion-based user identification</p>
+                        <p><b>Task:</b> This dataset focuses on users performing interactions with various interface elements, such as buttons and sliders,
+                            in AR and VR environments for motion-based user identification.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -208,19 +192,15 @@
                     <canvas id="threeCanvas4" class="threeCanvas"></canvas>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline4" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer4"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline4" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
                         <h4>MooreCrossDomain23</h4>
-                        <p> MooreCrossDomain23 includes motion data of 45 VR users
-                            performing assembly tasks, also intended for user identification re-
-                            search</p>
+                        <p><b>Task:</b> This dataset focuses on users performing assembly tasks in VR and is also intended for
+                            user identification research.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -267,18 +247,14 @@
                     <canvas id="threeCanvas5" class="threeCanvas"></canvas>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline5" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer5"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline5" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
-                        <h4>Vr.net </h4>
-                        <p>VR.net was designed for cybersickness research and provides
-                            16 users playing various VR games.</p>
+                        <h4>VR.net</h4>
+                        <p><b>Task:</b> This dataset focuses on users playing various VR games and was designed for cybersickness research.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-6">
@@ -326,19 +302,15 @@
                     <canvas id="threeCanvas6" class="threeCanvas"></canvas>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-center justify-content-start">
-                                <progress id="timeline6" max="1"></progress>
-                            </div>
-                            <div class="col-md-6">
-                                <span id="timer6"></span>
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline6" max="1" style="width: 100%;"></progress>
                             </div>
                         </div>
 
                         <hr>
                         <h4>RMillerBall22</h4>
-                        <p>RMillerBall22 captures the motions of 41 users performing
-                            ball throwing actions in VR, segregated by user, device, session,
-                            and peripheral.</p>
+                        <p><b>Task:</b> This dataset focuses on capturing the motions of users performing
+                            ball throwing actions in VR.</p>
                         <hr>
                         <div class="row">
                             <div class="col-md-4">
@@ -389,47 +361,73 @@
 
 <h2 class="text-center h-auto">Common Pitfalls:</h2>
 
-<div class="album py-5 bg-light">
+<div class="album py-5">
     <div class="container">
         <div class="row">
 
             <!-- Negative 1: Swapped Coordinate System -> RUF / RUB -->
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas7" class="threeCanvas"></canvas>
                     <div class="card-body">
-                        <p class="card-text"></p>
+                        <div class="row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline7" max="1" style="width: 100%;"></progress>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>S3: Coordinate System</h4>
+                        <p>This animation illustrates the impact of accidentally swapping the coordinate system from <b>RUB</b> (X=Right, Y=Up, Z=Backward)
+                            to <b>RUF</b> (X=Right, Y=Up, Z=Forward) on the motion.</p>
+
                         <div class="d-flex justify-content-between align-items-center">
                         </div>
+
                     </div>
-
-
                 </div>
             </div>
 
             <!-- Negative 2: Wrong mapping 'zyx' when loaded as euler -->
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas8" class="threeCanvas"></canvas>
                     <div class="card-body">
-                        <p class="card-text"></p>
+                        <div class="row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline8" max="1" style="width: 100%;"></progress>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h4>S5: Coordinate Mapping</h4>
+                        <p>This animation illustrates the impact of accidentally switching up the coordinate mapping when loading a dataset as euler coordinates on the motion (e.g., <b>zxy</b> instead of <b>xyz</b>).</p>
+
                         <div class="d-flex justify-content-between align-items-center">
-                      </div>
+                        </div>
                     </div>
-                                    </div>
+                </div>
             </div>
 
             <!-- Negative 3: Wrong intrinsic / extrinsic euler angles -->
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
                     <canvas id="threeCanvas9" class="threeCanvas"></canvas>
                     <div class="card-body">
-                        <p class="card-text"></p>
+                        <div class="row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-start">
+                                <progress id="timeline9" max="1" style="width: 100%;"></progress>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <h4>S5: Coordinate Transformation</h4>
+                        <p>This animation illustrates the impact of switching up the coordinate transformation with euler coordinates on the motion (e.g., <b>intrinsic</b> instead of <b>extrinsic</b>).</p>
+
                         <div class="d-flex justify-content-between align-items-center">
-                      </div>
-                  </div>
-              </div>
-          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- IVRUADST dataset -->
             <!-- TBD: Negative 4 -->
