@@ -6,100 +6,15 @@
 
 :root {
     --jumbotron-padding-y: 3rem;
-  }
-  
-  .jumbotron {
-    padding-top: var(--jumbotron-padding-y);
-    padding-bottom: var(--jumbotron-padding-y);
-    margin-bottom: 0;
-    background-color: #fff;
-  }
-  @media (max-width: 800px) {
-    .jumbotron {
-      padding-top: calc(var(--jumbotron-padding-y) * 2);
-      padding-bottom: calc(var(--jumbotron-padding-y) * 2);
-    }
-  }
-  
-  .jumbotron p:last-child {
-    margin-bottom: 0;
-  }
-  
-  .jumbotron-heading {
-    font-weight: 300;
-  }
-  
-  .jumbotron .container {
-    max-width: 50%;
-    max-height: 50%;
-    min-width: 50%;
-    min-height: 50%;
-  }
-  
-  
-  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-  
-  table {
-    width: 100%;
-    table-layout: fixed;
-  }
-  td{
-    vertical-align: top;
-    width: 50%;
-
-  }
-
-/* Optional: Basisstil für das Canvas, wenn es nicht vergrößert ist */
-.threeCanvas {
-  transition: all 0.2s ; /* Fügt eine sanfte Übergangsanimation hinzu */
 }
 
-/* Stil für das Canvas, wenn es vergrößert ist */
-.enlarged {
-  position: fixed;
-  z-index: 1000;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 80vw;
-  height: 80vh;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  overflow: auto;
+table {
+  width: 100%;
+  table-layout: fixed;
 }
 
-.enlarged .canvas {
-  width: 150px; 
-  height: 150px;
-}
+td{
+  vertical-align: top;
+  width: 50%;
 
-.enlarged .card-body {
-  width: 50%; /* Oder die gewünschte Breite für die Tabelle */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.enlarged h4 {
-  text-align: center;
-  width: 100%; /* Stellt sicher, dass die Überschrift die volle Breite einnimmt */
-  margin-top: 10px; /* Optional: Fügt etwas Abstand oben hinzu */
-  margin-bottom: 10px; /* Optional: Fügt etwas Abstand unten hinzu */
-}
-
-/* Stellen Sie sicher, dass die .card die nötigen Flexbox-Stile hat */
-.card.enlarged {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
