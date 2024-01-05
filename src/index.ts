@@ -47,13 +47,16 @@ function initializeApp() {
     motionPlayers.push(player6);
 
     // Negative Samples
-    const negative_player7 = new MotionVisualization("samples/liebers_1/fixed.csv", 7);
+    const negative_player7 = new MotionVisualization(
+        "negative_samples/vr-controllers_quat_swap_ruf_and_rub.csv", 7)
     motionPlayers.push(negative_player7);
 
-    const negative_player8 = new MotionVisualization("samples/liebers_2/fixed.csv", 8);
+    const negative_player8 = new MotionVisualization(
+        "negative_samples/vr-controllers_euler_to_quat_mapping_zyx.csv", 8);
     motionPlayers.push(negative_player8);
 
-    const negative_player9 = new MotionVisualization("samples/liebers_3/fixed.csv", 9);
+    const negative_player9 = new MotionVisualization(
+        "negative_samples/vr-controllers_euler_to_quat_intrinsic.csv", 9);
     motionPlayers.push(negative_player9);
 
     // const negative_player10 = new MotionVisualization("samples/IVRUADST/original.csv", 10);
