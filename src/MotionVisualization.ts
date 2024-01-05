@@ -121,17 +121,16 @@ export class MotionVisualization {
         this.cameraControls.enableDamping = true;
         this.cameraControls.dampingFactor = 0.25;
         this.cameraControls.screenSpacePanning = false;
-        this.cameraControls.autoRotate = true;
-        this.cameraControls.autoRotateSpeed = 0.25;
+        this.cameraControls.autoRotate = false;
+        this.cameraControls.autoRotateSpeed = 0.15;
         this.cameraControls.target.set(0, 1, 0);
 
-        const radius = 10;
+        const radius = 3;
         const theta = Math.PI / 4; // 45 degrees in radians
         const offsetX = radius * Math.sin(theta);
-        const thirdPersonOffsetY = 8;
-        const thirdPersonOffsetZ = 10;
+        const thirdPersonOffsetY = 5;
+        const thirdPersonOffsetZ = -2;
         this.camera.position.set(offsetX, thirdPersonOffsetY, thirdPersonOffsetZ);
-
         this.cameraControls.minPolarAngle = 0.5 * Math.PI / 3; // How low the camera can go
         this.cameraControls.maxPolarAngle = Math.PI / 3; // How high the camera can go
         this.cameraControls.enablePan = false;
@@ -140,8 +139,14 @@ export class MotionVisualization {
         this.cameraControls.enableRotate = true;
         this.cameraControls.update();
 
+
         this.cameraControls.addEventListener('change', () => {
             this.camera.position.y = thirdPersonOffsetY;
+            // if (this.playerIdx == 1) {
+            //     console.log("x" + this.camera.position.x)
+            //     console.log("y" + this.camera.position.y)
+            //     console.log("z" + this.camera.position.z)
+            // }
         });
     }
 
@@ -184,7 +189,7 @@ export class MotionVisualization {
 
                     const initialRow = data[0];
 
-                    const yOffset = 0.5;
+                    const yOffset = 2.0;
 
                     let row;
                     for (let i = 0; i < numRows; i++) {
@@ -484,7 +489,7 @@ export class MotionVisualization {
     onWindowResize() {
         const parent = this.dom.parentNode as HTMLElement
         this.renderer.setSize(parent.offsetWidth, parent.offsetHeight);
-        this.camera.aspect = (this.dom.offsetHeight ) / (this.dom.offsetWidth );
+        this.camera.aspect = (this.dom.offsetHeight) / (this.dom.offsetWidth);
         this.camera.updateProjectionMatrix();
         this.cameraControls.update()
     }
