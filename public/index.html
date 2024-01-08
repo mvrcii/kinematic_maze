@@ -25,7 +25,7 @@
             <!-- liebers1 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas1" class="threeCanvas"  source_path="samples/liebers_1/fixed.csv"></canvas>
+                    <canvas id="motion-player1" class="motion-player"  data-source-path="samples/liebers_1/fixed.csv"></canvas>
 
                     <div class="card-body">
                         <div class="row">
@@ -80,7 +80,7 @@
             <!-- liebers2 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas2" class="threeCanvas"  source_path="samples/liebers_2/fixed.csv"></canvas>
+                    <canvas id="motion-player2" class="motion-player"  data-source-path="samples/liebers_2/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -136,7 +136,7 @@
             <!-- unvollständige CSV datei bei fixed.csv-->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas3" class="threeCanvas"  source_path="samples/liebers_3/fixed.csv"></canvas>
+                    <canvas id="motion-player3" class="motion-player"  data-source-path="samples/liebers_3/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -191,7 +191,7 @@
             <!-- IVRUADST dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas4" class="threeCanvas"  source_path="samples/IVRUADST/fixed.csv"></canvas>
+                    <canvas id="motion-player4" class="motion-player"  data-source-path="samples/IVRUADST/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -246,7 +246,7 @@
             <!-- Vr.net dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas5" class="threeCanvas"  source_path="samples/Vrnet/Vrnet_traffic_cop.csv"></canvas>
+                    <canvas id="motion-player5" class="motion-player"  data-source-path="samples/Vrnet/Vrnet_traffic_cop.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -301,7 +301,7 @@
             <!-- kleiner Sprung bei Zeile index 63 ca. bei right hand x und z-->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas6" class="threeCanvas"  source_path="samples/r_miller/fixed.csv"></canvas>
+                    <canvas id="motion-player6" class="motion-player"  data-source-path="samples/r_miller/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -370,7 +370,7 @@
             <!-- Negative 1: Swapped Coordinate System -> RUF / RUB -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas7" class="threeCanvas"  source_path="negative_samples/vr-controllers_quat_swap_ruf_and_rub.csv"></canvas>
+                    <canvas id="motion-player7" class="motion-player"  data-source-path="negative_samples/vr-controllers_quat_swap_ruf_and_rub.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -392,7 +392,7 @@
             <!-- Negative 2: Wrong mapping 'zyx' when loaded as euler -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas8" class="threeCanvas"  source_path="negative_samples/vr-controllers_euler_to_quat_mapping_zyx.csv"></canvas>
+                    <canvas id="motion-player8" class="motion-player"  data-source-path="negative_samples/vr-controllers_euler_to_quat_mapping_zyx.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -413,7 +413,7 @@
             <!-- Negative 3: Wrong extrinsic / extrinsic euler angles -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas9" class="threeCanvas"  source_path="negative_samples/vr-controllers_euler_to_quat_intrinsic.csv"></canvas>
+                    <canvas id="motion-player9" class="motion-player"  data-source-path="negative_samples/vr-controllers_euler_to_quat_intrinsic.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -435,7 +435,7 @@
             <!-- TBD: Negative 4 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas10" class="threeCanvas"  source_path=""></canvas>-->
+            <!--                    <canvas id="motion-player10" class="motion-player"  data-source-path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->
@@ -448,7 +448,7 @@
             <!-- TBD: Negative 5 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas11" class="threeCanvas"  source_path=""></canvas>-->
+            <!--                    <canvas id="motion-player11" class="motion-player"  data-source-path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->
@@ -461,7 +461,7 @@
             <!-- TBD: Negative 6 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas12" class="threeCanvas"  source_path=""></canvas>-->
+            <!--                    <canvas id="motion-player12" class="motion-player"  data-source-path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->

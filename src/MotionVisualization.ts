@@ -37,7 +37,7 @@ export class MotionVisualization {
         this.reactor.registerEvent('sweep');
         this.playerIdx = playerIdx;
 
-        const canvasID = `threeCanvas` + playerIdx;
+        const canvasID = `motion-player` + playerIdx;
         const canvasElement = document.getElementById(canvasID) as HTMLCanvasElement;
         this.renderer = new THREE.WebGLRenderer({canvas: canvasElement});
         this.dom = this.renderer.domElement
