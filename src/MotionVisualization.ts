@@ -39,7 +39,7 @@ export class MotionVisualization {
         this.canvasContainer.classList.add("canvas-container")
         this.canvasContainer.appendChild(this.canvas);
         this.playerDom.appendChild(this.canvasContainer);
-        this.csvPath = this.playerDom.dataset["source-path"] as string;
+        this.csvPath = this.playerDom.dataset["sourcePath"] as string;
 
         if(this.playerDom.dataset["progressbar"] == "true") {
             new PlaybackController(this);
