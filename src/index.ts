@@ -15,15 +15,9 @@ function getQueryVariable(variable: string, defaultDataset: string) {
 }
 
 function initializeApp() {
-
-    let number = 1;
-    
-    while (number <= document.getElementsByClassName('motion-player').length){
-        const path = document.getElementById('motion-player' + number)?.getAttribute('data-source-path') || '';
-        const player = new MotionVisualization(path, number);
-        const controller = new PlaybackController(player);
-        number += 1;
-    }
+    Array.from(document.getElementsByClassName('motion-player')).forEach(dom => {
+        new PlaybackController(new MotionVisualization(dom as HTMLDivElement));
+    });
 }
 
 document.addEventListener('DOMContentLoaded', initializeApp);

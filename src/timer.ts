@@ -1,3 +1,4 @@
+import { MotionVisualization } from "./MotionVisualization";
 import {Reactor} from "./events";
 
 class BaseElement {
@@ -12,9 +13,20 @@ class BaseElement {
 
 
 class TimelineElement extends BaseElement {
-    constructor(dom: HTMLProgressElement) {
+    progressBar: HTMLDivElement;
+    constructor(motionVis: MotionVisualization) {
+        let dom = document.createElement("div");
+        dom.classList.add("progress");
+        
         super(dom);
         this.dom = dom;
+        
+        this.progressBar = document.createElement("div");
+        this.progressBar.classList.add("progress-bar");
+        
+        this.dom.appendChild(this.progressBar);
+        motionVis.playerDom.appendChild(this.dom);
+        
         this.reactor.registerEvent('sweepRequest');
 
         this.dom.addEventListener('click', (event: MouseEvent) => {
@@ -27,7 +39,7 @@ class TimelineElement extends BaseElement {
     }
 
     update(progress: any): void {
-        this.dom.setAttribute("value", progress)
+        this.progressBar.style.width = progress * 100 + "%";
     }
 }
 

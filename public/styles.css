@@ -1,8 +1,4 @@
 
-.motion-player {
-    max-width: 100%;
-    max-height: 300px;
-}
 
 :root {
     --jumbotron-padding-y: 3rem;
@@ -29,4 +25,52 @@ a[data-bs-toggle="tooltip"]:hover {
   cursor: help;
   color: inherit;
   border-bottom-color: currentColor;
+}
+
+.motion-player {
+    max-width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-flow: column;
+}
+
+.motion-player canvas {
+  display: block;
+}
+
+.motion-player .progress {
+  border-radius: 0;
+  height: 0.6rem;
+  cursor: pointer;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.motion-player .canvas-container {
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+dl.specifications {
+  font-size: 1rem;
+  line-height: 1.25em;
+  padding: 0.25em;
+}
+
+dl.specifications dt {
+  float: left;
+  margin-right: 0.5em;
+}
+
+dl.specifications dd {
+  margin-bottom: 0.75em;
+}
+
+table.specifications th {
+  vertical-align: top;
+  width: 56px;
+}
+
+table.specifications tr {
+  border-bottom: 1px solid #ccc;
 }

@@ -4,6 +4,7 @@ import {Reactor} from "./events";
 import {Sky} from "three/examples/jsm/objects/Sky";
 import {OBJLoader} from "three/examples/jsm/loaders/OBJLoader";
 import Papa from "papaparse";
+import { PlaybackController } from './PlaybackController';
 
 function sleep(ms: any) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -11,11 +12,10 @@ function sleep(ms: any) {
 
 export class MotionVisualization {
     csvPath: string;
-    playerIdx: number;
 
     isAutoRotateEnabled = true;
 
-    dom: HTMLElement
+    rendererDom: HTMLElement
     scene: THREE.Scene
     reactor: Reactor
     renderer: THREE.WebGLRenderer
@@ -28,24 +28,32 @@ export class MotionVisualization {
     mixers: { [key: string]: THREE.AnimationMixer } = {};
     actions: { [key: string]: any } = {};
     state: { [key: string]: any } = {};
+    canvas: HTMLCanvasElement;
+    playerDom: HTMLDivElement;
+    canvasContainer: HTMLDivElement;
 
-    constructor(csvPath: string, playerIdx: number) {
-        this.csvPath = csvPath;
+    constructor(playerDom: HTMLDivElement) {
+        this.playerDom = playerDom;
+        this.canvas = document.createElement("canvas");
+        this.canvasContainer = document.createElement("div");
+        this.canvasContainer.classList.add("canvas-container")
+        this.canvasContainer.appendChild(this.canvas);
+        this.playerDom.appendChild(this.canvasContainer);
+        this.csvPath = this.playerDom.dataset["source-path"] as string;
+
+        if(this.playerDom.dataset["progressbar"] == "true") {
+            new PlaybackController(this);
+        }
         this.scene = new THREE.Scene();
         this.reactor = new Reactor()
         this.reactor.registerEvent('step');
         this.reactor.registerEvent('sweep');
-        this.playerIdx = playerIdx;
-
-        const canvasID = `motion-player` + playerIdx;
-        const canvasElement = document.getElementById(canvasID) as HTMLCanvasElement;
-        this.renderer = new THREE.WebGLRenderer({canvas: canvasElement});
-        this.dom = this.renderer.domElement
+        
+        this.renderer = new THREE.WebGLRenderer({canvas: this.canvas});
+        this.rendererDom = this.renderer.domElement
 
         this._setupCameraAndControls()
         this._addKeyListeners()
-
-        this.onWindowResize()
         window.addEventListener('resize', this.onWindowResize.bind(this));
 
         this.setupScene();
@@ -64,10 +72,8 @@ export class MotionVisualization {
         this.state = {}
 
         this.setup()
-    }
 
-    getPlayerIdx() {
-        return this.playerIdx;
+        this.onWindowResize()
     }
 
     async setup() {
@@ -115,7 +121,7 @@ export class MotionVisualization {
     }
 
     _setupCameraAndControls() {
-        this.camera = new THREE.PerspectiveCamera(40, this.dom.offsetWidth / this.dom.offsetHeight, 0.1, 8000);
+        this.camera = new THREE.PerspectiveCamera(40, this.rendererDom.offsetWidth / this.rendererDom.offsetHeight, 0.1, 8000);
 
         this.cameraControls = new OrbitControls(this.camera, this.renderer.domElement);
         this.cameraControls.enableDamping = true;
@@ -491,9 +497,9 @@ export class MotionVisualization {
     
 
     onWindowResize() {
-        const parent = this.dom.parentNode as HTMLElement
-        this.renderer.setSize(parent.offsetWidth, parent.offsetHeight);
-        this.camera.aspect = (this.dom.offsetHeight) / (this.dom.offsetWidth);
+        const rect = this.canvasContainer.getBoundingClientRect();
+        this.renderer.setSize(rect.width, rect.height);
+        this.camera.aspect = rect.width / rect.height;
         this.camera.updateProjectionMatrix();
         this.cameraControls.update()
     }

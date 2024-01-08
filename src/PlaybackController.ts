@@ -15,17 +15,17 @@ export function getQueryVariable(variable: any) {
 export class PlaybackController {
     motionVis: MotionVisualization
 
-    playButton: HTMLButtonElement | null
+    // playButton: HTMLButtonElement | null
     // timerElement: TimerElement
     timelineElement: TimelineElement
 
     constructor(motionVis: MotionVisualization) {
-        const playerIdx = motionVis.getPlayerIdx();
-        this.playButton = document.querySelector("#playPause" + playerIdx) as HTMLButtonElement;
+        // this.playButton = document.querySelector("#playPause" + playerIdx) as HTMLButtonElement;
         // this.timerElement = new TimerElement(document.querySelector("#timer" + playerIdx) as HTMLElement);
-        this.timelineElement = new TimelineElement(document.querySelector("#timeline" + playerIdx) as HTMLProgressElement);
 
-        this.playButton?.addEventListener("click", (event) => this.playPause());
+        this.timelineElement = new TimelineElement(motionVis);
+
+        // this.playButton?.addEventListener("click", (event) => this.playPause());
         this.timelineElement.reactor.addEventListener("sweepRequest",
             (position: any) => this.onSweep(position));
 
