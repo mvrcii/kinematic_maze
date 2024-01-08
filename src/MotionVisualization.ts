@@ -30,7 +30,7 @@ export class MotionVisualization {
     state: { [key: string]: any } = {};
 
     constructor(csvPath: string, playerIdx: number) {
-        this.csvPath = csvPath
+        this.csvPath = csvPath;
         this.scene = new THREE.Scene();
         this.reactor = new Reactor()
         this.reactor.registerEvent('step');
@@ -128,8 +128,8 @@ export class MotionVisualization {
         const radius = 3;
         const theta = Math.PI / 4; // 45 degrees in radians
         const offsetX = radius * Math.sin(theta);
-        const thirdPersonOffsetY = 5;
-        const thirdPersonOffsetZ = -2;
+        const thirdPersonOffsetY = 7;
+        const thirdPersonOffsetZ = -4;
         this.camera.position.set(offsetX, thirdPersonOffsetY, thirdPersonOffsetZ);
         this.cameraControls.minPolarAngle = 0.5 * Math.PI / 3; // How low the camera can go
         this.cameraControls.maxPolarAngle = Math.PI / 3; // How high the camera can go
@@ -460,9 +460,9 @@ export class MotionVisualization {
     }
 
     addAxes() {
-        const axes = new THREE.AxesHelper(5);
-        axes.renderOrder = 1;
-        this.scene.add(axes);
+        // const axes = new THREE.AxesHelper(5);
+        // axes.renderOrder = 1;
+        // this.scene.add(axes);
 
         this.addAxeArrows();
     }
@@ -473,18 +473,22 @@ export class MotionVisualization {
         const dirZ = new THREE.Vector3(0, 0, 1);
 
         const origin = new THREE.Vector3(0, 0, 0);
-        const length = 5;
+        const length = 2;
         const headLength = 0.1 * length;
         const headWidth = 0.025 * length;
 
         const arrowHelperX = new THREE.ArrowHelper(dirX, origin, length, 0xff0000, headLength, headWidth);
         const arrowHelperY = new THREE.ArrowHelper(dirY, origin, length, 0x00ff00, headLength, headWidth);
         const arrowHelperZ = new THREE.ArrowHelper(dirZ, origin, length, 0x0000ff, headLength, headWidth);
+        arrowHelperX.name = "X" ;
+        arrowHelperY.name = "Y" ;
+        arrowHelperZ.name = "Z" ;
 
         this.scene.add(arrowHelperX);
         this.scene.add(arrowHelperY);
         this.scene.add(arrowHelperZ);
     }
+    
 
     onWindowResize() {
         const parent = this.dom.parentNode as HTMLElement

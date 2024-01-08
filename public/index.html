@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
     <title>XR Motion Dashboard</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
             <!-- liebers1 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas1" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas1" class="threeCanvas"  source_path="samples/liebers_1/fixed.csv"></canvas>
 
                     <div class="card-body">
                         <div class="row">
@@ -50,11 +52,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUB</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Backward)">RUB</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td>Euler (deg;XYZ;intr.)</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="Euler notation for rotations, extrinsic, in degrees, and an XYZ order">Euler (deg;XYZ;extr.)</a></td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -78,7 +80,7 @@
             <!-- liebers2 dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas2" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas2" class="threeCanvas"  source_path="samples/liebers_2/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -105,11 +107,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUB</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Backward)">RUB</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td>Euler (deg;XYZ;intr.)/Quat.</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="quaternion and Euler angle representations for rotations, extrinsic, in degrees, and an XYZ order for Euler rotation">Euler (deg;XYZ;extr.)/Quat.</a></td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -134,7 +136,7 @@
             <!-- unvollständige CSV datei bei fixed.csv-->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-5 box-shadow">
-                    <canvas id="threeCanvas3" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas3" class="threeCanvas"  source_path="samples/liebers_3/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -161,11 +163,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUB</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Backward)">RUB</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td> Euler (deg;XYZ;intr.)/Quat.</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="quaternion and Euler angle representations for rotations, extrinsic, in degrees, and an XYZ order for Euler rotation">Euler (deg;XYZ;extr.)/Quat.</a></td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -189,7 +191,7 @@
             <!-- IVRUADST dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas4" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas4" class="threeCanvas"  source_path="samples/IVRUADST/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -216,11 +218,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUB</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Backward)">RUB</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td> Euler (deg;XYZ;intr.)/Quat./Rot. Mat.</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="quaternions, Euler angle representations for rotations and rotation matrices, extrinsic, in degrees, and an XYZ order for Euler rotation">Euler (deg;XYZ;extr.)/Quat./Rot. Mat.</a></td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -228,7 +230,7 @@
                             </tr>
                             <tr>
                                 <td>Time:</td>
-                                <td>el. (s)</td>
+                                <td>rel. (s)</td>
                             </tr>
                             <tr>
                                 <td>File Format:</td>
@@ -244,7 +246,7 @@
             <!-- Vr.net dataset -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas5" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas5" class="threeCanvas"  source_path="samples/Vrnet/Vrnet_traffic_cop.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -270,11 +272,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUF</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Forward)">RUF</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td>Trans. Mat.</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="Transformation Matrix">Trans. Mat.</a></td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -299,7 +301,7 @@
             <!-- kleiner Sprung bei Zeile index 63 ca. bei right hand x und z-->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas6" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas6" class="threeCanvas"  source_path="samples/r_miller/fixed.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -330,11 +332,11 @@
                         <table>
                             <tr>
                                 <td>Coordinate Syst.:</td>
-                                <td>RUB</td>
+                                <td><a href="#" data-bs-toggle="tooltip" title="RUB: (X=Right, Y=Up, Z=Backward)">RUB</a></td>
                             </tr>
                             <tr>
                                 <td>Rotation Repr.:</td>
-                                <td>Qiaternion</td>
+                                <td>Quaternion</td>
                             </tr>
                             <tr>
                                 <td>Units:</td>
@@ -368,7 +370,7 @@
             <!-- Negative 1: Swapped Coordinate System -> RUF / RUB -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas7" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas7" class="threeCanvas"  source_path="negative_samples/vr-controllers_quat_swap_ruf_and_rub.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -390,7 +392,7 @@
             <!-- Negative 2: Wrong mapping 'zyx' when loaded as euler -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas8" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas8" class="threeCanvas"  source_path="negative_samples/vr-controllers_euler_to_quat_mapping_zyx.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -408,10 +410,10 @@
                 </div>
             </div>
 
-            <!-- Negative 3: Wrong intrinsic / extrinsic euler angles -->
+            <!-- Negative 3: Wrong extrinsic / extrinsic euler angles -->
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card mb-4 box-shadow">
-                    <canvas id="threeCanvas9" class="threeCanvas"></canvas>
+                    <canvas id="threeCanvas9" class="threeCanvas"  source_path="negative_samples/vr-controllers_euler_to_quat_intrinsic.csv"></canvas>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 d-flex align-items-center justify-content-start">
@@ -421,7 +423,7 @@
 
                         <hr>
                         <h4>S5: Coordinate Transformation</h4>
-                        <p>This animation illustrates the impact of switching up the coordinate transformation with euler coordinates on the motion (e.g., <b>intrinsic</b> instead of <b>extrinsic</b>).</p>
+                        <p>This animation illustrates the impact of switching up the coordinate transformation with euler coordinates on the motion (e.g., <b>extrinsic</b> instead of <b>extrinsic</b>).</p>
 
                         <div class="d-flex justify-content-between align-items-center">
                         </div>
@@ -433,7 +435,7 @@
             <!-- TBD: Negative 4 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas10" class="threeCanvas"></canvas>-->
+            <!--                    <canvas id="threeCanvas10" class="threeCanvas"  source_path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->
@@ -446,7 +448,7 @@
             <!-- TBD: Negative 5 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas11" class="threeCanvas"></canvas>-->
+            <!--                    <canvas id="threeCanvas11" class="threeCanvas"  source_path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->
@@ -459,7 +461,7 @@
             <!-- TBD: Negative 6 -->
             <!--            <div class="col-md-4">-->
             <!--                <div class="card mb-4 box-shadow">-->
-            <!--                    <canvas id="threeCanvas12" class="threeCanvas"></canvas>-->
+            <!--                    <canvas id="threeCanvas12" class="threeCanvas"  source_path=""></canvas>-->
             <!--                    <div class="card-body">-->
             <!--                        <p class="card-text"></p>-->
             <!--                        <div class="d-flex justify-content-between align-items-center">-->
@@ -475,5 +477,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  </script>
+  
+
 </body>
 </html>

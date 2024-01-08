@@ -6,19 +6,25 @@
     <link rel="stylesheet" href="styles_reusable.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>VR Dashboard</title>
+    <link >
 </head>
 <body>
 
 <h1 class="text-center h-auto">VR Dashboard</h1>
 
-<div class="meinContainer">
-    <canvas id="threeCanvas1" class="myCanvas"></canvas>
+<div class="myContainer">
+    <!--
+        insert your relativ path to your replay in source_path
+    -->
+    <canvas id="threeCanvas1" class="threeCanvas" source_path="samples/liebers_1/fixed.csv"></canvas>
     <div class="row">
         <div class="col-md-2">
         <progress id="timeline1" max="1"></progress>
     </div>
     <div class="col-md-2">
-        <span id="timer1"></span>
+        <div class="controls--timer-and-button">
+            <button type="button" id="playPause1" class="btn btn-primary">▶∥</button>
+        </div>
     </div>
     </div>
     

@@ -18,3 +18,15 @@ td{
   width: 50%;
 
 }
+
+a[data-bs-toggle="tooltip"] {
+  color: inherit; 
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+
+a[data-bs-toggle="tooltip"]:hover {
+  cursor: help;
+  color: inherit;
+  border-bottom-color: currentColor;
+}
