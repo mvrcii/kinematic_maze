@@ -4,7 +4,7 @@ import {Reactor} from "./events";
 import {Sky} from "three/examples/jsm/objects/Sky";
 import {OBJLoader} from "three/examples/jsm/loaders/OBJLoader";
 import Papa from "papaparse";
-import { PlaybackController } from './PlaybackController';
+import {PlaybackController} from './PlaybackController';
 
 function sleep(ms: any) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -41,14 +41,14 @@ export class MotionVisualization {
         this.playerDom.appendChild(this.canvasContainer);
         this.csvPath = this.playerDom.dataset["sourcePath"] as string;
 
-        if(this.playerDom.dataset["progressbar"] == "true") {
+        if (this.playerDom.dataset["progressbar"] == "true") {
             new PlaybackController(this);
         }
         this.scene = new THREE.Scene();
         this.reactor = new Reactor()
         this.reactor.registerEvent('step');
         this.reactor.registerEvent('sweep');
-        
+
         this.renderer = new THREE.WebGLRenderer({canvas: this.canvas});
         this.rendererDom = this.renderer.domElement
 
@@ -361,10 +361,7 @@ export class MotionVisualization {
         }
     }
 
-    sweep(position
-              :
-              any
-    ) {
+    sweep(position : any) {
         const animationTime = this.state["currentSessionDuration"] * position;
 
         const wasPaused = !this.state["run"];
@@ -486,15 +483,15 @@ export class MotionVisualization {
         const arrowHelperX = new THREE.ArrowHelper(dirX, origin, length, 0xff0000, headLength, headWidth);
         const arrowHelperY = new THREE.ArrowHelper(dirY, origin, length, 0x00ff00, headLength, headWidth);
         const arrowHelperZ = new THREE.ArrowHelper(dirZ, origin, length, 0x0000ff, headLength, headWidth);
-        arrowHelperX.name = "X" ;
-        arrowHelperY.name = "Y" ;
-        arrowHelperZ.name = "Z" ;
+        arrowHelperX.name = "X";
+        arrowHelperY.name = "Y";
+        arrowHelperZ.name = "Z";
 
         this.scene.add(arrowHelperX);
         this.scene.add(arrowHelperY);
         this.scene.add(arrowHelperZ);
     }
-    
+
 
     onWindowResize() {
         const rect = this.canvasContainer.getBoundingClientRect();
