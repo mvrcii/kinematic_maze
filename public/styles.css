@@ -1,30 +1,29 @@
 
-
 :root {
     --jumbotron-padding-y: 3rem;
 }
 
 table {
-  width: 100%;
-  table-layout: fixed;
+    width: 100%;
+    table-layout: fixed;
 }
 
-td{
-  vertical-align: top;
-  width: 50%;
+td {
+    vertical-align: top;
+    width: 50%;
 
 }
 
 a[data-bs-toggle="tooltip"] {
-  color: inherit; 
-  text-decoration: none;
-  border-bottom: 1px dashed;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed;
 }
 
 a[data-bs-toggle="tooltip"]:hover {
-  cursor: help;
-  color: inherit;
-  border-bottom-color: currentColor;
+    cursor: help;
+    color: inherit;
+    border-bottom-color: currentColor;
 }
 
 .motion-player {
@@ -35,44 +34,44 @@ a[data-bs-toggle="tooltip"]:hover {
 }
 
 .motion-player canvas {
-  display: block;
+    display: block;
 }
 
 .motion-player .progress {
-  border-radius: 0;
-  height: 0.6rem;
-  cursor: pointer;
-  flex-grow: 0;
-  flex-shrink: 0;
+    border-radius: 0;
+    height: 0.6rem;
+    cursor: pointer;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .motion-player .canvas-container {
-  overflow: hidden;
-  flex-grow: 1;
+    overflow: hidden;
+    flex-grow: 1;
 }
 
 dl.specifications {
-  font-size: 1rem;
-  line-height: 1.25em;
-  padding: 0.25em;
+    font-size: 1rem;
+    line-height: 1.25em;
+    padding: 0.25em;
 }
 
 dl.specifications dt {
-  float: left;
-  margin-right: 0.5em;
+    float: left;
+    margin-right: 0.5em;
 }
 
 dl.specifications dd {
-  margin-bottom: 0.75em;
+    margin-bottom: 0.75em;
 }
 
 table.specifications th {
-  vertical-align: top;
-  width: 56px;
+    vertical-align: top;
+    width: 56px;
 }
 
 table.specifications tr {
-  border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .progress-bar {
