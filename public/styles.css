@@ -74,3 +74,7 @@ table.specifications th {
 table.specifications tr {
   border-bottom: 1px solid #ccc;
 }
+
+.progress-bar {
+    transition: none !important;
+}
