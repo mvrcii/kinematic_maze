@@ -1,5 +1,5 @@
 import {MotionVisualization} from "./MotionVisualization";
-import {TimelineElement, TimerElement} from "./timer";
+import {TimelineElement} from "./timer";
 
 export function getQueryVariable(variable: any) {
     var query = window.location.search.substring(1);
@@ -30,13 +30,14 @@ export class PlaybackController {
             (position: any) => this.onSweep(position));
 
         this.motionVis = motionVis;
-        this.motionVis.reactor.addEventListener("step", () => this.onStep());
-        
+
+        if (!motionVis.playerDom.classList.contains('readonly')) {
+            this.motionVis.reactor.addEventListener("step", () => this.onStep());
+        }
     }
 
     onSweep(position: any) {
         this.motionVis.sweep(position);
-        
     }
 
     onStep() {
@@ -44,7 +45,7 @@ export class PlaybackController {
             // this.timerElement.update(new Date(this.getCurrentSceneTimestamp()));
             this.timelineElement.update(this.motionVis.progress());
         }
-        
+
     }
 
     getCurrentSceneTimestamp() {
@@ -53,6 +54,6 @@ export class PlaybackController {
 
     playPause() {
         this.motionVis.pauseContinue();
-       
+
     }
 }

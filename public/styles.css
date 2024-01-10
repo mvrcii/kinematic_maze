@@ -6,7 +6,6 @@
 table {
     width: 100%;
     table-layout: fixed;
-
 }
 
 td {
@@ -41,9 +40,12 @@ a[data-bs-toggle="tooltip"]:hover {
 .motion-player .progress {
     border-radius: 0;
     height: 0.6rem;
-    cursor: pointer;
     flex-grow: 0;
     flex-shrink: 0;
+}
+
+.motion-player:not(.readonly) .progress {
+    cursor: pointer; /* Apply only when 'readonly' class is not present */
 }
 
 .motion-player .canvas-container {
@@ -75,15 +77,31 @@ table.specifications tr {
     border-bottom: 1px solid #ccc;
 }
 
+table.specifications tr:last-child {
+    border-bottom: none;
+}
+
 .progress-bar {
     transition: none !important;
+}
+
+.card {
+    border: 1px solid #cbcbcb;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.card .canvas-container {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
 }
 
 .btn {
     display: inline-block;
     padding: 0.2rem 0.7rem;
     width: auto;
-    
+
     margin-left: 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -95,11 +113,11 @@ table.specifications tr {
     background-color: transparent;
     border: 1px solid grey;
   }
-  
+
 .btn:hover {
     background-color: transparent;
     color: grey;
-    border: 1px solid grey; 
+    border: 1px solid grey;
 }
 
 
