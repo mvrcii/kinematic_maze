@@ -14,6 +14,7 @@
 
 <body>
 <div class="container">
+    <!-- Title + Authors -->
     <div class="row justify-content-md-center">
         <div class="my-2">
             <h1 class="display-4">Navigating the Kinematic Maze: A Comprehensive Guide to XR Motion Dataset
@@ -29,8 +30,8 @@
         </div>
     </div>
 
-
-    <div class="row g-0">
+    <!-- Headline Example -->
+    <div class="row">
         <div class="col-sm-6">
             <div class="me-1">
                 <div class="motion-player" data-source-path="samples/IVRUADST/fixed.csv" style="height: 350px">
@@ -58,6 +59,7 @@
         </div>
     </div>
 
+    <!-- Abstract -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto">Abstract</h1>
@@ -83,7 +85,7 @@
         </div>
     </div>
 
-
+    <!-- Aligned Section -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto" id="sec-aligned-dset">Aligned Kinematic Datasets</h1>
@@ -97,8 +99,8 @@
 
     </div>
 
-    <!-- LiebersLabStudy21 / Liebers_1 -->
-    <div class="row">
+    <div class="row justify-content-md-center">
+        <!-- LiebersLabStudy21 / Liebers_1 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/liebers_labstudy21/fixed.csv" data-progress="true"
@@ -198,7 +200,6 @@
             </div>
         </div>
 
-
         <!-- RMillerBall22 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
@@ -248,7 +249,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="row justify-content-md-center">
         <!-- WhoIsAlyx -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
@@ -345,7 +348,8 @@
         <!-- BOXRR23_Tiltbrush -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/boxrr_tiltbrush23/boxrr_tiltbrush.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/boxrr_tiltbrush23/boxrr_tiltbrush.csv"
+                     data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>BOXRR Tiltbrush</h4>
@@ -388,7 +392,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="row justify-content-md-center">
         <!-- LiebersBeatSaber23 / Liebers_3 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
@@ -439,7 +445,8 @@
         <!-- MooreCrossDomain23 dataset -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/moore_cross_domain23/fixed.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/moore_cross_domain23/fixed.csv"
+                     data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>MooreCrossDomain23</h4>
@@ -486,7 +493,7 @@
         <!-- VRNet -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/Vrnet/mini_racing_sample.csv"
+                <div class="motion-player" data-source-path="samples/vr_net/mini_racing_sample.csv"
                      data-progress="true" style="height: 300px">
                 </div>
                 <div class="card-body">
@@ -531,6 +538,7 @@
         </div>
     </div>
 
+    <!-- Negative Section -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto" id="sec-wrong-specs">How Applying Wrong Specifications Looks Like</h1>
@@ -544,179 +552,105 @@
             </p>
         </div>
     </div>
-    <div class="row">
-        <!-- Negative 1: Swapped Coordinate System -> RUF / RUB -->
+
+    <div class="row justify-content-md-center">
+        <!-- Negative 1: Coordinate System -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-
                 <div class="motion-player"
-                     data-source-path="negative_samples/vr-controllers_quat_swap_ruf_and_rub.csv"
+                     data-source-path="TODO"
                      data-progress="true" style="height: 300px"></div>
                 <div class="card-body">
                     <h4>S3: Coordinate System</h4>
-                    <p>This animation illustrates the impact of accidentally
-                        swapping the coordinate system from
-                        <b>RUB</b> (X=Right, Y=Up, Z=Backward)
-                        to <b>RUF</b> (X=Right, Y=Up, Z=Forward) on the motion.
+                    <p>This animation illustrates the impact of accidentally swapping the coordinate system from
+                        <b>RUB</b> (X=Right, Y=Up, Z=Backward) to <b>RUF</b> (X=Right, Y=Up, Z=Forward) on the motion.
                     </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- Negative 2: Wrong mapping 'zyx' when loaded as euler -->
+
+        <!-- Negative 2: Coordinate Mapping -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
                 <div class="motion-player"
-                     data-source-path="negative_samples/vr-controllers_euler_to_quat_mapping_zyx.csv"
+                     data-source-path="TODO"
                      data-progress="true" style="height: 300px"></div>
                 <div class="card-body">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore
-                    magna aliquyam erat, sed diam voluptua.
-                </div>
-            </div>
-        </div>
-
-        <!-- Negative 3: Wrong extrinsic / extrinsic euler angles
-                                    -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player"
-                     data-source-path="negative_samples/vr-controllers_euler_to_quat_intrinsic.csv"
-                     data-progress="true" style="height: 300px">
-                </div>
-                <div class="card-body">
                     <h4>S5: Coordinate Mapping</h4>
-                    <p>This animation illustrates
-                        the impact of accidentally
-                        switching up the coordinate
-                        mapping
-                        when loading a dataset as
-                        euler coordinates on the
-                        motion (e.g., <b>zxy</b>
-                        instead of
-                        <b>xyz</b>).
+                    <p>This animation illustrates the impact of accidentally switching up the coordinate
+                        mapping when loading a dataset as Euler coordinates on the motion (e.g., <b>zxy</b>
+                        instead of <b>xyz</b>).
                     </p>
                 </div>
             </div>
         </div>
-        <!-- Negative 3: Wrong extrinsic / extrinsic euler angles -->
+
+        <!-- Negative 3: Rotations / Coordinate Transformation -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
                 <div class="motion-player"
-                     data-source-path="negative_samples/vr-controllers_euler_to_quat_intrinsic.csv"
+                     data-source-path="TODO"
                      data-progress="true" style="height: 300px">
                 </div>
                 <div class="card-body">
-                    <h4>S5: Coordinate
-                        Transformation</h4>
-                    <p>This animation illustrates
-                        the impact of switching up
-                        the coordinate
-                        transformation with
-                        euler coordinates on the
-                        motion (e.g.,
-                        <b>extrinsic</b> instead of
-                        <b>extrinsic</b>).
-                    </p>
+                    <h4>S5: Coordinate Transformation</h4>
+                    <p>This animation illustrates the impact of switching up the coordinate transformation with
+                        Euler coordinates on the motion (e.g., <b>intrinsic</b> instead of <b>extrinsic</b>).</p>
                 </div>
             </div>
         </div>
-
-        <!-- IVRUADST dataset -->
-        <!-- TBD: Negative 4 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="motion-player"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-
-        <!-- bsor dataset -->
-        <!-- TBD: Negative 5 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="motion-player"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-
-        <!-- r_miller dataset -->
-        <!-- TBD: Negative 6 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="threeCanvas"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!-- </div> -->
-        <!-- IVRUADST dataset -->
-        <!-- TBD: Negative 4 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="motion-player"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-
-        <!-- bsor dataset -->
-        <!-- TBD: Negative 5 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="motion-player"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-
-        <!-- r_miller dataset -->
-        <!-- TBD: Negative 6 -->
-        <!--            <div class="col-md-4">-->
-        <!--                <div class="card mb-4">-->
-        <!--                    <canvas class="motion-player"  data-source-path=""></canvas>-->
-        <!--                    <div class="card-body">-->
-        <!--                        <p class="card-text"></p>-->
-        <!--                        <div class="d-flex justify-content-between align-items-center">-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
     </div>
 
+    <div class="row justify-content-md-center">
+        <!-- Negative 4: TODO -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player"
+                     data-source-path="TODO"
+                     data-progress="true" style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>TODO: TODO</h4>
+                    <p>TODO</p>
+                </div>
+            </div>
+        </div>
 
-    <script type="module" src="bundle.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-    </script>
+        <!-- Negative 5: TODO -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player"
+                     data-source-path="TODO"
+                     data-progress="true" style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>TODO: TODO</h4>
+                    <p>TODO</p>
+                </div>
+            </div>
+        </div>
 
+        <!-- Negative 6: TODO -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player"
+                     data-source-path="TODO"
+                     data-progress="true" style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>TODO: TODO</h4>
+                    <p>TODO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<script type="module" src="bundle.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
