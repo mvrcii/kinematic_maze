@@ -98,7 +98,7 @@
     </div>
 
     <div class="row">
-        <!-- liebers1 dataset -->
+        <!-- 1: liebers1 dataset -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/liebers_1/fixed.csv" data-progress="true"
@@ -149,7 +149,57 @@
             </div>
         </div>
 
-        <!-- liebers2 dataset -->
+        <!-- LiebersHand22 -->
+        <!-- unvollständige CSV datei bei fixed.csv-->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/liebers_3/fixed.csv" data-progress="true"
+                     style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>LiebersHand22</h4>
+                    <p><b>Task:</b> This dataset focuses on users performing interactions with various
+                        interface
+                        elements, such as buttons and sliders,
+                        in AR and VR environments for motion-based user identification.</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                               class="button-link" target="_blank">Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                               class="button-link" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>Right, Up, Backward
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>Euler (extrinsic, degrees, sequence is XYZ) and Quaternion</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>Meter</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>relative (s and ms)</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>TSV</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- LiebersBeatSaber23 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/liebers_2/fixed.csv" data-progress="true"
@@ -217,155 +267,7 @@
             </div>
         </div>
 
-        <!-- liebers3 dataset -->
-        <!-- unvollständige CSV datei bei fixed.csv-->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_3/fixed.csv" data-progress="true"
-                     style="height: 300px">
-                </div>
-                <div class="card-body">
-                    <h4>LiebersHand22</h4>
-                    <p><b>Task:</b> This dataset focuses on users performing interactions with various
-                        interface
-                        elements, such as buttons and sliders,
-                        in AR and VR environments for motion-based user identification.</p>
-                    <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <table class="specifications">
-                        <tr>
-                            <th>XYZ</th>
-                            <td>Right, Up, Backward
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Rotations</th>
-                            <td>Euler (extrinsic, degrees, sequence is XYZ) and Quaternion</a></td>
-                        </tr>
-                        <tr>
-                            <th>Units</th>
-                            <td>Meter</td>
-                        </tr>
-                        <tr>
-                            <th>Time</th>
-                            <td>relative (s and ms)</td>
-                        </tr>
-                        <tr>
-                            <th>Format</th>
-                            <td>TSV</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- IVRUADST dataset -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-
-                <div class="motion-player" data-source-path="samples/IVRUADST/fixed.csv" data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
-                    <h4>MooreCrossDomain23</h4>
-                    <p><b>Task:</b> This dataset focuses on users performing assembly tasks in VR and is
-                        also
-                        intended for
-                        user identification research.</p>
-                    <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <table class="specifications">
-                        <tr>
-                            <th>XYZ</th>
-                            <td>Right, Up, Backward
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Rotations</th>
-                            <td>Euler (extrinsic, degrees, sequence is XYZ), Rotation Matrix and Quaternion</a></td>
-                        </tr>
-                        <tr>
-                            <th>Units</th>
-                            <td>Meter</td>
-                        </tr>
-                        <tr>
-                            <th>Time</th>
-                            <td>relative (s)</td>
-                        </tr>
-                        <tr>
-                            <th>Format</th>
-                            <td>CSV</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Vr.net dataset -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/Vrnet/mini_racing_sample.csv"
-                     data-progress="true" style="height: 300px">
-                </div>
-                <div class="card-body">
-                    <h4>VR.net</h4>
-                    <p><b>Task:</b> This dataset focuses on users playing various VR games and was
-                        designed for
-                        cybersickness research.</p>
-                    <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://vrnet.ahlab.org" class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://arxiv.org/abs/2306.03381" class="button-link" target="_blank">Paper
-                                1</a>
-                        </div>
-
-                    </div>
-                    <table class="specifications">
-                        <tr>
-                            <th>XYZ</th>
-                            <td>Right, Up, Forward</td>
-                        </tr>
-                        <tr>
-                            <th>Rotations</th>
-                            <td><a href="#" data-bs-toggle="tooltip" title="Transformation Matrix">Transformation
-                                Matrix</a></td>
-                        </tr>
-                        <tr>
-                            <th>Units</th>
-                            <td>Meter</td>
-                        </tr>
-                        <tr>
-                            <th>Time</th>
-                            <td>absolute (unix)</td>
-                        </tr>
-                        <tr>
-                            <th>Format</th>
-                            <td>CSV</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- r_miller dataset -->
+        <!-- RMillerBall22 -->
         <!-- kleiner Sprung bei Zeile index 63 ca. bei right hand x und z-->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
@@ -415,7 +317,240 @@
                 </div>
             </div>
         </div>
+
+        <!-- WhoIsAlyx -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player" data-source-path="samples/who_is_alyx/fixed.csv" data-progress="true"
+                     style="height: 300px"></div>
+                <div class="card-body">
+                    <h4>Who-Is-Alyx</h4>
+                    <p><b>Task:</b> TBD</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>TODO</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>TODO</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- BOXRR23_Beatsaber -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player" data-source-path="TODO" data-progress="true"
+                     style="height: 300px"></div>
+                <div class="card-body">
+                    <h4>BOXRR Beatsaber</h4>
+                    <p><b>Task:</b> TBD</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>TODO</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>TODO</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- BOXRR23_Tiltbrush -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player" data-source-path="samples/Boxrr/boxrr_tiltbrush.csv" data-progress="true"
+                     style="height: 300px"></div>
+                <div class="card-body">
+                    <h4>BOXRR Tiltbrush</h4>
+                    <p><b>Task:</b> TBD</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="TODO"
+                               class="button-link" target="_blank">TODO Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>TODO</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>TODO</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>TODO</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- MooreCrossDomain23 dataset -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player" data-source-path="samples/IVRUADST/fixed.csv" data-progress="true"
+                     style="height: 300px"></div>
+                <div class="card-body">
+                    <h4>MooreCrossDomain23</h4>
+                    <p><b>Task:</b> This dataset focuses on users performing assembly tasks in VR and is
+                        also
+                        intended for
+                        user identification research.</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
+                               class="button-link" target="_blank">Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
+                               class="button-link" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>Right, Up, Backward
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>Euler (extrinsic, degrees, sequence is XYZ), Rotation Matrix and Quaternion</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>Meter</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>relative (s)</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>CSV</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- VRNet -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-4">
+                <div class="motion-player" data-source-path="samples/Vrnet/mini_racing_sample.csv"
+                     data-progress="true" style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>VR.net</h4>
+                    <p><b>Task:</b> This dataset focuses on users playing various VR games and was
+                        designed for
+                        cybersickness research.</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="https://vrnet.ahlab.org" class="button-link" target="_blank">Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://arxiv.org/abs/2306.03381" class="button-link" target="_blank">Paper
+                                1</a>
+                        </div>
+
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>Right, Up, Forward</td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td><a href="#" data-bs-toggle="tooltip" title="Transformation Matrix">Transformation
+                                Matrix</a></td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>Meter</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>absolute (unix)</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>CSV</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto" id="sec-wrong-specs">How Applying Wrong Specifications Looks Like</h1>

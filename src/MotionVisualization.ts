@@ -134,8 +134,8 @@ export class MotionVisualization {
         const radius = 3;
         const theta = Math.PI / 4; // 45 degrees in radians
         const offsetX = radius * Math.sin(theta);
-        const thirdPersonOffsetY = 7;
-        const thirdPersonOffsetZ = -4;
+        const thirdPersonOffsetY = 5;
+        const thirdPersonOffsetZ = -3;
         this.camera.position.set(offsetX, thirdPersonOffsetY, thirdPersonOffsetZ);
         this.cameraControls.minPolarAngle = 0.5 * Math.PI / 3; // How low the camera can go
         this.cameraControls.maxPolarAngle = Math.PI / 3; // How high the camera can go
