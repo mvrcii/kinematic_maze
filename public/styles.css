@@ -6,6 +6,7 @@
 table {
     width: 100%;
     table-layout: fixed;
+
 }
 
 td {
@@ -76,4 +77,62 @@ table.specifications tr {
 
 .progress-bar {
     transition: none !important;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    width: auto;
+    
+    margin-left: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    color:grey;
+    background-color: transparent;
+    border: 1px solid grey;
+  }
+  
+.btn:hover {
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey; 
+}
+
+
+.btn:after {
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey;
+}
+
+.btn:before {
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey;
+}
+
+.btn:active {
+    background-color: transparent;
+    color: grey;
+    border: 1px solid grey;
+}
+
+.icon-paper {
+    content: \F38B;
+    display: inline-block;
+    width: 16px; 
+    height: 16px;
+    background-size: cover;
+}
+
+.icon-dataset {
+    content: \F8C4;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: cover;
 }
