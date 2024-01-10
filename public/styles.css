@@ -74,6 +74,10 @@ table.specifications tr {
     border-bottom: 1px solid #ccc;
 }
 
+table.specifications tr:last-child {
+    border-bottom: none;
+}
+
 .progress-bar {
     transition: none !important;
 }
