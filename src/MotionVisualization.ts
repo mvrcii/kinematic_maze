@@ -49,7 +49,12 @@ export class MotionVisualization {
         this.reactor.registerEvent('step');
         this.reactor.registerEvent('sweep');
 
-        this.renderer = new THREE.WebGLRenderer({canvas: this.canvas});
+        this.renderer = new THREE.WebGLRenderer(
+            {
+                canvas: this.canvas,
+                antialias: true,
+                precision: "highp"
+            });
         this.rendererDom = this.renderer.domElement
 
         this._setupCameraAndControls()
@@ -60,7 +65,7 @@ export class MotionVisualization {
 
         this.clock = new THREE.Clock();
 
-        const material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+        const material = new THREE.MeshStandardMaterial({color: 0x00ff00});
         this.meshes["HMDIndicator"] = new THREE.Mesh(new THREE.SphereGeometry(.02), material);
         this.meshes["leftControllerIndicator"] = new THREE.Mesh(new THREE.SphereGeometry(.02), material);
         this.meshes["rightControllerIndicator"] = new THREE.Mesh(new THREE.SphereGeometry(.02), material);
@@ -74,6 +79,17 @@ export class MotionVisualization {
         this.setup()
 
         this.onWindowResize()
+
+        // Activate shadows
+        for (const key in this.meshes) {
+            if (this.meshes.hasOwnProperty(key)) {
+                console.log("Activating shadow for", key)
+                const mesh = this.meshes[key];
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+            }
+        }
+
     }
 
     async setup() {
@@ -145,14 +161,8 @@ export class MotionVisualization {
         this.cameraControls.enableRotate = true;
         this.cameraControls.update();
 
-
         this.cameraControls.addEventListener('change', () => {
             this.camera.position.y = thirdPersonOffsetY;
-            // if (this.playerIdx == 1) {
-            //     console.log("x" + this.camera.position.x)
-            //     console.log("y" + this.camera.position.y)
-            //     console.log("z" + this.camera.position.z)
-            // }
         });
     }
 
@@ -361,7 +371,7 @@ export class MotionVisualization {
         }
     }
 
-    sweep(position : any) {
+    sweep(position: any) {
         const animationTime = this.state["currentSessionDuration"] * position;
 
         const wasPaused = !this.state["run"];
@@ -379,40 +389,36 @@ export class MotionVisualization {
     }
 
     setupScene() {
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
         this.scene.background = new THREE.Color().setHSL(0.6, 0, 1);
         this.scene.fog = new THREE.Fog(this.scene.background, 1, 5000);
 
-        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-        hemiLight.groundColor.setHSL(0.095, 1, 0.75);
-        hemiLight.position.set(0, 50, 0);
-        this.scene.add(hemiLight);
-
-        const hemiLightHelper = new THREE.HemisphereLightHelper(hemiLight, 10);
-        this.scene.add(hemiLightHelper);
-
+        // LIGHT
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        this.scene.add(ambientLight);
 
         const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-        dirLight.color.setHSL(0.1, 1, 0.95);
-        dirLight.position.set(-1, 1.75, 1);
-        dirLight.position.multiplyScalar(30);
+        dirLight.color.setHSL(1, 1, 0.95);
+        dirLight.position.set(-20, 60, -20);
+        dirLight.target.position.set(0, 0, 0);
         this.scene.add(dirLight);
 
         dirLight.castShadow = true;
         dirLight.shadow.mapSize.width = 2048;
         dirLight.shadow.mapSize.height = 2048;
-
         dirLight.shadow.camera.left = -50;
         dirLight.shadow.camera.right = 50;
         dirLight.shadow.camera.top = 50;
         dirLight.shadow.camera.bottom = -50;
-        dirLight.shadow.camera.far = 3500;
+        dirLight.shadow.camera.far = 100;
         dirLight.shadow.bias = -0.0001;
-        this.scene.add(new THREE.DirectionalLightHelper(dirLight, 10));
 
         // GROUND
         const groundGeo = new THREE.PlaneGeometry(100, 100);
-        const groundMat = new THREE.MeshLambertMaterial({color: 0xaaaaaa});
-        groundMat.opacity = 0.5;
+        const groundMat = new THREE.MeshPhongMaterial({color: 0xaaaaaa, side: THREE.DoubleSide});
+        groundMat.opacity = 0.4;
         groundMat.transparent = true;
         const ground = new THREE.Mesh(groundGeo, groundMat);
         ground.position.y = 0;
@@ -420,13 +426,11 @@ export class MotionVisualization {
         ground.receiveShadow = true;
         this.scene.add(ground);
 
-        const grid = new THREE.GridHelper(100, 20)
-        grid.position.y = -0.005; // Lower it just a bit
-        // grid.material.opacity = 0.25;
-        // grid.material.transparent = true;
+        const grid = new THREE.GridHelper(100, 25)
+        grid.position.y = 0.1; // Lower it just a bit
         this.scene.add(grid);
 
-        this.addAxes()
+        this.addAxeArrows();
 
         // SKY DOME
         const sky = new Sky();
@@ -462,34 +466,39 @@ export class MotionVisualization {
         this.renderer.toneMappingExposure = skySettings.exposure;
     }
 
-    addAxes() {
-        // const axes = new THREE.AxesHelper(5);
-        // axes.renderOrder = 1;
-        // this.scene.add(axes);
-
-        this.addAxeArrows();
-    }
-
     addAxeArrows() {
-        const dirX = new THREE.Vector3(1, 0, 0);
+        const dirX = new THREE.Vector3(-1, 0, 0);
         const dirY = new THREE.Vector3(0, 1, 0);
-        const dirZ = new THREE.Vector3(0, 0, 1);
+        const dirZ = new THREE.Vector3(0, 0, -1);
 
-        const origin = new THREE.Vector3(0, 0, 0);
-        const length = 2;
+        const origin = new THREE.Vector3(1, 0, 1);
+        const length = 3;
+        const radius_cylinder = 0.02;
         const headLength = 0.1 * length;
-        const headWidth = 0.025 * length;
+        const headWidth = 0.05 * length;
 
-        const arrowHelperX = new THREE.ArrowHelper(dirX, origin, length, 0xff0000, headLength, headWidth);
-        const arrowHelperY = new THREE.ArrowHelper(dirY, origin, length, 0x00ff00, headLength, headWidth);
-        const arrowHelperZ = new THREE.ArrowHelper(dirZ, origin, length, 0x0000ff, headLength, headWidth);
-        arrowHelperX.name = "X";
-        arrowHelperY.name = "Y";
-        arrowHelperZ.name = "Z";
+        const addAxis = (direction: THREE.Vector3, color: number) => {
+            const cylinderLength = length - headLength;
 
-        this.scene.add(arrowHelperX);
-        this.scene.add(arrowHelperY);
-        this.scene.add(arrowHelperZ);
+            // Cylinder for the shaft of the arrow
+            const cylinderGeometry = new THREE.CylinderGeometry(radius_cylinder, radius_cylinder, cylinderLength, 64);
+            const cylinderMaterial = new THREE.MeshBasicMaterial({color: color});
+            const cylinder = new THREE.Mesh(cylinderGeometry, cylinderMaterial);
+
+            // Positioning and orienting the cylinder
+            cylinder.position.copy(origin.clone().add(direction.clone().normalize().multiplyScalar(cylinderLength / 2)));
+            cylinder.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.clone().normalize());
+
+            // Arrowhead
+            const arrowHelper = new THREE.ArrowHelper(direction, origin, length, color, headLength, headWidth);
+
+            this.scene.add(cylinder);
+            this.scene.add(arrowHelper);
+        };
+
+        addAxis(dirX, 0xff0000); // Red for X-axis
+        addAxis(dirY, 0x00d400); // Green for Y-axis
+        addAxis(dirZ, 0x0000ff); // Blue for Z-axis
     }
 
 
