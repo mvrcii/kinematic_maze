@@ -121,18 +121,6 @@ table.specifications tr {
     border: 1px solid grey;
 }
 
-.icon-paper {
-    content: \F38B;
-    display: inline-block;
-    width: 16px; 
-    height: 16px;
-    background-size: cover;
-}
-
-.icon-dataset {
-    content: \F8C4;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-size: cover;
+.bi {
+    padding-right: 0.5rem;
 }
