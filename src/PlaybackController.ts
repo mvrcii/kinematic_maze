@@ -38,7 +38,6 @@ export class PlaybackController {
 
     onSweep(position: any) {
         this.motionVis.sweep(position);
-
     }
 
     onStep() {
