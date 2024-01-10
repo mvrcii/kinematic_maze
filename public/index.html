@@ -97,11 +97,11 @@
 
     </div>
 
+    <!-- LiebersLabStudy21 / Liebers_1 -->
     <div class="row">
-        <!-- 1: liebers1 dataset -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_1/fixed.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/liebers_labstudy21/fixed.csv" data-progress="true"
                      style="height: 300px">
                 </div>
                 <div class="card-body">
@@ -116,7 +116,7 @@
                                class="button-link" target="_blank">Dataset</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
+                            <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/Paper/Understanding_User_Identification_in_Virtual_Reality_Through_Behavioral_Biometrics_and_the_Effect_of_Body_Normalization.pdf"
                                class="button-link" target="_blank">Paper</a>
                         </div>
                     </div>
@@ -149,10 +149,10 @@
             </div>
         </div>
 
-        <!-- LiebersHand22 -->
+        <!-- LiebersHand22 / Liebers_2 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_3/fixed_removed_anomalies.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/liebers_hand22/fixed.csv" data-progress="true"
                      style="height: 300px">
                 </div>
                 <div class="card-body">
@@ -198,79 +198,11 @@
             </div>
         </div>
 
-        <!-- LiebersBeatSaber23 -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_2/fixed.csv" data-progress="true"
-                     style="height: 300px">
-                </div>
-                <div class="card-body">
-                    <h4>LiebersBeatSaber23</h4>
-                    <p><b>Task:</b> This dataset focuses on users playing the
-                        game <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
-                        identification
-                        through motion.</p>
-                    <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
-                    </div>
-                    <table class="specifications">
-                        <tr>
-                            <th>XYZ</th>
-                            <td>Right, Up, Backward</td>
-                        </tr>
-                        <tr>
-                            <th>Rotations</th>
-                            <!-- <td><a href="#" data-bs-toggle="tooltip"
-                                    title="quaternion and Euler angle representations for rotations, extrinsic, in degrees, and an XYZ order for Euler rotation">Euler
-                                    (deg;XYZ;extr.)/Quat.</a></td> -->
-                            <td>Euler (extrinsic, degrees, sequence is XYZ) and Quaternions</td>
-                        </tr>
-                        <tr>
-                            <th>Units</th>
-                            <td>Meter</td>
-                        </tr>
-                        <tr>
-                            <th>Time</th>
-                            <td>90 Hz (presumably fixed)</td>
-                        </tr>
-                        <tr>
-                            <th>Format</th>
-                            <td>CSV</td>
-                        </tr>
-                    </table>
-                    <!-- <dl class="specifications">
-                        <dt>Coordinate System</dt>
-                        <dd>X: Right, Y: Up, Z: Backward
-                        </dd>
-
-                        <dt>Rotations</dt>
-                        <dd>Extrinsic Euler notation in degrees, sequence is XYZ and Quaternions</dd>
-
-                        <dt>Units</dt>
-                        <dd>Meter</dd>
-
-                        <dt>Time</dt>
-                        <dd>90 Hz (presumably fixed)</dd>
-
-                        <dt>File Format</dt>
-                        <dd>CSV</dd>
-                    </dl> -->
-                </div>
-            </div>
-        </div>
 
         <!-- RMillerBall22 -->
-        <!-- kleiner Sprung bei Zeile index 63 ca. bei right hand x und z-->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/r_miller/fixed.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>RMillerBall22</h4>
@@ -320,11 +252,12 @@
         <!-- WhoIsAlyx -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/who_is_alyx/fixed.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/who_is_alyx/fixed_cutout.csv" data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>Who-Is-Alyx</h4>
-                    <p><b>Task:</b> TBD</p>
+                    <p><b>Task:</b> This dataset focuses on capturing the motions of users playing
+                        the game 'Half-Life: Alyx' in VR.</p>
                     <div class="row my-4">
                         <div class="col-md-6">
                             <a href="TODO"
@@ -338,23 +271,23 @@
                     <table class="specifications">
                         <tr>
                             <th>XYZ</th>
-                            <td>TODO</td>
+                            <td>Right, Up, Forward</td>
                         </tr>
                         <tr>
                             <th>Rotations</th>
-                            <td>TODO</a></td>
+                            <td>Quaternion</td>
                         </tr>
                         <tr>
                             <th>Units</th>
-                            <td>TODO</td>
+                            <td>Centimeter</td>
                         </tr>
                         <tr>
                             <th>Time</th>
-                            <td>TODO</td>
+                            <td>abs. (ISO 8601)</td>
                         </tr>
                         <tr>
                             <th>Format</th>
-                            <td>TODO</td>
+                            <td>CSV</td>
                         </tr>
                     </table>
 
@@ -369,37 +302,39 @@
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>BOXRR Beatsaber</h4>
-                    <p><b>Task:</b> TBD</p>
+                    <p><b>Task:</b> This dataset focuses on users playing the game
+                        <a href="https://beatsaber.com/">Beatsaber</a> in VR and aims to provide a large-scale human
+                        motion dataset for researchers and studies.</p>
                     <div class="row my-4">
                         <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Dataset</a>
+                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                               class="button-link" target="_blank">Dataset</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Paper</a>
+                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                               class="button-link" target="_blank">Paper</a>
                         </div>
                     </div>
                     <table class="specifications">
                         <tr>
                             <th>XYZ</th>
-                            <td>TODO</td>
+                            <td>Right, Up, Backward</td>
                         </tr>
                         <tr>
                             <th>Rotations</th>
-                            <td>TODO</a></td>
+                            <td>Quaternion</td>
                         </tr>
                         <tr>
                             <th>Units</th>
-                            <td>TODO</td>
+                            <td>Meter</td>
                         </tr>
                         <tr>
                             <th>Time</th>
-                            <td>TODO</td>
+                            <td>relative (s)</td>
                         </tr>
                         <tr>
                             <th>Format</th>
-                            <td>TODO</td>
+                            <td>XROR</td>
                         </tr>
                     </table>
 
@@ -410,19 +345,21 @@
         <!-- BOXRR23_Tiltbrush -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/Boxrr/boxrr_tiltbrush.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/boxrr_tiltbrush23/boxrr_tiltbrush.csv" data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>BOXRR Tiltbrush</h4>
-                    <p><b>Task:</b> TBD</p>
+                    <p><b>Task:</b> This dataset focuses on users playing the game
+                        <a href="https://www.tiltbrush.com/">Tiltbrush</a> in VR and aims to provide a large-scale human
+                        motion dataset for researchers and studies.</p>
                     <div class="row my-4">
                         <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Dataset</a>
+                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                               class="button-link" target="_blank">Dataset</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Paper</a>
+                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                               class="button-link" target="_blank">Paper</a>
                         </div>
                     </div>
                     <table class="specifications">
@@ -432,7 +369,7 @@
                         </tr>
                         <tr>
                             <th>Rotations</th>
-                            <td>TODO</a></td>
+                            <td>Quaternion</td>
                         </tr>
                         <tr>
                             <th>Units</th>
@@ -440,11 +377,11 @@
                         </tr>
                         <tr>
                             <th>Time</th>
-                            <td>TODO</td>
+                            <td>relative (ms)</td>
                         </tr>
                         <tr>
                             <th>Format</th>
-                            <td>TODO</td>
+                            <td>XROR</td>
                         </tr>
                     </table>
 
@@ -452,17 +389,62 @@
             </div>
         </div>
 
+        <!-- LiebersBeatSaber23 / Liebers_3 -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/liebers_beatsaber23/fixed.csv" data-progress="true"
+                     style="height: 300px">
+                </div>
+                <div class="card-body">
+                    <h4>LiebersBeatSaber23</h4>
+                    <p><b>Task:</b> This dataset focuses on users playing the game
+                        <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
+                        identification through motion.</p>
+                    <div class="row my-4">
+                        <div class="col-md-6">
+                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
+                               class="button-link" target="_blank">Dataset</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
+                               class="button-link" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                    <table class="specifications">
+                        <tr>
+                            <th>XYZ</th>
+                            <td>Right, Up, Backward</td>
+                        </tr>
+                        <tr>
+                            <th>Rotations</th>
+                            <td>Euler (extrinsic, degrees, sequence is XYZ) and Quaternions</td>
+                        </tr>
+                        <tr>
+                            <th>Units</th>
+                            <td>Meter</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>90 Hz (presumably fixed)</td>
+                        </tr>
+                        <tr>
+                            <th>Format</th>
+                            <td>CSV</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <!-- MooreCrossDomain23 dataset -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/IVRUADST/fixed.csv" data-progress="true"
+                <div class="motion-player" data-source-path="samples/moore_cross_domain23/fixed.csv" data-progress="true"
                      style="height: 300px"></div>
                 <div class="card-body">
                     <h4>MooreCrossDomain23</h4>
                     <p><b>Task:</b> This dataset focuses on users performing assembly tasks in VR and is
-                        also
-                        intended for
-                        user identification research.</p>
+                        also intended for user identification research.</p>
                     <div class="row my-4">
                         <div class="col-md-6">
                             <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
@@ -529,8 +511,7 @@
                         </tr>
                         <tr>
                             <th>Rotations</th>
-                            <td><a href="#" data-bs-toggle="tooltip" title="Transformation Matrix">Transformation
-                                Matrix</a></td>
+                            <td>Transformation Matrix</td>
                         </tr>
                         <tr>
                             <th>Units</th>
