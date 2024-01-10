@@ -378,6 +378,7 @@ export class MotionVisualization {
         this.unPauseAllActions();
 
         for (const mixer of Object.values(this.mixers)) {
+            console.log(animationTime)
             mixer.setTime(animationTime);
         }
 
