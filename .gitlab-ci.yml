@@ -2,7 +2,7 @@ image: node:16 # Using Node.js version 16
 
 pages:
   rules:
-    - if $CI_COMMIT_BRANCH == "main"
+    - if: $CI_COMMIT_BRANCH == "main"
   tags:
     - docker
   stage: deploy
