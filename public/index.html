@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css">
+
 
     <link rel="stylesheet" href="styles.css">
 
@@ -37,10 +39,12 @@
                 <div class="motion-player" data-source-path="samples/IVRUADST/fixed.csv" style="height: 350px">
                 </div>
                 <div>
-                    <p><small>An example recording from the BOXRR-23 dataset; you
-                        can see
-                        examples for all dataset we have analysed <a href="#sec-aligned-dset">down
-                            below</a>.</small></p>
+                    <p>
+                        <small>
+                            An example recording from the BOXRR-23 dataset; you can see examples for all dataset we
+                            have analysed <a href="#sec-aligned-dset">down below</a>.
+                        </small>
+                    </p>
                 </div>
             </div>
         </div>
@@ -85,42 +89,38 @@
         </div>
     </div>
 
-    <!-- Aligned Section -->
+    <!-- Aligned Section Text -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto" id="sec-aligned-dset">Aligned Kinematic Datasets</h1>
-
             <p class="lead">
                 Below you find one example recording from each analysed dataset.
                 Each recording has been converted and aligned into a unified format.
                 You can find the scripts we have created for this conversion on <a href="#TODO">GitHub</a>.
             </p>
         </div>
-
     </div>
 
+    <!-- Aligned Section Visuals -->
     <div class="row justify-content-md-center">
         <!-- LiebersLabStudy21 / Liebers_1 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_labstudy21/fixed.csv" data-progress="true"
-                     style="height: 300px">
-                </div>
-                <div class="card-body">
+                <div class="motion-player" data-source-path="samples/liebers_labstudy21/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>LiebersLabStudy21</h4>
 
-                    <p><b>Task:</b> This dataset focuses on users performing specific bowling and
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users performing specific bowling and
                         archery
                         motions.</p>
-                    <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/Paper/Understanding_User_Identification_in_Virtual_Reality_Through_Behavioral_Biometrics_and_the_Effect_of_Body_Normalization.pdf"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
+                    <div class="row my-4 ">
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                class="bi bi-file-earmark-text"></i>Paper </a>
+
+                        <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/Paper/Understanding_User_Identification_in_Virtual_Reality_Through_Behavioral_Biometrics_and_the_Effect_of_Body_Normalization.pdf"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i class="bi bi-table"></i>Dataset</a>
                     </div>
                     <table class="specifications">
                         <tr>
@@ -145,8 +145,6 @@
                             <td>CSV</td>
                         </tr>
                     </table>
-                    <div class="d-flex justify-content-between align-items-center">
-                    </div>
                 </div>
             </div>
         </div>
@@ -154,24 +152,27 @@
         <!-- LiebersHand22 / Liebers_2 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_hand22/fixed_0m5s_to_0m25s.csv" data-progress="true"
-                     style="height: 300px">
-                </div>
-                <div class="card-body">
+                <div class="motion-player" data-source-path="samples/liebers_hand22/fixed_0m5s_to_0m25s.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>LiebersHand22</h4>
-                    <p><b>Task:</b> This dataset focuses on users performing interactions with various
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users performing interactions with
+                        various
                         interface
                         elements, such as buttons and sliders,
                         in AR and VR environments for motion-based user identification.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
+                        <a class="btn btn-outline-secondary" role="button"
+                           href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           role="button" target="_blank">
+                            <i class="bi bi-file-earmark-text"></i>Paper</span>
+                        </a>
+
+                        <a class="btn btn-outline-secondary" role="button"
+                           href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           role="button" target="_blank">
+                            <i class="bi bi-table"></i>Dataset</span>
+                        </a>
                     </div>
                     <table class="specifications">
                         <tr>
@@ -202,26 +203,26 @@
 
         <!-- RMillerBall22 -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>RMillerBall22</h4>
-                    <p><b>Task:</b> This dataset focuses on capturing the motions of users performing
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on capturing the motions of users
+                        performing
                         ball throwing actions in VR.</p>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="https://github.com/Terascale-All-sensing-Research-Studio/VR-Biometric-Authentication"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="https://ieeexplore.ieee.org/document/9756791" class="button-link"
-                               target="_blank">Paper 1</a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="https://ieeexplore.ieee.org/document/9756745" class="button-link"
-                               target="_blank">Paper 2</a>
-                        </div>
+                    <div class="row my-4">
+
+                        <a href="https://ieeexplore.ieee.org/document/9756791" class="btn btn-outline-secondary"
+                           role="button"
+                           target="_blank"><i class="bi bi-file-earmark-text"></i>Paper 1</a>
+
+                        <a href="https://ieeexplore.ieee.org/document/9756745" class="btn btn-outline-secondary"
+                           role="button"
+                           target="_blank"><i class="bi bi-file-earmark-text"></i>Paper 2</a>
+
+                        <a href="https://github.com/Terascale-All-sensing-Research-Studio/VR-Biometric-Authentication"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i class="bi bi-table"></i>Dataset</a>
                     </div>
                     <table class="specifications">
                         <tr>
@@ -246,6 +247,7 @@
                             <td>Custom</td>
                         </tr>
                     </table>
+
                 </div>
             </div>
         </div>
@@ -254,22 +256,23 @@
     <div class="row justify-content-md-center">
         <!-- WhoIsAlyx -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player" data-source-path="samples/who_is_alyx/fixed_cutout.csv" data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/who_is_alyx/fixed_cutout.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>Who-Is-Alyx</h4>
-                    <p><b>Task:</b> This dataset focuses on capturing the motions of users playing
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on capturing the motions of users playing
                         the game 'Half-Life: Alyx' in VR.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="TODO"
-                               class="button-link" target="_blank">TODO Paper</a>
-                        </div>
+
+                        <a href="TODO"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                class="bi bi-file-earmark-text"></i>TODO Paper</a>
+
+                        <a href="TODO"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i class="bi bi-table"></i>TODO
+                            Dataset</a>
+
                     </div>
                     <table class="specifications">
                         <tr>
@@ -293,30 +296,26 @@
                             <td>CSV</td>
                         </tr>
                     </table>
-
                 </div>
             </div>
         </div>
 
         <!-- BOXRR23_Beatsaber -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player" data-source-path="TODO" data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="TODO" data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>BOXRR Beatsaber</h4>
-                    <p><b>Task:</b> This dataset focuses on users playing the game
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users playing the game
                         <a href="https://beatsaber.com/">Beatsaber</a> in VR and aims to provide a large-scale human
                         motion dataset for researchers and studies.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
+                        <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                class="bi bi-file-earmark-text"></i>Paper</a>
+                        <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i class="bi bi-table"></i>Dataset</a>
+
                     </div>
                     <table class="specifications">
                         <tr>
@@ -340,31 +339,27 @@
                             <td>XROR</td>
                         </tr>
                     </table>
-
                 </div>
             </div>
         </div>
 
         <!-- BOXRR23_Tiltbrush -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
+            <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/boxrr_tiltbrush23/boxrr_tiltbrush.csv"
-                     data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>BOXRR Tiltbrush</h4>
-                    <p><b>Task:</b> This dataset focuses on users playing the game
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users playing the game
                         <a href="https://www.tiltbrush.com/">Tiltbrush</a> in VR and aims to provide a large-scale human
                         motion dataset for researchers and studies.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
+                        <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                class="bi bi-file-earmark-text"></i>Paper </a>
+                        <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                           class="btn btn-outline-secondary" role="button" target="_blank"><i class="bi bi-table"></i>Dataset</a>
+
                     </div>
                     <table class="specifications">
                         <tr>
@@ -395,25 +390,25 @@
     </div>
 
     <div class="row justify-content-md-center">
+
         <!-- LiebersBeatSaber23 / Liebers_3 -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_beatsaber23/fixed.csv" data-progress="true"
-                     style="height: 300px">
-                </div>
-                <div class="card-body">
+                <div class="motion-player" data-source-path="samples/liebers_beatsaber23/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>LiebersBeatSaber23</h4>
                     <p><b>Task:</b> This dataset focuses on users playing the game
                         <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
                         identification through motion.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
+                        <div class="row my-4">
                             <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
+                               class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                    class="bi bi-file-earmark-text"></i>Paper </a>
                             <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/exploring-the-stability-of-behavioral-biometrics-in-virtual-reality-in-a-remote-field-study/"
-                               class="button-link" target="_blank">Paper</a>
+                               class="btn btn-outline-secondary" role="button" target="_blank"><i
+                                    class="bi bi-table"></i>Dataset</a>
                         </div>
                     </div>
                     <table class="specifications">
@@ -444,23 +439,25 @@
 
         <!-- MooreCrossDomain23 dataset -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
+            <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/moore_cross_domain23/fixed_1m5s_to_1m20s.csv"
-                     data-progress="true"
-                     style="height: 300px"></div>
-                <div class="card-body">
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>MooreCrossDomain23</h4>
-                    <p><b>Task:</b> This dataset focuses on users performing assembly tasks in VR and is
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users performing assembly tasks in VR
+                        and is
                         also intended for user identification research.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
-                               class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
-                               class="button-link" target="_blank">Paper</a>
-                        </div>
+                        <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
+                           class="btn btn-outline-secondary" role="button" target="_blank">
+                            <i class="bi bi-file-earmark-text"></i>
+                            Paper
+                        </a>
+                        <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
+                           class="btn btn-outline-secondary" role="button" target="_blank">
+                            <i class="bi bi-table"></i>
+                            Dataset
+                        </a>
                     </div>
                     <table class="specifications">
                         <tr>
@@ -485,31 +482,25 @@
                             <td>CSV</td>
                         </tr>
                     </table>
-
                 </div>
             </div>
         </div>
 
         <!-- VRNet -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
+            <div class="card mb-5">
                 <div class="motion-player" data-source-path="samples/vr_net/fixed_6m40s_to_7m0s.csv"
-                     data-progress="true" style="height: 300px">
-                </div>
-                <div class="card-body">
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>VR.net</h4>
-                    <p><b>Task:</b> This dataset focuses on users playing various VR games and was
+                    <p class="flex-grow-1"><b>Task:</b> This dataset focuses on users playing various VR games and was
                         designed for
                         cybersickness research.</p>
                     <div class="row my-4">
-                        <div class="col-md-6">
-                            <a href="https://vrnet.ahlab.org" class="button-link" target="_blank">Dataset</a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="https://arxiv.org/abs/2306.03381" class="button-link" target="_blank">Paper
-                                1</a>
-                        </div>
-
+                        <a href="https://arxiv.org/abs/2306.03381" class="btn btn-outline-secondary" role="button"
+                           target="_blank"><i class="bi bi-file-earmark-text"></i>Paper</a>
+                        <a href="https://vrnet.ahlab.org" class="btn btn-outline-secondary" role="button"
+                           target="_blank"><i class="bi bi-table"></i>Dataset</a>
                     </div>
                     <table class="specifications">
                         <tr>
@@ -538,7 +529,7 @@
         </div>
     </div>
 
-    <!-- Negative Section -->
+    <!-- Negative Section Text -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
             <h1 class="h-auto" id="sec-wrong-specs">How Applying Wrong Specifications Looks Like</h1>
@@ -553,14 +544,13 @@
         </div>
     </div>
 
+    <!-- Negative Section Visuals -->
     <div class="row justify-content-md-center">
         <!-- Negative 1: Coordinate System -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px"></div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>S3: Coordinate System</h4>
                     <p>This animation illustrates the impact of accidentally swapping the coordinate system from
                         <b>RUB</b> (X=Right, Y=Up, Z=Backward) to <b>RUF</b> (X=Right, Y=Up, Z=Forward) on the motion.
@@ -571,11 +561,9 @@
 
         <!-- Negative 2: Coordinate Mapping -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px"></div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>S5: Coordinate Mapping</h4>
                     <p>This animation illustrates the impact of accidentally switching up the coordinate
                         mapping when loading a dataset as Euler coordinates on the motion (e.g., <b>zxy</b>
@@ -587,12 +575,9 @@
 
         <!-- Negative 3: Rotations / Coordinate Transformation -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px">
-                </div>
-                <div class="card-body">
+            <div class="card mb-5">
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>S5: Coordinate Transformation</h4>
                     <p>This animation illustrates the impact of switching up the coordinate transformation with
                         Euler coordinates on the motion (e.g., <b>intrinsic</b> instead of <b>extrinsic</b>).</p>
@@ -604,11 +589,8 @@
     <div class="row justify-content-md-center">
         <!-- Negative 4: TODO -->
         <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px">
-                </div>
+            <div class="card mb-5">
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
                 <div class="card-body">
                     <h4>TODO: TODO</h4>
                     <p>TODO</p>
@@ -619,10 +601,7 @@
         <!-- Negative 5: TODO -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px">
-                </div>
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
                 <div class="card-body">
                     <h4>TODO: TODO</h4>
                     <p>TODO</p>
@@ -633,11 +612,8 @@
         <!-- Negative 6: TODO -->
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card mb-4">
-                <div class="motion-player readonly"
-                     data-source-path="TODO"
-                     data-progress="true" style="height: 300px">
-                </div>
-                <div class="card-body">
+                <div class="motion-player readonly" data-source-path="TODO" data-progress="true"></div>
+                <div class="card-body d-flex flex-column">
                     <h4>TODO: TODO</h4>
                     <p>TODO</p>
                 </div>

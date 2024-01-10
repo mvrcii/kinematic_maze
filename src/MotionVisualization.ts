@@ -52,7 +52,7 @@ export class MotionVisualization {
         this.renderer = new THREE.WebGLRenderer(
             {
                 canvas: this.canvas,
-                antialias: true,
+                antialias: false,
                 precision: "highp"
             });
         this.rendererDom = this.renderer.domElement
