@@ -90,6 +90,19 @@ table.specifications tr:last-child {
     transition: none !important;
 }
 
+.head-examples .motion-player {
+    height: 400px;
+}
+
+.beatsaber-player {
+    width: 100%;
+    height: 400px;
+}
+
+.beatsaber-player #playerInfoOverlay {
+    display: None
+}
+
 .card {
     border: 1px solid #cbcbcb;
     border-top-left-radius: 10px;
@@ -102,7 +115,11 @@ table.specifications tr:last-child {
     border-top-right-radius: 9px;
 }
 
-.btn {
+.container .downloads .btn {
+    font-size: 1.25rem;
+}
+
+.container .btn {
     display: inline-block;
     padding: 0.2rem 0.7rem;
     width: auto;
@@ -111,37 +128,24 @@ table.specifications tr:last-child {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
-    border-color: transparent;
     text-align: center;
     text-decoration: none;
-    color:grey;
-    background-color: transparent;
-    border: 1px solid grey;
-  }
 
-.btn:hover {
-    background-color: transparent;
-    color: grey;
-    border: 1px solid grey;
+    color: #363636 !important;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
 }
 
-
-.btn:after {
-    background-color: transparent;
-    color: grey;
-    border: 1px solid grey;
+.container .btn:hover {
+    border-color: #b5b5b5;
+    background-color: #fff;
+    color: #363636;
 }
 
-.btn:before {
-    background-color: transparent;
-    color: grey;
-    border: 1px solid grey;
-}
-
-.btn:active {
-    background-color: transparent;
-    color: grey;
-    border: 1px solid grey;
+.container .btn:first-child:active {
+    color: #363636;
+    background-color: #fff;
+    border-color: #b5b5b5;
 }
 
 .bi {

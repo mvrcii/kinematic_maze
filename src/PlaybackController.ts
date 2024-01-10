@@ -17,17 +17,19 @@ export class PlaybackController {
 
     // playButton: HTMLButtonElement | null
     // timerElement: TimerElement
-    timelineElement: TimelineElement
+    timelineElement: TimelineElement | undefined
 
     constructor(motionVis: MotionVisualization) {
         // this.playButton = document.querySelector("#playPause" + playerIdx) as HTMLButtonElement;
         // this.timerElement = new TimerElement(document.querySelector("#timer" + playerIdx) as HTMLElement);
 
-        this.timelineElement = new TimelineElement(motionVis);
+        if (!motionVis.playerDom.classList.contains('hide-pbar')) {
+            this.timelineElement = new TimelineElement(motionVis);
 
-        // this.playButton?.addEventListener("click", (event) => this.playPause());
-        this.timelineElement.reactor.addEventListener("sweepRequest",
-            (position: any) => this.onSweep(position));
+            this.timelineElement.reactor.addEventListener("sweepRequest",
+                (position: any) => this.onSweep(position));
+
+        }
 
         this.motionVis = motionVis;
 
@@ -41,7 +43,7 @@ export class PlaybackController {
     }
 
     onStep() {
-        if (this.motionVis.isEverythingLoadedAndReady()) {
+        if (this.timelineElement && this.motionVis.isEverythingLoadedAndReady()) {
             // this.timerElement.update(new Date(this.getCurrentSceneTimestamp()));
             this.timelineElement.update(this.motionVis.progress());
         }
