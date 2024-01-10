@@ -31,6 +31,7 @@ a[data-bs-toggle="tooltip"]:hover {
     display: flex;
     align-items: stretch;
     flex-flow: column;
+    height: 300px;
 }
 
 .motion-player canvas {
