@@ -40,9 +40,12 @@ a[data-bs-toggle="tooltip"]:hover {
 .motion-player .progress {
     border-radius: 0;
     height: 0.6rem;
-    cursor: pointer;
     flex-grow: 0;
     flex-shrink: 0;
+}
+
+.motion-player:not(.readonly) .progress {
+    cursor: pointer; /* Apply only when 'readonly' class is not present */
 }
 
 .motion-player .canvas-container {
