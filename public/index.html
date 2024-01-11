@@ -47,8 +47,8 @@
     <!-- Abstract -->
     <div class="row justify-content-md-center">
         <div class="col-md-6 my-5">
-            <h2 class="h-auto text-center">Abstract</h2>
-            <p class="text-center lead">
+            <h2>Abstract</h2>
+            <p class="lead">
                 We address the critical importance of standards and documentation in kinematic
                 research,
                 particularly within Extended Reality (XR) environments.
@@ -73,9 +73,9 @@
     <!-- Downloads -->
     <div class="downloads">
         <div class="row justify-content-md-center">
-            <div class="col-md-9 mb-5">
-                <h2 class="h-auto mb-3 text-center">Resources</h2>
-                <div class="row justify-content-md-center">
+            <div class="col-md-6 mb-5">
+                <h2>Resources</h2>
+                <div class="row my-3">
                     <a href="TODO" class="btn btn-outline-secondary" role="button" target="_blank">
                         <i class="fa-solid fa-file-pdf"></i>
                         TODO Paper
@@ -97,9 +97,9 @@
 
     <!-- Aligned Section Text -->
     <div class="row justify-content-md-center">
-        <div class="col-md-9 my-5">
-            <h2 class="h-auto text-center" id="sec-aligned-dset">Aligned Kinematic Datasets</h2>
-            <p class="lead text-center">
+        <div class="col-md-6 my-5">
+            <h2 id="sec-aligned-dset">Aligned Kinematic Datasets</h2>
+            <p class="lead">
                 Below you find one example recording from each analyzed dataset.
                 Each recording has been converted and aligned into our unified proposed format.
                 You can find the scripts we have created for this conversion on <a href="#TODO">GitHub</a>.
@@ -678,48 +678,65 @@
 </div>
 
 <!-- Specifications -->
-<div class="specifications">
+<div class="specs">
     <div class="row justify-content-md-center">
         <div class="col-md-8 my-5">
             <hr>
             <h2 class="h-auto text-center mb-5">Specifications</h2>
             <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <ul class="list-group spec-list">
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5"><i
-                                        class="fa-solid fa-folder-tree"></i></span>
-                                <span class="fw-light fs-4"><b>S1: Structure</b></span>
-                                <p>The organization of datasets, particularly in the arrangement of recordings, is
-                                    crucial for data accessibility. Inadequate structuring can cause confusion in
-                                    identifying specific sessions or participants. For instance, merging multiple
-                                    recordings into a single file without clear separation hinders the isolation and
-                                    analysis of individual records. Similarly, saving each motion sequence in a separate
-                                    file without a systematic naming or indexing system can impede researchers in
-                                    locating and aggregating data for their studies. This becomes increasingly
-                                    significant in large datasets, where the volume of recordings demands a well-defined
-                                    organizational system for efficient access and selection. Logical, well-documented
-                                    dataset structures are essential for effective data retrieval and analysis, aligning
-                                    with the goals of the research.</p>
-                            </h4>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5"><i class="fa-regular fa-clock"></i></span>
-                                <span class="fw-light fs-4"><b>S2: File Format</b> </span>
-                                <p>The file format is vital in determining how
-                                    recordings can be loaded and attributes correctly labeled. An unsuit-
-                                    able or poorly documented file format can lead to misunderstandings.
-                                    This affects the integrity of the research, as conclusions drawn from
-                                    improperly interpreted data are likely to be erroneous.</p>
-                            </h4>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5"><i class="fa-regular fa-clock"></i></span>
-                                <span class="fw-light fs-4"><b>S3: Coordinate System</b> </span>
-                            </h4>
+
+                <!-- Left Column -->
+                <div class="col-md-5 me-5">
+
+                    <!-- Spec 1 -->
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <span class="badge bg-secondary fs-5 p-2">
+                                <i class="fa-solid fa-folder-tree"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4" title="Structure"><b>S1: Structure</b></span>
+                            <p>The organization of datasets, particularly in the arrangement of recordings, is
+                                crucial for data accessibility. Inadequate structuring can cause confusion in
+                                identifying specific sessions or participants. For instance, merging multiple
+                                recordings into a single file without clear separation hinders the isolation and
+                                analysis of individual records. Similarly, saving each motion sequence in a separate
+                                file without a systematic naming or indexing system can impede researchers in
+                                locating and aggregating data for their studies. This becomes increasingly
+                                significant in large datasets, where the volume of recordings demands a well-defined
+                                organizational system for efficient access and selection. Logical, well-documented
+                                dataset structures are essential for effective data retrieval and analysis, aligning
+                                with the goals of the research.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spec 2 -->
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <span class="badge bg-secondary fs-5 p-2">
+                                <i class="fa-solid fa-file-csv" title="File Format"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4"><b>S2: File Format</b></span>
+                            <p>The file format is vital in determining how
+                                recordings can be loaded and attributes correctly labeled. An unsuit-
+                                able or poorly documented file format can lead to misunderstandings.
+                                This affects the integrity of the research, as conclusions drawn from
+                                improperly interpreted data are likely to be erroneous.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spec 3 -->
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                           <span class="badge bg-primary fs-5 p-2">
+                                <i class="fa-solid fa-cube" title="Coordinate System"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4"><b>S3: Coordinate System</b></span>
                             <p>Understanding the coordinate system
                                 used in a dataset is essential for accurately interpreting spatial data. If
                                 it is unclear how the X, Y, and Z coordinates correspond to axes like
@@ -733,52 +750,70 @@
                                 Even though this difference is relatively subtle, assuming the wrong
                                 coordinate system will result in highly corrupted motions and will
                                 lead to incorrect conclusions.</p>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Right Column -->
                 <div class="col-md-5">
-                    <ul class="list-group spec-list">
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5">S4</span>
-                                <span class="fw-light fs-4"><b>Units of Measurement</b> </span>
-                                <p>The units of measurement used
-                                    in a dataset, whether meters, centimeters, custom units, etc., are
-                                    fundamental for accurately assessing and comparing spatial data.
-                                    For example, assuming centimeters instead of meters would lead
-                                    to peripherals appearing a 100 times closer and motions 100 times
-                                    slower.</p>
-                            </h4>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5">S5</span>
-                                <span class="fw-light fs-4"><b>Representation of Rotations</b></span>
-                                <p>Misinterpreting rotations
-                                    (e.g., Euler angles, quaternions, or transformation matrices) leads to
-                                    incorrect reconstructions of motions. For instance, Euler notation
-                                    seems straightforward at first glance, as it defines rotations around
-                                    the X, Y, and Z axes. Yet, to apply it correctly, one needs to know
-                                    whether the rotations are intrinsic (rotating about the axes of the
-                                    moving coordinate system) or extrinsic (rotating about the axes of the
-                                    fixed coordinate system), as well as the order of applying rotations
-                                    along each axis. Like before, wrong assumptions regarding this are
-                                    easy to miss, but will lead to incorrectly reconstructed motions.</p>
-                            </h4>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-start align-items-center">
-                            <h4 class="lead">
-                                <span class="badge bg-secondary me-3 fs-5">S6</span>
-                                <span class="fw-light fs-4"><b>Time Encoding</b></span>
-                                <p>Accurate timing information is crucial for
-                                    understanding the sequence of frames and duration of movements in
-                                    motion data. This can be represented through timestamps or a fixed
-                                    framerate. Without clear timing data, the dynamics of motion cannot
-                                    be accurately analyzed. Assuming the wrong timing of frames will
-                                    effectively lead to reconstructed motions to be too fast or too slow.</p>
-                            </h4>
-                        </li>
-                    </ul>
+
+                    <!-- Spec 4 -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <span class="badge bg-secondary fs-5 p-2">
+                                <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4"><b>S4: Units of Measurement</b></span>
+                            <p>The units of measurement used
+                                in a dataset, whether meters, centimeters, custom units, etc., are
+                                fundamental for accurately assessing and comparing spatial data.
+                                For example, assuming centimeters instead of meters would lead
+                                to peripherals appearing a 100 times closer and motions 100 times
+                                slower.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spec 5 -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <span class="badge bg-secondary fs-5 p-2">
+                                <i class="fa-solid fa-rotate" title="Representation of Rotations"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4"><b>S5: Representation of Rotations</b></span>
+                            <p>Misinterpreting rotations
+                                (e.g., Euler angles, quaternions, or transformation matrices) leads to
+                                incorrect reconstructions of motions. For instance, Euler notation
+                                seems straightforward at first glance, as it defines rotations around
+                                the X, Y, and Z axes. Yet, to apply it correctly, one needs to know
+                                whether the rotations are intrinsic (rotating about the axes of the
+                                moving coordinate system) or extrinsic (rotating about the axes of the
+                                fixed coordinate system), as well as the order of applying rotations
+                                along each axis. Like before, wrong assumptions regarding this are
+                                easy to miss, but will lead to incorrectly reconstructed motions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Spec 6 -->
+                    <div class="row">
+                        <div class="col-auto">
+                            <span class="badge bg-secondary fs-5 p-2">
+                                <i class="fa-regular fa-clock" title="Time Encoding"></i>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <span class="fw-light fs-4"><b>S6: Time Encoding</b></span>
+                            <p>Accurate timing information is crucial for
+                                understanding the sequence of frames and duration of movements in
+                                motion data. This can be represented through timestamps or a fixed
+                                framerate. Without clear timing data, the dynamics of motion cannot
+                                be accurately analyzed. Assuming the wrong timing of frames will
+                                effectively lead to reconstructed motions to be too fast or too slow.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

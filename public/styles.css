@@ -180,7 +180,21 @@ table.specifications tr:last-child {
 }
 
 /* Set the min-height for the text within aligned animations row 2 and 3 */
-.aligned-2, .aligned-3 .card-body p {
+.aligned-2 .card-body p {
     max-height: 4rem;
     min-height: 4rem;
+}
+
+.aligned-3 .card-body p {
+    max-height: 4rem;
+    min-height: 4rem;
+}
+
+.specs .fa-solid {
+    padding-right: 0px;
+}
+
+.specs .badge {
+    /*margin-top: 3px;*/
+    background-color: #0d6efd !important;
 }
