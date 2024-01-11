@@ -110,6 +110,11 @@ table.specifications tr:last-child {
     flex-grow: 1;
 }
 
+.contributions sup {
+    font-size: 1.25em;
+    top: 0em;
+}
+
 .spec-list li {
     border: none
 }
