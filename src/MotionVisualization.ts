@@ -205,23 +205,24 @@ export class MotionVisualization {
 
                     const initialRow = data[0];
 
-                    const yOffset = 2.0;
+                    const yOffset = 2;
+                    const scaling = 50;
 
                     let row;
                     for (let i = 0; i < numRows; i++) {
                         row = data[i];
                         times[i] = Number(row.delta_time_ms) / 1000.0;
-                        HeadPositions[i * 3 + 0] = Number(row.head_pos_x - initialRow.head_pos_x) / 50;
-                        HeadPositions[i * 3 + 1] = Number(row.head_pos_y - initialRow.head_pos_y) / 50 + yOffset;
-                        HeadPositions[i * 3 + 2] = Number(row.head_pos_z - initialRow.head_pos_z) / 50;
+                        HeadPositions[i * 3 + 0] = Number(row.head_pos_x - initialRow.head_pos_x) / scaling;
+                        HeadPositions[i * 3 + 1] = Number(row.head_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                        HeadPositions[i * 3 + 2] = Number(row.head_pos_z - initialRow.head_pos_z) / scaling;
 
-                        leftHandPositions[i * 3 + 0] = Number(row.left_hand_pos_x - initialRow.head_pos_x) / 50;
-                        leftHandPositions[i * 3 + 1] = Number(row.left_hand_pos_y - initialRow.head_pos_y) / 50 + yOffset;
-                        leftHandPositions[i * 3 + 2] = Number(row.left_hand_pos_z - initialRow.head_pos_z) / 50;
+                        leftHandPositions[i * 3 + 0] = Number(row.left_hand_pos_x - initialRow.head_pos_x) / scaling;
+                        leftHandPositions[i * 3 + 1] = Number(row.left_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                        leftHandPositions[i * 3 + 2] = Number(row.left_hand_pos_z - initialRow.head_pos_z) / scaling;
 
-                        rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / 50;
-                        rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / 50 + yOffset;
-                        rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / 50;
+                        rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / scaling;
+                        rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                        rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / scaling;
 
                         HeadRotations[i * 4 + 0] = Number(row.head_rot_x);
                         HeadRotations[i * 4 + 1] = Number(row.head_rot_y);

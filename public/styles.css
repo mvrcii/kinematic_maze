@@ -78,6 +78,10 @@ table.specifications th {
     width: 56px;
 }
 
+table.specifications tr:nth-of-type(2) th {
+    height: 75px;
+}
+
 table.specifications tr {
     border-bottom: 1px solid #ccc;
 }
@@ -120,7 +124,15 @@ table.specifications tr:last-child {
 }
 
 .spec-list p {
-    padding-left: 4.5rem;
+    padding-left: 68px;
+}
+
+.card-body p {
+    margin-bottom: 0;
+}
+
+.fa-solid {
+    padding-right: 6px;
 }
 
 .card .canvas-container {
@@ -161,6 +173,14 @@ table.specifications tr:last-child {
     border-color: #b5b5b5;
 }
 
-.bi {
-    padding-right: 0.5rem;
+/* Set the min-height for the text within aligned animations row 1 */
+.aligned-1 .card-body p {
+    max-height: 6rem;
+    min-height: 6rem;
+}
+
+/* Set the min-height for the text within aligned animations row 2 and 3 */
+.aligned-2, .aligned-3 .card-body p {
+    max-height: 4rem;
+    min-height: 4rem;
 }
