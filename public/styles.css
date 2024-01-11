@@ -110,6 +110,10 @@ table.specifications tr:last-child {
     flex-grow: 1;
 }
 
+.spec-list li {
+    border: none
+}
+
 .card .canvas-container {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
