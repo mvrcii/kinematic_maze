@@ -468,11 +468,11 @@ export class MotionVisualization {
     }
 
     addAxeArrows() {
-        const dirX = new THREE.Vector3(-1, 0, 0);
+        const dirX = new THREE.Vector3(1, 0, 0);
         const dirY = new THREE.Vector3(0, 1, 0);
-        const dirZ = new THREE.Vector3(0, 0, -1);
+        const dirZ = new THREE.Vector3(0, 0, 1);
 
-        const origin = new THREE.Vector3(1, 0, 1);
+        const origin = new THREE.Vector3(-1, 0, -1);
         const length = 3;
         const radius_cylinder = 0.02;
         const headLength = 0.1 * length;
