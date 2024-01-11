@@ -181,13 +181,13 @@ table.specifications tr:last-child {
 
 /* Set the min-height for the text within aligned animations row 2 and 3 */
 .aligned-2 .card-body p {
-    max-height: 4rem;
-    min-height: 4rem;
+    max-height: 5rem;
+    min-height: 5rem;
 }
 
 .aligned-3 .card-body p {
-    max-height: 4rem;
-    min-height: 4rem;
+    max-height: 5rem;
+    min-height: 5rem;
 }
 
 .specs .fa-solid {
