@@ -11,8 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/papaparse": "^5.3.10",
-    "@types/three": "^0.158.1",
     "ts-loader": "^9.5.0",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0",
@@ -20,11 +18,9 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "css-loader": "^6.8.1",
-    "d3": "^7.8.5",
-    "font-awesome": "^4.7.0",
-    "papaparse": "^5.4.1",
-    "style-loader": "^3.3.3",
-    "three": "^0.158.0"
+    "@types/papaparse": "^5.3.10",
+    "@types/three": "^0.160",
+    "papaparse": "^5.3.10",
+    "three": "~0.160"
   }
-}               
+}
