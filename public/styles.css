@@ -114,6 +114,10 @@ table.specifications tr:last-child {
     border: none
 }
 
+.spec-list p {
+    padding-left: 4.5rem;
+}
+
 .card .canvas-container {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
