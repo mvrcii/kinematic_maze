@@ -13,6 +13,9 @@ function sleep(ms: any) {
 export class MotionVisualization {
     csvPath: string;
 
+    preview = false;
+    
+
     isAutoRotateEnabled = true;
 
     rendererDom: HTMLElement
@@ -40,6 +43,11 @@ export class MotionVisualization {
         this.canvasContainer.appendChild(this.canvas);
         this.playerDom.appendChild(this.canvasContainer);
         this.csvPath = this.playerDom.dataset["sourcePath"] as string;
+
+        // Preview video camera change
+        if (this.playerDom.className.includes("preview")) {
+            this.preview = true;
+        }
 
         if (this.playerDom.dataset["progressbar"] == "true") {
             new PlaybackController(this);
@@ -147,11 +155,20 @@ export class MotionVisualization {
         this.cameraControls.autoRotateSpeed = 0.15;
         this.cameraControls.target.set(0, 1.2, 0);
 
-        const radius = 3;
-        const theta = Math.PI / 4; // 45 degrees in radians
-        const offsetX = radius * Math.sin(theta);
-        const thirdPersonOffsetY = 5;
-        const thirdPersonOffsetZ = -3;
+        let radius = 3;
+        let theta = Math.PI / 4; // 45 degrees in radians
+        let offsetX = radius * Math.sin(theta);
+        let thirdPersonOffsetY = 5;
+        let thirdPersonOffsetZ = -3;
+        
+        if (this.preview) {
+            radius = 3;
+            theta = Math.PI / 4; // 45 degrees in radians
+            offsetX = radius * Math.sin(theta);
+            thirdPersonOffsetY = 3;
+            thirdPersonOffsetZ = 5;
+        }
+
         this.camera.position.set(offsetX, thirdPersonOffsetY, thirdPersonOffsetZ);
         this.cameraControls.minPolarAngle = 0.5 * Math.PI / 3; // How low the camera can go
         this.cameraControls.maxPolarAngle = Math.PI / 3; // How high the camera can go

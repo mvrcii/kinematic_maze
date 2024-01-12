@@ -198,3 +198,60 @@ table.specifications tr:last-child {
     /*margin-top: 3px;*/
     background-color: #0d6efd !important;
 }
+
+
+
+/* Test Felix */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown-item {
+    padding: 5px 0;
+    background-color: transparent;
+    color: black;
+  }
+
+  .dropdown-item span {
+    margin-right: 10px;
+  }
+  
+  .dropdown-item button {
+    cursor: pointer;
+  }
+  
+.copied-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none; 
+}
+
+input::placeholder {
+    color: inherit; 
+    opacity: 1;
+  }
+
+code {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
