@@ -131,10 +131,6 @@ table.specifications tr:last-child {
     margin-bottom: 0;
 }
 
-.fa-solid {
-    padding-right: 6px;
-}
-
 .card .canvas-container {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
