@@ -34,28 +34,16 @@ export class MotionVisualization {
     canvas: HTMLCanvasElement;
     playerDom: HTMLDivElement;
     canvasContainer: HTMLDivElement;
+    ready: Promise<void>;
 
     constructor(playerDom: HTMLDivElement) {
         this.playerDom = playerDom;
-        this.canvas = document.createElement("canvas");
-        this.canvasContainer = document.createElement("div");
-        this.canvasContainer.classList.add("canvas-container")
-        this.canvasContainer.appendChild(this.canvas);
-        this.playerDom.appendChild(this.canvasContainer);
         this.csvPath = this.playerDom.dataset["sourcePath"] as string;
 
-        // Preview video camera change
-        if (this.playerDom.className.includes("preview")) {
-            this.preview = true;
-        }
-
-        if (this.playerDom.dataset["progressbar"] == "true") {
-            new PlaybackController(this);
-        }
+        this.canvas = document.createElement("canvas");
+        this.canvasContainer = document.createElement("div");
         this.scene = new THREE.Scene();
         this.reactor = new Reactor()
-        this.reactor.registerEvent('step');
-        this.reactor.registerEvent('sweep');
 
         this.renderer = new THREE.WebGLRenderer(
             {
@@ -64,6 +52,29 @@ export class MotionVisualization {
                 precision: "highp"
             });
         this.rendererDom = this.renderer.domElement
+        this.clock = new THREE.Clock();
+
+        this.state = {}
+
+        this.ready = new Promise<void>(async (resolve, _reject) => {
+            await this.setup();
+            resolve();
+        });
+
+        this.onWindowResize()
+
+    }
+
+    async setup() {
+        this.reactor.registerEvent('step');
+        this.reactor.registerEvent('sweep');
+        this.canvasContainer.classList.add("canvas-container")
+        this.canvasContainer.appendChild(this.canvas);
+        this.playerDom.appendChild(this.canvasContainer);
+        // Preview video camera change
+        if (this.playerDom.className.includes("preview")) {
+            this.preview = true;
+        }
 
         this._setupCameraAndControls()
         this._addKeyListeners()
@@ -71,7 +82,6 @@ export class MotionVisualization {
 
         this.setupScene();
 
-        this.clock = new THREE.Clock();
 
         const material = new THREE.MeshStandardMaterial({color: 0x00ff00});
         this.meshes["HMDIndicator"] = new THREE.Mesh(new THREE.SphereGeometry(.02), material);
@@ -82,25 +92,6 @@ export class MotionVisualization {
         this.mixers["leftControllerIndicator"] = new THREE.AnimationMixer(this.meshes["leftControllerIndicator"]);
         this.mixers["rightControllerIndicator"] = new THREE.AnimationMixer(this.meshes["rightControllerIndicator"]);
 
-        this.state = {}
-
-        this.setup()
-
-        this.onWindowResize()
-
-        // Activate shadows
-        for (const key in this.meshes) {
-            if (this.meshes.hasOwnProperty(key)) {
-                console.log("Activating shadow for", key)
-                const mesh = this.meshes[key];
-                mesh.castShadow = true;
-                mesh.receiveShadow = true;
-            }
-        }
-
-    }
-
-    async setup() {
         const modelMapping = {
             HMD: "generic_hmd",
             leftController: "vr_controller_vive_1_5",
@@ -141,7 +132,22 @@ export class MotionVisualization {
             await sleep(250);
         }
 
-        await this._loadAndBuildAnimations()
+        await this._loadAndBuildAnimations();
+
+
+        console.debug(this.playerDom.dataset["progress"]);
+        if (this.playerDom.dataset["progress"] == "true") {
+            new PlaybackController(this);
+        }
+
+        // Activate shadows
+        for (const key in this.meshes) {
+            if (this.meshes.hasOwnProperty(key)) {
+                const mesh = this.meshes[key];
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+            }
+        }
     }
 
     _setupCameraAndControls() {
@@ -203,110 +209,108 @@ export class MotionVisualization {
             }
             const csvData = await response.text();
 
-            Papa.parse(csvData, {
-                fastMode: true,
-                header: true,
-                skipEmptyLines: true,
-                complete: (results: any) => {
-                    const data = results.data;
-                    const numRows = data.length;
-                    const times = new Array(numRows);
+            const parse = new Promise<void>((resolve, reject) => {
+                Papa.parse(csvData, {
+                    fastMode: true,
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (results: any) => {
+                        const data = results.data;
+                        const numRows = data.length;
+                        const times = new Array(numRows);
 
-                    const HeadPositions = new Array(numRows * 3);
-                    const leftHandPositions = new Array(numRows * 3);
-                    const rightHandPositions = new Array(numRows * 3);
+                        const HeadPositions = new Array(numRows * 3);
+                        const leftHandPositions = new Array(numRows * 3);
+                        const rightHandPositions = new Array(numRows * 3);
 
-                    const HeadRotations = new Array(numRows * 4);
-                    const leftHandRotations = new Array(numRows * 4);
-                    const rightHandRotations = new Array(numRows * 4);
+                        const HeadRotations = new Array(numRows * 4);
+                        const leftHandRotations = new Array(numRows * 4);
+                        const rightHandRotations = new Array(numRows * 4);
 
-                    const initialRow = data[0];
+                        const initialRow = data[0];
 
-                    const yOffset = 2;
-                    const scaling = 50;
+                        const yOffset = 2;
+                        const scaling = 50;
 
-                    let row;
-                    for (let i = 0; i < numRows; i++) {
-                        row = data[i];
-                        times[i] = Number(row.delta_time_ms) / 1000.0;
-                        HeadPositions[i * 3 + 0] = Number(row.head_pos_x - initialRow.head_pos_x) / scaling;
-                        HeadPositions[i * 3 + 1] = Number(row.head_pos_y - initialRow.head_pos_y) / scaling + yOffset;
-                        HeadPositions[i * 3 + 2] = Number(row.head_pos_z - initialRow.head_pos_z) / scaling;
+                        let row;
+                        for (let i = 0; i < numRows; i++) {
+                            row = data[i];
+                            times[i] = Number(row.delta_time_ms) / 1000.0;
+                            HeadPositions[i * 3 + 0] = Number(row.head_pos_x - initialRow.head_pos_x) / scaling;
+                            HeadPositions[i * 3 + 1] = Number(row.head_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                            HeadPositions[i * 3 + 2] = Number(row.head_pos_z - initialRow.head_pos_z) / scaling;
 
-                        leftHandPositions[i * 3 + 0] = Number(row.left_hand_pos_x - initialRow.head_pos_x) / scaling;
-                        leftHandPositions[i * 3 + 1] = Number(row.left_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
-                        leftHandPositions[i * 3 + 2] = Number(row.left_hand_pos_z - initialRow.head_pos_z) / scaling;
+                            leftHandPositions[i * 3 + 0] = Number(row.left_hand_pos_x - initialRow.head_pos_x) / scaling;
+                            leftHandPositions[i * 3 + 1] = Number(row.left_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                            leftHandPositions[i * 3 + 2] = Number(row.left_hand_pos_z - initialRow.head_pos_z) / scaling;
 
-                        rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / scaling;
-                        rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
-                        rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / scaling;
+                            rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / scaling;
+                            rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
+                            rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / scaling;
 
-                        HeadRotations[i * 4 + 0] = Number(row.head_rot_x);
-                        HeadRotations[i * 4 + 1] = Number(row.head_rot_y);
-                        HeadRotations[i * 4 + 2] = Number(row.head_rot_z);
-                        HeadRotations[i * 4 + 3] = Number(row.head_rot_w);
+                            HeadRotations[i * 4 + 0] = Number(row.head_rot_x);
+                            HeadRotations[i * 4 + 1] = Number(row.head_rot_y);
+                            HeadRotations[i * 4 + 2] = Number(row.head_rot_z);
+                            HeadRotations[i * 4 + 3] = Number(row.head_rot_w);
 
-                        leftHandRotations[i * 4 + 0] = Number(row.left_hand_rot_x);
-                        leftHandRotations[i * 4 + 1] = Number(row.left_hand_rot_y);
-                        leftHandRotations[i * 4 + 2] = Number(row.left_hand_rot_z);
-                        leftHandRotations[i * 4 + 3] = Number(row.left_hand_rot_w);
+                            leftHandRotations[i * 4 + 0] = Number(row.left_hand_rot_x);
+                            leftHandRotations[i * 4 + 1] = Number(row.left_hand_rot_y);
+                            leftHandRotations[i * 4 + 2] = Number(row.left_hand_rot_z);
+                            leftHandRotations[i * 4 + 3] = Number(row.left_hand_rot_w);
 
-                        rightHandRotations[i * 4 + 0] = Number(row.right_hand_rot_x);
-                        rightHandRotations[i * 4 + 1] = Number(row.right_hand_rot_y);
-                        rightHandRotations[i * 4 + 2] = Number(row.right_hand_rot_z);
-                        rightHandRotations[i * 4 + 3] = Number(row.right_hand_rot_w);
+                            rightHandRotations[i * 4 + 0] = Number(row.right_hand_rot_x);
+                            rightHandRotations[i * 4 + 1] = Number(row.right_hand_rot_y);
+                            rightHandRotations[i * 4 + 2] = Number(row.right_hand_rot_z);
+                            rightHandRotations[i * 4 + 3] = Number(row.right_hand_rot_w);
+                        }
+
+                        const HeadPositionKFT = new THREE.VectorKeyframeTrack(".position", times, HeadPositions)
+                        const leftHandPositionKFT = new THREE.VectorKeyframeTrack(".position", times, leftHandPositions)
+                        const rightHandPositionKFT = new THREE.VectorKeyframeTrack(".position", times, rightHandPositions)
+
+                        const HeadRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, HeadRotations)
+                        const leftHandRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, leftHandRotations)
+                        const rightHandRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, rightHandRotations)
+
+                        const animateHead = new THREE.AnimationClip('AnimateHMD', -1, [HeadPositionKFT, HeadRotationKFT])
+                        this.actions["HMD"] = this.mixers["HMD"].clipAction(animateHead);
+                        this.actions["HMDIndicator"] = this.mixers["HMDIndicator"].clipAction(animateHead);
+
+                        const animateLeftHand = new THREE.AnimationClip('AnimateLeftController', -1, [leftHandPositionKFT, leftHandRotationKFT])
+                        this.actions["leftController"] = this.mixers["leftController"].clipAction(animateLeftHand);
+                        this.actions["leftControllerIndicator"] = this.mixers["leftControllerIndicator"].clipAction(animateLeftHand);
+
+                        const animateRightHand = new THREE.AnimationClip('AnimateRightController', -1, [rightHandPositionKFT, rightHandRotationKFT])
+                        this.actions["rightController"] = this.mixers["rightController"].clipAction(animateRightHand);
+                        this.actions["rightControllerIndicator"] = this.mixers["rightControllerIndicator"].clipAction(animateRightHand);
+
+                        this.state["currentSessionDuration"] = animateHead.duration;
+
+                        resolve();
+                    },
+                    error: (error: any) => {
+                        console.error('Error parsing CSV:', error.message);
                     }
-
-                    const HeadPositionKFT = new THREE.VectorKeyframeTrack(".position", times, HeadPositions)
-                    const leftHandPositionKFT = new THREE.VectorKeyframeTrack(".position", times, leftHandPositions)
-                    const rightHandPositionKFT = new THREE.VectorKeyframeTrack(".position", times, rightHandPositions)
-
-                    const HeadRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, HeadRotations)
-                    const leftHandRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, leftHandRotations)
-                    const rightHandRotationKFT = new THREE.QuaternionKeyframeTrack(".quaternion", times, rightHandRotations)
-
-                    const animateHead = new THREE.AnimationClip('AnimateHMD', -1, [HeadPositionKFT, HeadRotationKFT])
-                    this.actions["HMD"] = this.mixers["HMD"].clipAction(animateHead);
-                    this.actions["HMDIndicator"] = this.mixers["HMDIndicator"].clipAction(animateHead);
-
-                    const animateLeftHand = new THREE.AnimationClip('AnimateLeftController', -1, [leftHandPositionKFT, leftHandRotationKFT])
-                    this.actions["leftController"] = this.mixers["leftController"].clipAction(animateLeftHand);
-                    this.actions["leftControllerIndicator"] = this.mixers["leftControllerIndicator"].clipAction(animateLeftHand);
-
-                    const animateRightHand = new THREE.AnimationClip('AnimateRightController', -1, [rightHandPositionKFT, rightHandRotationKFT])
-                    this.actions["rightController"] = this.mixers["rightController"].clipAction(animateRightHand);
-                    this.actions["rightControllerIndicator"] = this.mixers["rightControllerIndicator"].clipAction(animateRightHand);
-
-                    this.state["currentSessionDuration"] = animateHead.duration;
-
-                    this.onSetupFinished();
-                },
-                error: (error: any) => {
-                    console.error('Error parsing CSV:', error.message);
-                }
+                });
             });
+            await parse;
         } catch (error) {
             console.error('Error fetching and parsing CSV:', error);
+            return;
         }
-    }
-
-    onSetupFinished() {
         this.activateAllActions();
         this.animate();
     }
 
     isEverythingLoadedAndReady() {
-        // console.log(this.mixers)
         return "HMD" in this.mixers;
     }
 
     progress() {
-        // console.log(this.actions)
         return this.actions["HMD"].time / this.state["currentSessionDuration"];
     }
 
     getCurrentTimestamp() {
-        // console.log(this.actions)
         return this.actions["HMD"].time * 1000;
     }
 
@@ -360,17 +364,6 @@ export class MotionVisualization {
         }
     }
 
-    // allObjectsLoaded()
-    //     :
-    //     boolean {
-    //     const requiredSubstrings = ['HMD', 'leftController', 'rightController'];
-    //     const keys = Object.keys(this.meshes);
-    //
-    //     return requiredSubstrings.every(substring =>
-    //         keys.some(key => key.includes(substring))
-    //     );
-    // }
-
     allObjectsLoaded() {
         return "HMD" in this.meshes && "leftController" in this.meshes && "rightController" in this.meshes
     }
@@ -389,6 +382,13 @@ export class MotionVisualization {
         }
     }
 
+    resetAllActions() {
+        this.state["run"] = true;
+        for (const action of Object.values(this.actions)) {
+            action.reset();
+        }
+    }
+
     sweep(position: any) {
         const animationTime = this.state["currentSessionDuration"] * position;
 
@@ -396,7 +396,6 @@ export class MotionVisualization {
         this.unPauseAllActions();
 
         for (const mixer of Object.values(this.mixers)) {
-            console.log(animationTime)
             mixer.setTime(animationTime);
         }
 

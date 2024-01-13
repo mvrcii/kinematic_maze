@@ -13,29 +13,19 @@ export function getQueryVariable(variable: any) {
 }
 
 export class PlaybackController {
-    motionVis: MotionVisualization
-
-    // playButton: HTMLButtonElement | null
-    // timerElement: TimerElement
-    timelineElement: TimelineElement | undefined
+    motionVis: MotionVisualization;
+    timelineElement: TimelineElement;
 
     constructor(motionVis: MotionVisualization) {
-        // this.playButton = document.querySelector("#playPause" + playerIdx) as HTMLButtonElement;
-        // this.timerElement = new TimerElement(document.querySelector("#timer" + playerIdx) as HTMLElement);
-
-        if (!motionVis.playerDom.classList.contains('hide-pbar')) {
-            this.timelineElement = new TimelineElement(motionVis);
-
-            this.timelineElement.reactor.addEventListener("sweepRequest",
-                (position: any) => this.onSweep(position));
-
-        }
-
         this.motionVis = motionVis;
 
-        if (!motionVis.playerDom.classList.contains('readonly')) {
-            this.motionVis.reactor.addEventListener("step", () => this.onStep());
-        }
+        this.timelineElement = new TimelineElement(motionVis);
+
+        this.timelineElement.reactor.addEventListener("sweepRequest",
+            (position: any) => this.onSweep(position));
+
+
+        this.motionVis.reactor.addEventListener("step", () => this.onStep());
     }
 
     onSweep(position: any) {
@@ -44,7 +34,6 @@ export class PlaybackController {
 
     onStep() {
         if (this.timelineElement && this.motionVis.isEverythingLoadedAndReady()) {
-            // this.timerElement.update(new Date(this.getCurrentSceneTimestamp()));
             this.timelineElement.update(this.motionVis.progress());
         }
 
