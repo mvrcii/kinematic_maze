@@ -19,9 +19,7 @@ function initializeApp() {
     const syncer = new MotionVisualizationSyncer();
 
     Array.from(document.getElementsByClassName('motion-player')).forEach(dom => {
-        const mv = new MotionVisualization(dom as HTMLDivElement);
-        new PlaybackController(mv);
-        
+        const mv = new MotionVisualization(dom as HTMLDivElement);        
         if (dom.classList.contains("motion-player-sync")) {
             syncer.add(mv);
         }

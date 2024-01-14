@@ -134,8 +134,6 @@ export class MotionVisualization {
 
         await this._loadAndBuildAnimations();
 
-
-        console.debug(this.playerDom.dataset["progress"]);
         if (this.playerDom.dataset["progress"] == "true") {
             new PlaybackController(this);
         }
