@@ -18,13 +18,21 @@
             <div class="col-md-12 mt-5 mb-3">
                 <h1 class="display-4 text-center">Navigating the Kinematic Maze: <br>A Comprehensive Guide to
                     XR Motion Dataset Standards</h1>
+
+                <div class="text-center text-secondary">
+                    An IEEE VR 2024 workshop paper from
+                </div>
                 <div class="authors d-flex fs-5 justify-content-md-center mb-5">
-                    <div class="me-4 contributions"><span>Christian Rack<sup>*</sup></span></div>
-                    <div class="me-4">Vivek Nair</div>
+                    <div class="me-4"><a href="https://orcid.org/0000-0002-0022-0711"
+                            class="text-body link-underline-light">Christian
+                            Rack</a></div>
+                    <div class="me-4"><a href="https://nair.me/" class="text-body link-underline-light">Vivek Nair</a>
+                    </div>
                     <div class="me-4">Lukas Schach</div>
                     <div class="me-4">Felix Foschum</div>
                     <div class="me-4">Marcel Roth</div>
-                    <div class="me-4">Marc E. Latoschik</div>
+                    <div class="me-4"><a href="https://orcid.org/0000-0002-9340-9600"
+                            class="text-body link-underline-light">Marc E. Latoschik</a></div>
                 </div>
             </div>
         </div>
@@ -77,12 +85,12 @@
         <!-- Specifications -->
         <div class="row justify-content-md-center mt-5">
             <div class="col-md-8">
-                <h1 class="text-center mt-5 mb-5 border-bottom-3">Critical Motion Specifications</h1>
+                <h1 class="text-center mt-5 mb-5">Critical Motion Specifications</h1>
             </div>
         </div>
 
         <div class="row mb-5">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-8 mb-3">
                 <p class="lead">
                     Researchers working with XR motion data require a minimum set of critical information to
                     correctly load and interpret motion recordings. We identify the following mandatory
@@ -97,12 +105,12 @@
                     specifications to showcase the different effects.
                 </p>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <figure class="d-flex align-items-center flex-column">
                     <b>Correctly Imported Recording</b>
-                    <div class="motion-player motion-player-sync col-md-8"
+                    <div class="motion-player motion-player-sync"
                         data-source-path="samples/liebers_labstudy21_bowling/fixed.csv" data-progress="false"></div>
-                    <figcaption class="small col-md-8">
+                    <figcaption class="small">
                         A correctly imported motion recording.
                     </figcaption>
                 </figure>
@@ -111,19 +119,19 @@
 
         <div class="specs">
             <div class="row">
-                <div class="col-md-6 text-center">
-                    <h3 class="underline">Specification</h3>
+                <div class="col-md-8 text-center">
+                    <h3>Specification</h3>
                     <hr class="border-2 border-dark opacity-100">
                 </div>
                 <div class="col text-center">
-                    <h3 class="underline">Examples</h3>
+                    <h3>Examples</h3>
                     <hr class="border-2 border-dark opacity-100">
                 </div>
             </div>
 
             <!-- Spec 3 -->
             <div class="row my-5">
-                <div class="col-md-6 mb-3">
+                <div class="col-md-8 mb-3">
                     <div class="d-flex gap-3">
                         <div>
                             <span class="fa-stack fa-2x">
@@ -149,13 +157,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <figure class="d-flex align-items-center flex-column">
                         <b>Wrong Coordinate System</b>
-                        <div class="motion-player motion-player-sync col-md-8"
+                        <div class="motion-player motion-player-sync"
                             data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_system.csv"
                             data-progress="false"></div>
-                        <figcaption class="small col-md-8">This recording has been loaded with an inverted Z-axis; this
+                        <figcaption class="small">This recording has been loaded with an inverted Z-axis; this
                             not
                             only results
                             in
@@ -166,7 +174,7 @@
 
             <!-- Spec 4 -->
             <div class="row my-5">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="d-flex gap-3">
                         <div>
                             <span class="fa-stack fa-2x">
@@ -185,15 +193,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
 
                     <figure class="d-flex align-items-center flex-column">
                         <b>Wrong Units</b>
-                        <div class="motion-player motion-player-sync col-md-8"
+                        <div class="motion-player motion-player-sync"
                             data-source-path="samples/liebers_labstudy21_bowling/negative_units.csv"
                             data-progress="false">
                         </div>
-                        <figcaption class="small col-md-8">
+                        <figcaption class="small">
                             This recording has been loaded with a wrong scaling of units (e.g., meters instead of
                             centimeters).
                         </figcaption>
@@ -203,7 +211,7 @@
 
             <!-- Spec 5 -->
             <div class="row my-5">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="d-flex gap-3">
                         <div>
                             <span class="fa-stack fa-2x">
@@ -226,25 +234,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <figure class="d-flex align-items-center flex-column">
                         <b>Intrinsic vs. Extrinsic Euler notation</b>
-                        <div class="motion-player motion-player-sync  col-md-8"
+                        <div class="motion-player motion-player-sync "
                             data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
                             data-progress="false"></div>
 
-                        <figcaption class="small col-md-8">
+                        <figcaption class="small">
                             Euler angles can be intrinsic or extrinsic; if the wrong type gets assumed during import,
                             rotations are inherently broken.
                         </figcaption>
                     </figure>
                     <figure class="d-flex align-items-center flex-column">
                         <b>Wrong Euler sequence</b>
-                        <div class="motion-player motion-player-sync  col-md-8"
+                        <div class="motion-player motion-player-sync "
                             data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
                             data-progress="false"></div>
 
-                        <figcaption class="small col-md-8">
+                        <figcaption class="small">
                             Three values are needed to represent a rotation with the Euler notation, but it has to be
                             defined to which axis each of these values is mapped to; X&rightarrow;Y&rightarrow;Z may
                             seem straightforward, but it can also be ZXY, ZYX, or even something like XZX!
@@ -253,12 +261,12 @@
                     <!-- <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <div class="motion-player motion-player-sync  col-md-8"
+                                    <div class="motion-player motion-player-sync "
                                         data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
                                         data-progress="false"></div>
                                 </div>
                                 <div class="carousel-item">
-                                    <div class="motion-player motion-player-sync  col-md-8"
+                                    <div class="motion-player motion-player-sync "
                                         data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
                                         data-progress="false"></div>
                                 </div>
@@ -278,7 +286,7 @@
 
             <!-- Spec 6 -->
             <div class="row my-5">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="d-flex gap-3">
                         <div>
                             <span class="fa-stack fa-2x">
@@ -297,15 +305,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <figure class="d-flex align-items-center flex-column">
                         <b>Wrong Time Encoding</b>
-                        <div class="motion-player motion-player-sync col-md-8"
+                        <div class="motion-player motion-player-sync"
                             data-source-path="samples/liebers_labstudy21_bowling/negative_time.csv"
                             data-progress="false">
                         </div>
 
-                        <figcaption class="small col-md-8">
+                        <figcaption class="small">
                             This example shows what happens if the wrong time encoding gets applied to a motion
                             sequence: the reconstructed animation is either too fast or too slow!
                         </figcaption>
@@ -369,7 +377,7 @@
         <!-- Aligned Section Text -->
         <div class="row justify-content-md-center">
             <div class="col-md-8 my-5">
-                <h1 class="text-center mb-4 border-bottom-3" id="sec-aligned-dset">Catalogue of XR Motion Datasets</h1>
+                <h1 class="text-center mb-4" id="sec-aligned-dset">Catalogue of XR Motion Datasets</h1>
                 <p class="lead">
                     We have compiled a catalogue of XR motion datasets. Originally, each of these datasets comes in a
                     different format and requires very different approaches to download, read and convert. We
@@ -912,319 +920,298 @@
             </div>
         </div>
 
-        <!-- Guidelines -->
-        <div class="specs">
-            <div class="row justify-content-md-center">
-                <div class="col-md-8 my-5">
-                    <hr>
-                    <h1 class="text-center mb-4 border-bottom-3">Guidelines</h1>
-                    <div class="row justify-content-center">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 my-5">
+                <h1 class="text-center mb-4">Guidelines</h1>
+            </div>
+        </div>
+
+        <div class="row justify-content-center g-5">
+            <div class="col-md-6">
+                <div class="row">
+                    <h3 class="h-auto text-center">For Motion Datasets Creators</h3>
+                    <hr class="border-2 border-dark opacity-100">
+                </div>
 
 
-                        <!-- Left Column -->
-                        <div class="col-md-5 me-5">
-                            <h3 class="h-auto text-center mb-5">Guidelines For Creators of Motion Datasets </h3>
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-folder-tree"></i>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fw-light fs-4" title="Structure"><b>GC1: Report critical
+                                requirements</b></span>
+                        <p>First and foremost, it is
+                            imperative that future datasets comprehensively report all relevant
+                            specifications discussed above. For file formats, we recommend
+                            adopting common table-based formats like CSV, or binary equiva-
+                            lents such as HDF5 [8] or Parquet [3], ensuring compatibility with
+                            standard data processing tools like Python Pandas, R, or Apache
+                            Spark. This should be accompanied with a thorough documentation
+                            of each data attribute and how it has been labeled. We advocate
+                            using quaternions to represent rotations, as these are less ambiguous
+                            than Euler angles. Providing a timestamp column with the passed
+                            time since the start of the recording in milliseconds offers a clear
+                            way to specify the timing of each frame. Clear documentation of
+                            all of these aspects is crucial for accurate data interpretation and
+                            replication of research.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 1 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-folder-tree"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4" title="Structure"><b>GC1: Report critical
-                                            requirements</b></span>
-                                    <p>First and foremost, it is
-                                        imperative that future datasets comprehensively report all relevant
-                                        specifications discussed above. For file formats, we recommend
-                                        adopting common table-based formats like CSV, or binary equiva-
-                                        lents such as HDF5 [8] or Parquet [3], ensuring compatibility with
-                                        standard data processing tools like Python Pandas, R, or Apache
-                                        Spark. This should be accompanied with a thorough documentation
-                                        of each data attribute and how it has been labeled. We advocate
-                                        using quaternions to represent rotations, as these are less ambiguous
-                                        than Euler angles. Providing a timestamp column with the passed
-                                        time since the start of the recording in milliseconds offers a clear
-                                        way to specify the timing of each frame. Clear documentation of
-                                        all of these aspects is crucial for accurate data interpretation and
-                                        replication of research.</p>
-                                </div>
-                            </div>
+                <!-- Spec 2 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-file-csv" title="File Format"></i>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fw-light fs-4"><b>S2: File Format</b></span>
+                        <p>The file format is vital in determining how
+                            recordings can be loaded and attributes correctly labeled. An unsuit-
+                            able or poorly documented file format can lead to misunderstandings.
+                            This affects the integrity of the research, as conclusions drawn from
+                            improperly interpreted data are likely to be erroneous.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 2 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-file-csv" title="File Format"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>S2: File Format</b></span>
-                                    <p>The file format is vital in determining how
-                                        recordings can be loaded and attributes correctly labeled. An unsuit-
-                                        able or poorly documented file format can lead to misunderstandings.
-                                        This affects the integrity of the research, as conclusions drawn from
-                                        improperly interpreted data are likely to be erroneous.</p>
-                                </div>
-                            </div>
+                <!-- Spec 3 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2">
+                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fw-light fs-4"><b>GC3: Allow easy and permanent dataset
+                                access</b></span>
+                        <p>Other researchers should be able to easily, and permanently access and
+                            download published datasets. Several of the analyzed datasets re-
+                            quire to download the full data, which is especially cumbersome if
+                            the total size is prohibitively large. Often, only certain data types or
+                            recordings of a few users are needed, so dataset creators should look
+                            for ways to not only provide bulk- but also partial downloads. Tools
+                            like Git paired with Git LFS or DVC allow straightforward ways to
+                            easily manage even large datasets, offering a convenient alternative
+                            to single zip archives. For hosting, there are options like Hugging
+                            Face, GitHub, Kaggle, Zenodo, etc. that not provide free hosting,
+                            but often tooling for up- and downloading datasets, which improves
+                            accessibility for both, creators and users of datasets.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 3 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-primary fs-5 p-2">
-                                        <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC3: Allow easy and permanent dataset
-                                            access</b></span>
-                                    <p>Other researchers should be able to easily, and permanently access and
-                                        download published datasets. Several of the analyzed datasets re-
-                                        quire to download the full data, which is especially cumbersome if
-                                        the total size is prohibitively large. Often, only certain data types or
-                                        recordings of a few users are needed, so dataset creators should look
-                                        for ways to not only provide bulk- but also partial downloads. Tools
-                                        like Git paired with Git LFS or DVC allow straightforward ways to
-                                        easily manage even large datasets, offering a convenient alternative
-                                        to single zip archives. For hosting, there are options like Hugging
-                                        Face, GitHub, Kaggle, Zenodo, etc. that not provide free hosting,
-                                        but often tooling for up- and downloading datasets, which improves
-                                        accessibility for both, creators and users of datasets.</p>
-                                </div>
-                            </div>
-
-                            <!-- Spec 4 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-primary fs-5 p-2">
-                                        <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC4: Provide Demo Code</b></span>
-                                    <p>Additionally, datasets should in-
-                                        clude example scripts that demonstrate how to properly load the data
-                                        and correctly identify each attribute. These scripts not only serve as
-                                        a practical tool for other researchers but also act as a form of docu-
-                                        mentation, offering insights into the intended use and interpretation
-                                        of the data.</p>
-                                </div>
-                            </div>
+                <!-- Spec 4 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2">
+                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fw-light fs-4"><b>GC4: Provide Demo Code</b></span>
+                        <p>Additionally, datasets should in-
+                            clude example scripts that demonstrate how to properly load the data
+                            and correctly identify each attribute. These scripts not only serve as
+                            a practical tool for other researchers but also act as a form of docu-
+                            mentation, offering insights into the intended use and interpretation
+                            of the data.</p>
+                    </div>
+                </div>
 
 
-                            <!-- Spec 5 -->
-                            <div class="row">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC5: Offer Visualizations</b></span>
-                                    <p>An ideal enhancement for future
-                                        datasets is the provision of options for data visualization. To aid
-                                        in this, we provide a Python library tailored for visualizing XR
-                                        user motion data. Visual tools can significantly ease the process refine
-                                        of understanding and analyzing motion data, making datasets more
-                                        accessible and user-friendly.</p>
-                                </div>
-                            </div>
+                <!-- Spec 5 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GC5: Offer Visualizations</b></span>
+                        <p>An ideal enhancement for future
+                            datasets is the provision of options for data visualization. To aid
+                            in this, we provide a Python library tailored for visualizing XR
+                            user motion data. Visual tools can significantly ease the process refine
+                            of understanding and analyzing motion data, making datasets more
+                            accessible and user-friendly.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 6 -->
-                            <div class="row">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-rotate" title="Representation of Rotations"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC6: Add Contextual Information</b></span>
-                                    <p>Beyond the discussed
-                                        fundamental specifications, there is additional contextual informa-
-                                        tion that can greatly benefit researchers. For example, providing
-                                        background information about the used data source, such as whether
-                                        it was collected from Unity, Steam OpenVR, or other platforms, can
-                                        give important context information about the dataset’s characteris-
-                                        tics. Moreover, awareness of application-specific traits is crucial.
-                                        For instance, scenarios where users are teleported within a scene
-                                        can result in abrupt and seemingly inexplicable ‘jumps’ in the data.
-                                        Similarly, it should be clarified if data for certain peripherals, like
-                                        hand tracking, are available only under specific conditions (like
-                                        when hands are visible to the camera). This helps to distinguish
-                                        between intentional data absences and potential errors. Additionally,
-                                        understanding whether users might place their controllers or HMDs
-                                        down during a session, or whether they are seated or standing, can
-                                        offer valuable insights into the dataset’s dynamics. These nuances,
-                                        although seemingly minor, can have substantial implications for
-                                        the accuracy and reliability of research outcomes, underscoring the
-                                        importance of comprehensive dataset documentation. Creators of
-                                        dataset should also be aware that their datasets might be used for
-                                        different purposes, so they should not just focus on the specific
-                                        requirements of their own research.</p>
-                                </div>
-                            </div>
+                <!-- Spec 6 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-rotate" title="Representation of Rotations"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GC6: Add Contextual Information</b></span>
+                        <p>Beyond the discussed
+                            fundamental specifications, there is additional contextual informa-
+                            tion that can greatly benefit researchers. For example, providing
+                            background information about the used data source, such as whether
+                            it was collected from Unity, Steam OpenVR, or other platforms, can
+                            give important context information about the dataset’s characteris-
+                            tics. Moreover, awareness of application-specific traits is crucial.
+                            For instance, scenarios where users are teleported within a scene
+                            can result in abrupt and seemingly inexplicable ‘jumps’ in the data.
+                            Similarly, it should be clarified if data for certain peripherals, like
+                            hand tracking, are available only under specific conditions (like
+                            when hands are visible to the camera). This helps to distinguish
+                            between intentional data absences and potential errors. Additionally,
+                            understanding whether users might place their controllers or HMDs
+                            down during a session, or whether they are seated or standing, can
+                            offer valuable insights into the dataset’s dynamics. These nuances,
+                            although seemingly minor, can have substantial implications for
+                            the accuracy and reliability of research outcomes, underscoring the
+                            importance of comprehensive dataset documentation. Creators of
+                            dataset should also be aware that their datasets might be used for
+                            different purposes, so they should not just focus on the specific
+                            requirements of their own research.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 7 -->
-                            <div class="row">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-regular fa-clock" title="Time Encoding"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC7: Disclosure of Recording Methods
-                                        </b></span>
-                                    <p>We highly recom-
-                                        mend that dataset creators disclose and discuss the software used
-                                        in generating their datasets. This transparency not only allows for
-                                        the reproduction, verification, and extension of the datasets but also
-                                        fosters an environment of open collaboration and innovation in the
-                                        field. By sharing the tools and methods used for data collection, re-
-                                        searchers can contribute to a more robust and dynamic understanding
-                                        of kinematic data in XR environments.</p>
-                                </div>
-                            </div>
+                <!-- Spec 7 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-regular fa-clock" title="Time Encoding"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GC7: Disclosure of Recording Methods
+                            </b></span>
+                        <p>We highly recom-
+                            mend that dataset creators disclose and discuss the software used
+                            in generating their datasets. This transparency not only allows for
+                            the reproduction, verification, and extension of the datasets but also
+                            fosters an environment of open collaboration and innovation in the
+                            field. By sharing the tools and methods used for data collection, re-
+                            searchers can contribute to a more robust and dynamic understanding
+                            of kinematic data in XR environments.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 8 -->
-                            <div class="row">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-regular fa-clock" title="Time Encoding"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GC8: Easy Access of Information </b></span>
-                                    <p>n line with general best
-                                        practices for dataset creation, it is highly advisable to utilize es-
-                                        tablished dataset labeling frameworks, such as Dataset Nutrition
-                                        Labels [9], Data Cards [20], or Datasheets for Datasets [7]. These
-                                        frameworks provide structured and standardized ways to present
-                                        critical information about datasets, promoting transparency and ease
-                                        of use. By incorporating these labeling frameworks, dataset creators
-                                        can ensure that users are well-informed about the nature and char-
-                                        acteristics of the data. These frameworks can easily be augmented
-                                        with the aforementioned specific information relevant to XR user
-                                        motion studies. This practice not only allows researchers to quickly
-                                        understand the datasets without spending time and resources for
-                                        tedious and error prone analyses, but also fosters a culture of clarity
-                                        and accountability in data sharing within the kinematic research
-                                        community. Implementing such comprehensive labeling approaches
-                                        will significantly contribute to the rigor and reproducibility of future
-                                        research in this field.</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Spec 8 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-regular fa-clock" title="Time Encoding"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GC8: Easy Access of Information </b></span>
+                        <p>n line with general best
+                            practices for dataset creation, it is highly advisable to utilize es-
+                            tablished dataset labeling frameworks, such as Dataset Nutrition
+                            Labels [9], Data Cards [20], or Datasheets for Datasets [7]. These
+                            frameworks provide structured and standardized ways to present
+                            critical information about datasets, promoting transparency and ease
+                            of use. By incorporating these labeling frameworks, dataset creators
+                            can ensure that users are well-informed about the nature and char-
+                            acteristics of the data. These frameworks can easily be augmented
+                            with the aforementioned specific information relevant to XR user
+                            motion studies. This practice not only allows researchers to quickly
+                            understand the datasets without spending time and resources for
+                            tedious and error prone analyses, but also fosters a culture of clarity
+                            and accountability in data sharing within the kinematic research
+                            community. Implementing such comprehensive labeling approaches
+                            will significantly contribute to the rigor and reproducibility of future
+                            research in this field.</p>
+                    </div>
+                </div>
+            </div>
 
-                        <!-- Right Column -->
-                        <div class="col-md-5 me-5">
-                            <h3 class="h-auto text-center mb-5">Guidelines For Authors and Reviewers </h3>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="row">
+                    <h3 class="text-center">For Authors and Reviewers</h3>
+                    <hr class="border-2 border-dark opacity-100">
+                </div>
+                <!-- Spec 1 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-folder-tree"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4" title="Structure"><b>GAR1: Review and
+                                Exploration</b></span>
+                        <p>For researchers engaging
+                            with XR user motion studies, a thorough understanding and explo-
+                            ration of key dataset specifications are imperative. These specifi-
+                            cations, as outlined in previous sections, are crucial for accurate
+                            data interpretation and experimental reproducibility. If a dataset’s
+                            documentation lacks these details, researchers should make efforts to
+                            acquire this information directly from the dataset creators or conduct
+                            their own analysis to determine these specifics. Furthermore, any
+                            such efforts and findings must be transparently disclosed in their
+                            publications.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 1 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-folder-tree"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4" title="Structure"><b>GAR1: Review and
-                                            Exploration</b></span>
-                                    <p>For researchers engaging
-                                        with XR user motion studies, a thorough understanding and explo-
-                                        ration of key dataset specifications are imperative. These specifi-
-                                        cations, as outlined in previous sections, are crucial for accurate
-                                        data interpretation and experimental reproducibility. If a dataset’s
-                                        documentation lacks these details, researchers should make efforts to
-                                        acquire this information directly from the dataset creators or conduct
-                                        their own analysis to determine these specifics. Furthermore, any
-                                        such efforts and findings must be transparently disclosed in their
-                                        publications.</p>
-                                </div>
-                            </div>
+                <!-- Spec 3 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2">
+                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GAR3: Alignment</b></span>
+                        <p>In studies utilizing multiple datasets, it is
+                            essential to disclose the key differences between them and the mea-
+                            sures taken to align each dataset. This includes aligning coordinate
+                            systems, normalizing units of measurement, standardizing rotation
+                            representations and frame timing. Researchers must clearly outline
+                            how they harmonized disparate datasets to ensure consistent and
+                            accurate analysis.</p>
+                    </div>
+                </div>
 
-                            <!-- Spec 2 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-file-csv" title="File Format"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GAR2: Conversion.</b></span>
-                                    <p>Researchers must document any conver-
-                                        sions applied to the motion data. Detailed documentation of these
-                                        conversions is essential for clarity and integrity of the research. It
-                                        en-
-                                        sures that each step of data handling is accurately conveyed and that
-                                        the data is not inadvertently distorted during the process. This trans-
-                                        parency is critical for other researchers who may wish to replicate
-                                        or build upon the work</p>
-                                </div>
-                            </div>
-
-                            <!-- Spec 3 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-primary fs-5 p-2">
-                                        <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GAR3: Alignment</b></span>
-                                    <p>In studies utilizing multiple datasets, it is
-                                        essential to disclose the key differences between them and the mea-
-                                        sures taken to align each dataset. This includes aligning coordinate
-                                        systems, normalizing units of measurement, standardizing rotation
-                                        representations and frame timing. Researchers must clearly outline
-                                        how they harmonized disparate datasets to ensure consistent and
-                                        accurate analysis.</p>
-                                </div>
-                            </div>
-
-                            <!-- Spec 4 -->
-                            <div class="row mb-3">
-                                <div class="col-auto">
-                                    <span class="badge bg-primary fs-5 p-2">
-                                        <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GAR4: Critical Analysis of Results</b></span>
-                                    <p>Authors must critically
-                                        analyze and potentially discuss how the specifications of the datasets
-                                        could have influenced their results. This examination should con-
-                                        sider whether the results might be skewed — either overly optimistic,
-                                        such as when machine learning models overfit to dataset-specific
-                                        signals, or overly pessimistic, due to erroneous preprocessing or
-                                        misinterpretation of the data. Such a critical evaluation helps in con-
-                                        textualizing the findings and provides a more nuanced understanding
-                                        of the study’s implications and limitations.</p>
-                                </div>
-                            </div>
+                <!-- Spec 4 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2">
+                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GAR4: Critical Analysis of Results</b></span>
+                        <p>Authors must critically
+                            analyze and potentially discuss how the specifications of the datasets
+                            could have influenced their results. This examination should con-
+                            sider whether the results might be skewed — either overly optimistic,
+                            such as when machine learning models overfit to dataset-specific
+                            signals, or overly pessimistic, due to erroneous preprocessing or
+                            misinterpretation of the data. Such a critical evaluation helps in con-
+                            textualizing the findings and provides a more nuanced understanding
+                            of the study’s implications and limitations.</p>
+                    </div>
+                </div>
 
 
-                            <!-- Spec 5 -->
-                            <div class="row">
-                                <div class="col-auto">
-                                    <span class="badge bg-secondary fs-5 p-2">
-                                        <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
-                                    </span>
-                                </div>
-                                <div class="col">
-                                    <span class="fw-light fs-4"><b>GAR5: Publish Codebase</b></span>
-                                    <p>Publishing the codebase is a funda-
-                                        mental requirement. This includes code for data import, alignment,
-                                        preprocessing, and analysis. Making the codebase publicly avail-
-                                        able allows for independent verification of the methodology and
-                                        ensures that data handling has been executed correctly. It fosters
-                                        transparency, reproducibility, and collaborative advancement in the
-                                        field. Without access to code, it is impossible for reviewers and other
-                                        researchers to validate, replicate, or extend the findings, thereby im-
-                                        peding scientific progress in kinematic research.</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Spec 5 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2">
+                            <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
+                        </span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>GAR5: Publish Codebase</b></span>
+                        <p>Publishing the codebase is a funda-
+                            mental requirement. This includes code for data import, alignment,
+                            preprocessing, and analysis. Making the codebase publicly avail-
+                            able allows for independent verification of the methodology and
+                            ensures that data handling has been executed correctly. It fosters
+                            transparency, reproducibility, and collaborative advancement in the
+                            field. Without access to code, it is impossible for reviewers and other
+                            researchers to validate, replicate, or extend the findings, thereby im-
+                            peding scientific progress in kinematic research.</p>
                     </div>
                 </div>
             </div>
