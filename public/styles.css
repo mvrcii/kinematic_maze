@@ -100,20 +100,11 @@ table.specifications tr:last-child {
 
 .beatsaber-player {
     width: 100%;
-    height: 400px;
 }
 
 .beatsaber-player #playerInfoOverlay {
     display: None
 }
-
-.card {
-    border: 1px solid #cbcbcb;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    flex-grow: 1;
-}
-
 .contributions sup {
     font-size: 1.25em;
     top: 0em;
@@ -127,22 +118,6 @@ table.specifications tr:last-child {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
 }
-
-
-.specs .motion-player {
-    /* border-radius: 2px;
-    border: 2px solid #333; */
-}
-
-/* .motion-player-wrapper {
-    margin:2.5rem auto;
-}
-
-.motion-player-wrapper .motion-player {
-    margin-left: auto;
-    margin-right: auto;
-} */
-
 
 
 /* Test Felix */
@@ -198,9 +173,3 @@ code {
     white-space: nowrap;
     margin-right: 5px;
 }
-/* 
-h1 {
-    border-bottom: 3px solid #333;
-    padding-bottom:1rem;
-    display: inline-block;
-} */

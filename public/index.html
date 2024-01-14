@@ -15,10 +15,9 @@
     <!-- Title + Authors -->
     <div class="headline">
         <div class="row justify-content-md-center">
-            <div class="col-md-12 my-2">
-                <h1 class="display-4 text-center fw-normal">Navigating the Kinematic Maze: <br>A Comprehensive Guide to
-                    XR
-                    Motion Dataset Standards</h1>
+            <div class="col-md-12 mt-5 mb-3">
+                <h1 class="display-4 text-center">Navigating the Kinematic Maze: <br>A Comprehensive Guide to
+                    XR Motion Dataset Standards</h1>
                 <div class="authors d-flex fs-5 justify-content-md-center mb-5">
                     <div class="me-4 contributions"><span>Christian Rack<sup>*</sup></span></div>
                     <div class="me-4">Vivek Nair</div>
@@ -33,81 +32,52 @@
 
 
     <div class="container">
-        <div class="head-examples row justify-content-md-center my-5">
-            <div class="col-md-6">
-                <video id="beatsaber-player" class="beatsaber-player" controls autoplay muted>
-                    <source src="samples/boxrr_beatsaber23/beatsaber_replay.mp4" type="video/mp4">
-                    Ihr Browser unterstützt das Video-Tag nicht.
-                </video>
-            </div>
-            <div class="col-md-5">
-                <div class="hide-pbar preview motion-player" data-source-path="samples/boxrr_beatsaber23/fixed.csv"
-                    data-progress="true">
-                </div>
-            </div>
-        </div>
-
-        <div class="row my-5">
-            <div class="col-md-4">
-                <h4>Jump to</i></h4>
-                <ol>
-                    <li><a href="#">Critical Motion Specifications</a></li>
-                    <li><a href="#">Catalogue of XR Motion Datasets</a></li>
-                    <li><a href="#">Guidelines for Dataset Creators</a></li>
-                    <li><a href="#">Guidelines for Dataset Users and Reviewers</a></li>
-                </ol>
-            </div>
-            <div class="col-md-4">
-                <h4>Resources</h4>
-                <a href="#" class="btn btn-outline-secondary" role="button">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    Paper
-                </a><a href="#" class="btn btn-outline-secondary" role="button">
-                    <i class="fa-brands fa-github"></i>
-                    Code
-                </a><a href="#" class="btn btn-outline-secondary" role="button">
-                    <i class="fa-solid fa-download"></i>
-                    Datasets
-                </a>
-            </div>
-            <div class="col-md-4">
-                <h4>XR Motion Dataset Catalogue</h4>
-                <a href="" class="btn btn-primary">🤗 Access Catalouge on Hugging
-                    Face</a>
-            </div>
-        </div>
-
         <div class="row justify-content-md-center">
-            <div class="col-md-8 my-5">
-                <h1 class="text-center mb-4">Abstract</h1>
-                <p class="lead">
-                    We address the critical importance of standards and documentation in kinematic
-                    research,
-                    particularly within Extended Reality (XR) environments.
-                    We focus on the pivotal role of motion data, emphasizing the challenges posed by the current lack of
-                    standardized practices in XR user motion datasets.
-                    Our work involves a detailed analysis of existing datasets, identifying gaps in documentation and
-                    essential specifications such as coordinate systems, rotation representations, and units of
-                    measurement.
-                    We highlight how these gaps can lead to misinterpretations and irreproducible results.
-                    Based on our findings, we propose a set of guidelines and best practices for creating and
-                    documenting motion datasets, aiming to improve their quality, usability, and reproducibility.
-                    The paper also introduces a web-based tool for visual inspection of motion recordings, further
-                    aiding in dataset
-                    evaluation and standardization.
-                    Our contributions seek to enhance dataset integrity and reliability in kinematic research, paving
-                    the way for more
-                    consistent and scientifically robust studies in the field.
-                </p>
+            <div class="col-md-4">
+                <figure>
+                    <video id="beatsaber-player" class="beatsaber-player" controls autoplay muted>
+                        <source src="samples/boxrr_beatsaber23/beatsaber_replay.mp4" type="video/mp4">
+                        Ihr Browser unterstützt das Video-Tag nicht.
+                    </video>
+                    <figcaption>A user playing the VR game Beatsaber.</figcaption>
+                </figure>
+            </div>
+            <div class="col-md-4">
+                <figure>
+                    <div class="hide-pbar preview motion-player" data-source-path="samples/boxrr_beatsaber23/fixed.csv"
+                        data-progress="true">
+                    </div>
+                    <figcaption>The same recording, but the coordinate system has been imported with wrong
+                        specifications into our motion visualization tool.</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row justify-content-md-center lead mt-2">
+            <div class="col-md-8">
+                <p>The above example shows why working with user motion data is hard: kinematic
+                    researchers need to know a lot of details about XR motion data before they can actually work with
+                    them. In our paper and with this page we explain this issue and why it is dangerous for research,
+                    provides a catalogue of already prepared XR motion datasets and provides guidelines and best
+                    practices for future work.</p>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mb-5">
+            <div class="col-md-8">
+                <hr class="my-4">
+                <p class="lead">For all details, download <a href="#"><i class="fa-solid fa-file-pdf"></i> our
+                        paper</a>. If you want
+                    to work or play around with any of these motion datasets, check out <a href="#"><i
+                            class="fa-solid fa-database"></i> our catalogue</a>. For live demos and guidelines for
+                    dataset creators, researchers or reviewers,
+                    scroll down!</p>
             </div>
         </div>
 
-        <hr class="mt-5 mb-2">
 
         <!-- Specifications -->
         <div class="row justify-content-md-center mt-5">
             <div class="col-md-8">
-                <h1 class="text-center mb-4 border-bottom-3">Critical Motion Specifications</h1>
+                <h1 class="text-center mt-5 mb-5 border-bottom-3">Critical Motion Specifications</h1>
             </div>
         </div>
 
@@ -432,8 +402,8 @@
                             <div class="row row-cols-md-2">
                                 <div class="col d-flex align-items-start">
                                     <div>
-                                        <p class="text-decoration-underline mb-0">XYZ</p>
-                                        <p class="small">Right, Up, Backward</p>
+                                        <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                        <p class="small">X: Right, Y: Up, Z: Backward</p>
                                     </div>
                                 </div>
                                 <div class="col d-flex align-items-start">
