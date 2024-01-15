@@ -228,7 +228,14 @@ export class MotionVisualization {
                         const initialRow = data[0];
 
                         const yOffset = 2;
-                        const scaling = 50;
+                        let scaling = 50;
+
+                        // Fix normalization for boxrr tiltbrush if head positions are not given
+                        if (!(initialRow.head_pos_x && initialRow.head_pos_y && initialRow.head_pos_z)) {
+                            initialRow.head_pos_x = initialRow.right_hand_pos_x
+                            initialRow.head_pos_y = initialRow.right_hand_pos_y
+                            initialRow.head_pos_z = initialRow.right_hand_pos_z
+                        }
 
                         let row;
                         for (let i = 0; i < numRows; i++) {
@@ -245,6 +252,12 @@ export class MotionVisualization {
                             rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / scaling;
                             rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
                             rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / scaling;
+
+                            if (this.csvPath.includes("boxrr")) {
+                                console.log(this.csvPath + "\n")
+                                console.log(row.right_hand_pos_y, initialRow.head_pos_y)
+                                console.log(Number(row.right_hand_pos_y - initialRow.head_pos_y))
+                            }
 
                             HeadRotations[i * 4 + 0] = Number(row.head_rot_x);
                             HeadRotations[i * 4 + 1] = Number(row.head_rot_y);
