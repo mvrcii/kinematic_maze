@@ -1074,6 +1074,7 @@
 
         <!-- Guideline Section Content -->
         <div class="row justify-content-center">
+            <!-- GC -->
             <div class="col-md-6">
                 <div class="row justify-content-center">
                     <h3 class="h-auto text-center">For Motion Dataset Creators</h3>
@@ -1085,7 +1086,7 @@
                         <span class="badge bg-primary fs-5 p-2 fw-semibold">GC1</span>
                     </div>
                     <div class="col-md-9">
-                        <span class="fw-light fs-4" title="Structure"><b>Use Accessible Standards and Report Critical
+                        <span class="fw-light fs-4"><b>Use Accessible Standards and Report Critical
                             Requirements</b></span>
                         <p>
                             First and foremost, it is imperative that future datasets
@@ -1288,26 +1289,24 @@
                 </div>
             </div>
 
-            <!-- Right Column -->
+            <!-- GAR -->
             <div class="col-md-6">
-                <div class="row">
+                <div class="row justify-content-center">
                     <h3 class="text-center">For Authors and Reviewers</h3>
-                    <hr class="border-2 border-dark opacity-100">
+                    <hr class="border-2 border-dark opacity-100 w-75">
                 </div>
                 <!-- Spec 1 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-folder-tree"></i>
-                        </span>
+                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR1</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4" title="Structure"><b>GAR1: Review and
+                        <span class="fw-light fs-4"><b>Review and
                                 Exploration</b></span>
                         <p>For researchers engaging
-                            with XR user motion studies, a thorough understanding and explo-
-                            ration of key dataset specifications are imperative. These specifi-
-                            cations, as outlined in previous sections, are crucial for accurate
+                            with XR user motion studies, a thorough understanding and exploration of key dataset
+                            specifications are imperative. These specifications, as outlined in previous sections, are
+                            crucial for accurate
                             data interpretation and experimental reproducibility. If a dataset’s
                             documentation lacks these details, researchers should make efforts to
                             acquire this information directly from the dataset creators or conduct
@@ -1317,18 +1316,33 @@
                     </div>
                 </div>
 
+                <!-- Spec 2 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR2</span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>Conversion</b></span>
+                        <p>Researchers must document any conversions applied to the motion data.
+                            Detailed documentation of these
+                            conversions is essential for clarity and integrity of the research. It ensures that each
+                            step of data handling is accurately conveyed and that
+                            the data is not inadvertently distorted during the process. This transparency is critical
+                            for other researchers who may wish to replicate
+                            or build upon the work.</p>
+                    </div>
+                </div>
+
                 <!-- Spec 3 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-primary fs-5 p-2">
-                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                        </span>
+                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR3</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GAR3: Alignment</b></span>
+                        <span class="fw-light fs-4"><b>Alignment</b></span>
                         <p>In studies utilizing multiple datasets, it is
-                            essential to disclose the key differences between them and the mea-
-                            sures taken to align each dataset. This includes aligning coordinate
+                            essential to disclose the key differences between them and the measures taken
+                            to align each dataset. This includes aligning coordinate
                             systems, normalizing units of measurement, standardizing rotation
                             representations and frame timing. Researchers must clearly outline
                             how they harmonized disparate datasets to ensure consistent and
@@ -1339,20 +1353,18 @@
                 <!-- Spec 4 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-primary fs-5 p-2">
-                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                        </span>
+                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR4</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GAR4: Critical Analysis of Results</b></span>
+                        <span class="fw-light fs-4"><b>Critical Analysis of Results</b></span>
                         <p>Authors must critically
                             analyze and potentially discuss how the specifications of the datasets
-                            could have influenced their results. This examination should con-
-                            sider whether the results might be skewed — either overly optimistic,
+                            could have influenced their results. This examination should consider whether
+                            the results might be skewed — either overly optimistic,
                             such as when machine learning models overfit to dataset-specific
                             signals, or overly pessimistic, due to erroneous preprocessing or
-                            misinterpretation of the data. Such a critical evaluation helps in con-
-                            textualizing the findings and provides a more nuanced understanding
+                            misinterpretation of the data. Such a critical evaluation helps in contextualizing the
+                            findings and provides a more nuanced understanding
                             of the study’s implications and limitations.</p>
                     </div>
                 </div>
@@ -1361,21 +1373,17 @@
                 <!-- Spec 5 -->
                 <div class="row">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
-                        </span>
+                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR5</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GAR5: Publish Codebase</b></span>
-                        <p>Publishing the codebase is a funda-
-                            mental requirement. This includes code for data import, alignment,
-                            preprocessing, and analysis. Making the codebase publicly avail-
-                            able allows for independent verification of the methodology and
-                            ensures that data handling has been executed correctly. It fosters
-                            transparency, reproducibility, and collaborative advancement in the
-                            field. Without access to code, it is impossible for reviewers and other
-                            researchers to validate, replicate, or extend the findings, thereby im-
-                            peding scientific progress in kinematic research.</p>
+                        <span class="fw-light fs-4"><b>Publication of Codebase</b></span>
+                        <p>Publishing the codebase is a
+                            fundamental requirement. This includes code for data import, alignment, preprocessing, and analysis. Making the codebase publicly
+                            available allows for independent verification of the methodology
+                            and ensures that data handling has been executed correctly. It fosters transparency, reproducibility, and collaborative advancement
+                            in the field. Without access to code, it is impossible for reviewers
+                            and other researchers to validate, replicate, or extend the findings,
+                            thereby impeding scientific progress in kinematic research.</p>
                     </div>
                 </div>
             </div>
