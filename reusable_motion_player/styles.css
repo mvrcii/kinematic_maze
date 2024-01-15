@@ -1,0 +1,11 @@
+
+:root {
+    --jumbotron-padding-y: 3rem;
+}
+
+.motion-player {
+    max-width: 80%;
+    align-items: center;
+    height: 80%;
+}
+
