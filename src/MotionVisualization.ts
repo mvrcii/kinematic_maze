@@ -164,14 +164,6 @@ export class MotionVisualization {
         let offsetX = radius * Math.sin(theta);
         let thirdPersonOffsetY = 5;
         let thirdPersonOffsetZ = -3;
-        
-        if (this.preview) {
-            radius = 3;
-            theta = Math.PI / 4; // 45 degrees in radians
-            offsetX = radius * Math.sin(theta);
-            thirdPersonOffsetY = 3;
-            thirdPersonOffsetZ = 5;
-        }
 
         this.camera.position.set(offsetX, thirdPersonOffsetY, thirdPersonOffsetZ);
         this.cameraControls.minPolarAngle = 0.5 * Math.PI / 3; // How low the camera can go
@@ -252,12 +244,6 @@ export class MotionVisualization {
                             rightHandPositions[i * 3 + 0] = Number(row.right_hand_pos_x - initialRow.head_pos_x) / scaling;
                             rightHandPositions[i * 3 + 1] = Number(row.right_hand_pos_y - initialRow.head_pos_y) / scaling + yOffset;
                             rightHandPositions[i * 3 + 2] = Number(row.right_hand_pos_z - initialRow.head_pos_z) / scaling;
-
-                            if (this.csvPath.includes("boxrr")) {
-                                console.log(this.csvPath + "\n")
-                                console.log(row.right_hand_pos_y, initialRow.head_pos_y)
-                                console.log(Number(row.right_hand_pos_y - initialRow.head_pos_y))
-                            }
 
                             HeadRotations[i * 4 + 0] = Number(row.head_rot_x);
                             HeadRotations[i * 4 + 1] = Number(row.head_rot_y);
