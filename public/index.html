@@ -401,46 +401,53 @@
     <!-- Aligned Section Visuals -->
     <div class="row aligned-1 justify-content-md-center">
         <!-- LiebersLabStudy21 / Liebers_1 -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/liebers_labstudy21_archery/fixed.csv"
                      data-progress="true"></div>
-
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>LiebersLabStudy21</h4>
                     <p>This dataset focuses on users performing specific bowling and
                         archery motions. The latter is visualized here.</p>
-
                 </div>
                 <hr class="my-0">
-                <div class="card-body ">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3 specs">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Euler (extrinsic, degrees, sequence is XYZ)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">relative (ms)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">CSV</p>
@@ -448,10 +455,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
                            class="btn btn-sm btn-outline-primary">
@@ -473,11 +477,11 @@
         </div>
 
         <!-- LiebersHand22 / Liebers_2 -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/liebers_hand22/fixed_0m5s_to_0m25s.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>LiebersHand22</h4>
                     <p>This dataset focuses on users performing interactions with
                         various
@@ -485,36 +489,45 @@
                         elements, such as buttons and sliders,
                         in AR and VR environments for motion-based user identification.</p>
                 </div>
-
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
-                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternion</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and
+                                    Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">relative (s and ms)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">TSV</p>
@@ -522,10 +535,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
                            class="btn btn-sm btn-outline-primary">
@@ -543,50 +553,59 @@
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <!-- RMillerBall22 -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>RMillerBall22</h4>
-                    <p>This dataset focuses on capturing the motions of users performing ball throwing actions in
+                    <p>This dataset focuses on capturing the motions of users performing ball throwing
+                        actions in
                         VR.</p>
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">fixed to 45 fps</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">Custom</p>
@@ -594,10 +613,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
                            class="btn btn-sm btn-outline-primary">
@@ -619,45 +635,55 @@
         </div>
 
         <!-- WhoIsAlyx -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/who_is_alyx/fixed_cutout.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>Who-Is-Alyx</h4>
                     <p>This dataset focuses on capturing the motions of users playing
-                        the game <a href="https://www.half-life.com/de/alyx">'Half-Life: Alyx'</a> in VR.</p>
+                        the game <a href="https://www.half-life.com/de/alyx">'Half-Life: Alyx'</a> in VR.
+                    </p>
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Forward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Centimeter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">abs. (ISO 8601)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">CSV</p>
@@ -665,10 +691,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.frontiersin.org/articles/10.3389/frvir.2023.1272234/full"
                            class="btn btn-sm btn-outline-primary">
@@ -690,11 +713,11 @@
         </div>
 
         <!-- BOXRR23_Beatsaber -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5  justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/boxrr_beatsaber23/fixed.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>BOXRR Beatsaber</h4>
                     <p>This dataset focuses on users playing the game
                         <a href="https://beatsaber.com/">Beatsaber</a> in VR and aims to provide a
@@ -705,34 +728,43 @@
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">relative (s)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">XROR</p>
@@ -740,10 +772,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://arxiv.org/pdf/2310.00430.pdf"
                            class="btn btn-sm btn-outline-primary">
@@ -765,10 +794,12 @@
         </div>
 
         <!-- BOXRR23_Tiltbrush -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/boxrr_tiltbrush23/fixed_0m0s_to_0m30s.csv" data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+        <div class="col-md-4">
+            <div class="card mb-5  justify-content-start align-items-stretch">
+                <div class="motion-player"
+                     data-source-path="samples/boxrr_tiltbrush23/fixed_0m0s_to_0m30s.csv"
+                     data-progress="true"></div>
+                <div class="card-body">
                     <h4>BOXRR Tiltbrush</h4>
                     <p>This dataset focuses on users playing the game
                         <a href="https://www.tiltbrush.com/">Tiltbrush</a> in VR and aims to provide a
@@ -779,34 +810,43 @@
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">TODO</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">TODO</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">relative (ms)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">XROR</p>
@@ -814,10 +854,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://arxiv.org/pdf/2310.00430.pdf"
                            class="btn btn-sm btn-outline-primary">
@@ -829,7 +866,7 @@
                             <i class="fa-solid fa-database"></i>
                             Original Dataset
                         </a>
-                        <a href="#" class="btn btn-sm btn-outline-primary">
+                        <a href="TODO" class="btn btn-sm btn-outline-primary">
                             🤗
                             Aligned Dataset
                         </a>
@@ -839,11 +876,12 @@
         </div>
 
         <!-- LiebersBeatSaber23 / Liebers_3 -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/liebers_beatsaber23/fixed_removed_anomalies.csv"
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
+                <div class="motion-player"
+                     data-source-path="samples/liebers_beatsaber23/fixed_removed_anomalies.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>LiebersBeatSaber23</h4>
                     <p>This dataset focuses on users playing the game
                         <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
@@ -852,34 +890,44 @@
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
-                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternions</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and
+                                    Quaternions</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">90 Hz (presumably fixed)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">CSV</p>
@@ -887,10 +935,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/liebers2023vrst.pdf"
                            class="btn btn-sm btn-outline-primary">
@@ -902,11 +947,6 @@
                             <i class="fa-solid fa-database"></i>
                             Original Dataset
                         </a>
-                        <a href="https://research.hcigroup.de/Code_for_Exploring_the_Stability_of_Behavioral_Biometrics_in_Virtual_Reality.zip"
-                           class="btn btn-sm btn-outline-primary">
-                            <i class="fa-solid fa-database"></i>
-                            Code
-                        </a>
                         <a href="#" class="btn btn-sm btn-outline-primary">
                             🤗
                             Aligned Dataset
@@ -917,11 +957,12 @@
         </div>
 
         <!-- MooreCrossDomain23 dataset -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
-                <div class="motion-player" data-source-path="samples/moore_cross_domain23/fixed_1m5s_to_1m20s.csv"
+        <div class="col-md-4">
+            <div class="card mb-5 justify-content-start align-items-stretch">
+                <div class="motion-player"
+                     data-source-path="samples/moore_cross_domain23/fixed_1m5s_to_1m20s.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>MooreCrossDomain23</h4>
                     <p>This dataset focuses on users performing assembly tasks in VR
                         and is also intended for user identification research.
@@ -929,35 +970,45 @@
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Backward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
-                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ), Rotation Matrix and
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ), Rotation
+                                    Matrix and
                                     Quaternion</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">relative (s)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">CSV</p>
@@ -965,10 +1016,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
                            class="btn btn-sm btn-outline-primary">
@@ -991,11 +1039,11 @@
         </div>
 
         <!-- VRNet -->
-        <div class="col-md-4 d-flex align-items-stretch">
-            <div class="card mb-5">
+        <div class="col-md-4">
+            <div class="card mb-5  justify-content-start align-items-stretch">
                 <div class="motion-player" data-source-path="samples/vr_net/fixed_6m40s_to_7m0s.csv"
                      data-progress="true"></div>
-                <div class="card-body d-flex flex-column justify-content-between">
+                <div class="card-body">
                     <h4>VR.net</h4>
                     <p>This dataset focuses on users playing various VR games and was
                         designed for
@@ -1004,34 +1052,43 @@
 
                 </div>
                 <hr class="my-0">
-                <div class="card-body">
+                <div class="card-body specs">
                     <h5>Specifications</h5>
-                    <div class="row row-cols-md-3">
-                        <div class="col d-flex align-items-start">
+
+                    <div class="row">
+                        <!-- Coordinate System spans over two columns -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Coordinate System</p>
                                 <p class="small">X: Right, Y: Up, Z: Forward</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Rotations -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Rotations</p>
                                 <p class="small">Transformation Matrix</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                    </div>
+                    <!-- Second Row -->
+                    <div class="row">
+                        <!-- Units -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Units</p>
                                 <p class="small">Meter</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Time -->
+                        <div class="col-md-3 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Time</p>
                                 <p class="small">absolute (unix)</p>
                             </div>
                         </div>
-                        <div class="col d-flex align-items-start">
+                        <!-- Format -->
+                        <div class="col-md-6 d-flex align-items-start">
                             <div>
                                 <p class="text-decoration-underline mb-0">Format</p>
                                 <p class="small">CSV</p>
@@ -1039,10 +1096,7 @@
                         </div>
                     </div>
                 </div>
-
-                <hr class="my-0">
                 <div class="card-body">
-                    <b>Go to</b><br>
                     <div class="btn-group w-100">
                         <a href="https://arxiv.org/abs/2306.03381"
                            class="btn btn-sm btn-outline-primary">
@@ -1091,13 +1145,15 @@
                             First and foremost, it is imperative that future datasets
                             comprehensively report all relevant specifications as described above.
                             For file formats, we recommend adopting common formats
-                            like CSV, or binary equivalents such as <a href="https://www.hdfgroup.org/solutions/hdf5/">HDF5</a>
+                            like CSV, or binary equivalents such as <a
+                                href="https://www.hdfgroup.org/solutions/hdf5/">HDF5</a>
                             or
                             <a href="https://parquet.apache.org/">Parquet</a>
                             for tabular data, or formats like JSON, YAML, or BSON (binary
                             variant of JSON). Custom formats, like the XROR format used by
                             the BOXRR-23 dataset, can also be a sensible solution for datasets
-                            with very specific characteristics and unique requirements. Regardless of the format
+                            with very specific characteristics and unique requirements. Regardless of the
+                            format
                             chosen, the dataset should be accompanied by a
                             thorough documentation of each data attribute and how it has been
                             labeled. We advocate using quaternions to represent rotations, as
@@ -1118,7 +1174,8 @@
                     <div class="col-md-9">
                         <span class="fw-light fs-4"><b>Account for Sensible File Structure</b></span>
                         <p>
-                            Motion recordings should be organized in an accessible and transparent file structure.
+                            Motion recordings should be organized in an accessible and transparent file
+                            structure.
                             Ideally, there is one file per recording and data type. Combined with
                             a clear naming scheme, this should make it straightforward to select
                             individual recordings without having to inconveniently extract them
@@ -1138,7 +1195,8 @@
                                 Access</b></span>
                         <p>
                             Other researchers should be able to easily, and permanently access and
-                            download published datasets. Several of the analyzed datasets require to download
+                            download published datasets. Several of the analyzed datasets require to
+                            download
                             the full data, which is especially cumbersome if
                             the total size is prohibitively large. Often, only certain data types or
                             recordings of a few users are needed, so dataset creators should look
@@ -1192,8 +1250,10 @@
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Add Contextual Information</b></span>
-                        <p>Beyond the discussed fundamental specifications, there is additional contextual information
-                            that can greatly benefit researchers. For example, providing background information
+                        <p>Beyond the discussed fundamental specifications, there is additional contextual
+                            information
+                            that can greatly benefit researchers. For example, providing background
+                            information
                             about the used data source, such as whether it
                             was collected from Unity, Steam OpenVR, or other platforms, can
                             give important context information about the dataset’s characteristics.
@@ -1276,7 +1336,8 @@
                             shown, motion data can inadvertently reveal personal information,
                             making it crucial to implement protective measures. Even if users are fine
                             with being openly recognized within the
-                            dataset collection study, they should be aware that they could be re-identified in
+                            dataset collection study, they should be aware that they could be re-identified
+                            in
                             different scenarios where they want to stay anonymous,
                             just based on their motion data. Hence, researchers must account
                             for informed consent, pseudonymize data as soon as possible, and
@@ -1297,14 +1358,16 @@
                 <!-- Spec 1 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR1</span>
+                        <span class="badge bg-info fs-5 p-2 fw-semibold">GAR1</span>
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Review and
                                 Exploration</b></span>
                         <p>For researchers engaging
-                            with XR user motion studies, a thorough understanding and exploration of key dataset
-                            specifications are imperative. These specifications, as outlined in previous sections, are
+                            with XR user motion studies, a thorough understanding and exploration of key
+                            dataset
+                            specifications are imperative. These specifications, as outlined in previous
+                            sections, are
                             crucial for accurate
                             data interpretation and experimental reproducibility. If a dataset’s
                             documentation lacks these details, researchers should make efforts to
@@ -1318,15 +1381,17 @@
                 <!-- Spec 2 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR2</span>
+                        <span class="badge bg-info fs-5 p-2 fw-semibold">GAR2</span>
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Conversion</b></span>
                         <p>Researchers must document any conversions applied to the motion data.
                             Detailed documentation of these
-                            conversions is essential for clarity and integrity of the research. It ensures that each
+                            conversions is essential for clarity and integrity of the research. It ensures
+                            that each
                             step of data handling is accurately conveyed and that
-                            the data is not inadvertently distorted during the process. This transparency is critical
+                            the data is not inadvertently distorted during the process. This transparency is
+                            critical
                             for other researchers who may wish to replicate
                             or build upon the work.</p>
                     </div>
@@ -1335,7 +1400,7 @@
                 <!-- Spec 3 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR3</span>
+                        <span class="badge bg-info fs-5 p-2 fw-semibold">GAR3</span>
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Alignment</b></span>
@@ -1352,7 +1417,7 @@
                 <!-- Spec 4 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR4</span>
+                        <span class="badge bg-info fs-5 p-2 fw-semibold">GAR4</span>
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Critical Analysis of Results</b></span>
@@ -1362,7 +1427,8 @@
                             the results might be skewed — either overly optimistic,
                             such as when machine learning models overfit to dataset-specific
                             signals, or overly pessimistic, due to erroneous preprocessing or
-                            misinterpretation of the data. Such a critical evaluation helps in contextualizing the
+                            misinterpretation of the data. Such a critical evaluation helps in
+                            contextualizing the
                             findings and provides a more nuanced understanding
                             of the study’s implications and limitations.</p>
                     </div>
@@ -1372,15 +1438,17 @@
                 <!-- Spec 5 -->
                 <div class="row">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2 fw-semibold">GAR5</span>
+                        <span class="badge bg-info fs-5 p-2 fw-semibold">GAR5</span>
                     </div>
                     <div class="col">
                         <span class="fw-light fs-4"><b>Publication of Codebase</b></span>
                         <p>Publishing the codebase is a
-                            fundamental requirement. This includes code for data import, alignment, preprocessing, and
+                            fundamental requirement. This includes code for data import, alignment,
+                            preprocessing, and
                             analysis. Making the codebase publicly
                             available allows for independent verification of the methodology
-                            and ensures that data handling has been executed correctly. It fosters transparency,
+                            and ensures that data handling has been executed correctly. It fosters
+                            transparency,
                             reproducibility, and collaborative advancement
                             in the field. Without access to code, it is impossible for reviewers
                             and other researchers to validate, replicate, or extend the findings,

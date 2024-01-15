@@ -120,6 +120,15 @@ table.specifications tr:last-child {
     width: 100%;
 }
 
+.card-body h4 + p {
+    height: 96px;
+    max-height: 96px;
+}
+
+.card .specs {
+    height: 240px;
+    max-height: 240px;
+}
 
 /* Test Felix */
 
