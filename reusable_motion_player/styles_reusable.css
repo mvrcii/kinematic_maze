@@ -1,0 +1,19 @@
+.myClass {
+    height: 500px !important;
+    width: 700px !important;
+}
+
+.motion-player .progress {
+    border-radius: 0;
+    height: 0.6rem;
+}
+
+.motion-player:not(.readonly) .progress {
+    cursor: pointer;
+}
+
+.motion-player .canvas-container {
+    height: 500px ;
+    width: 700px ;
+}
+

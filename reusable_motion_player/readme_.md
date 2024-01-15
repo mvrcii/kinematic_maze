@@ -1,6 +1,33 @@
-# Prerequisites for visualizing in the Motion Player
-## File-Format
-- Ensure that your file is an csv. It needs to use the following comun-names to be read correcly: <br> - delta_time_ms,head_pos_x,head_pos_y,head_pos_z,head_rot_x,head_rot_y,head_rot_z,head_rot_w,left_hand_pos_x,left_hand_pos_y,left_hand_pos_z,left_hand_rot_x,left_hand_rot_y,left_hand_rot_z,left_hand_rot_w,right_hand_pos_x,right_hand_pos_y,right_hand_pos_z,right_hand_rot_x,right_hand_rot_y,right_hand_rot_z,right_hand_rot_w
+# Prerequisites for Visualizing in the Motion Player
+
+## File Format
+- Ensure that your file is in CSV format and follows these column names to be read correctly:
+  - `delta_time_ms`
+  - `head_pos_x`
+  - `head_pos_y`
+  - `head_pos_z`
+  - `head_rot_x`
+  - `head_rot_y`
+  - `head_rot_z`
+  - `head_rot_w`
+  - `left_hand_pos_x`
+  - `left_hand_pos_y`
+  - `left_hand_pos_z`
+  - `left_hand_rot_x`
+  - `left_hand_rot_y`
+  - `left_hand_rot_z`
+  - `left_hand_rot_w`
+  - `right_hand_pos_x`
+  - `right_hand_pos_y`
+  - `right_hand_pos_z`
+  - `right_hand_rot_x`
+  - `right_hand_rot_y`
+  - `right_hand_rot_z`
+  - `right_hand_rot_w`
+- You also need to make sure that the representation of the rotation is in quaternions. 
+
+## Index.html
+- To reference your file, you need to copy the file path into the `index.html` file.
 
 # Starting a Local Server with Python
 
