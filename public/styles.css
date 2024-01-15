@@ -107,6 +107,7 @@ table.specifications tr:last-child {
 .beatsaber-player #playerInfoOverlay {
     display: None
 }
+
 .contributions sup {
     font-size: 1.25em;
     top: 0em;
@@ -130,36 +131,41 @@ table.specifications tr:last-child {
     max-height: 240px;
 }
 
+.bg-info-subtle {
+    --bs-bg-opacity: 0.15;
+    background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+}
+
 /* Test Felix */
 
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-menu {
+}
+
+.dropdown-menu {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 12px 16px;
     z-index: 1;
-  }
-  
-  .dropdown-item {
+}
+
+.dropdown-item {
     padding: 5px 0;
     background-color: transparent;
     color: black;
-  }
+}
 
-  .dropdown-item span {
+.dropdown-item span {
     margin-right: 10px;
-  }
-  
-  .dropdown-item button {
+}
+
+.dropdown-item button {
     cursor: pointer;
-  }
-  
+}
+
 .copied-notification {
     position: fixed;
     bottom: 20px;
@@ -170,13 +176,13 @@ table.specifications tr:last-child {
     padding: 10px;
     border-radius: 5px;
     z-index: 1000;
-    display: none; 
+    display: none;
 }
 
 input::placeholder {
-    color: inherit; 
+    color: inherit;
     opacity: 1;
-  }
+}
 
 code {
     display: inline-block;

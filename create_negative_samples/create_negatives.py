@@ -71,7 +71,7 @@ def negative_units(df):
 
 if __name__ == '__main__':
     negative_vars = [
-        ("negative_coordinate_system", [negative_coordinate_system, transform_quat_to_euler, negative_coordinate_mapping,
+        ("negative_coordinate_system", [transform_quat_to_euler, negative_coordinate_mapping,
                                         transform_quat_to_euler, negative_rotations]),
         # ("negative_coordinate_mapping", [transform_quat_to_euler, negative_coordinate_mapping]),
         # ("negative_rotations", [transform_quat_to_euler, negative_rotations]),
@@ -80,7 +80,7 @@ if __name__ == '__main__':
         # ("custom", [negative_coordinate_system, transform_quat_to_euler, negative_coordinate_mapping,
         #             transform_quat_to_euler, negative_rotations]),
     ]
-    csv_path = "public/samples/boxrr_beatsaber23"
+    csv_path = "public/samples/liebers_labstudy21_bowling"
     fixed_csv_name = "fixed.csv"
     csv_file_path = os.path.join(csv_path, fixed_csv_name)
 
