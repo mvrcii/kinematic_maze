@@ -12,1099 +12,361 @@
 </head>
 
 <body>
-    <!-- Title + Authors -->
-    <div class="headline">
-        <div class="row justify-content-md-center">
-            <div class="col-md-12 mt-5 mb-3">
-                <h1 class="display-4 text-center">Navigating the Kinematic Maze: <br>A Comprehensive Guide to
-                    XR Motion Dataset Standards</h1>
+<!-- Title + Authors -->
+<div class="headline">
+    <div class="row justify-content-md-center">
+        <div class="col-md-12 mt-5 mb-3">
+            <h1 class="display-4 text-center">Navigating the Kinematic Maze: <br>A Comprehensive Guide to
+                XR Motion Dataset Standards</h1>
 
-                <div class="text-center text-secondary">
-                    An IEEE VR 2024 workshop paper from
-                </div>
-                <div class="authors d-flex fs-5 justify-content-md-center mb-5">
-                    <div class="me-4"><a href="https://orcid.org/0000-0002-0022-0711"
-                            class="text-body link-underline-light">Christian
-                            Rack</a></div>
-                    <div class="me-4"><a href="https://nair.me/" class="text-body link-underline-light">Vivek Nair</a>
-                    </div>
-                    <div class="me-4">Lukas Schach</div>
-                    <div class="me-4">Felix Foschum</div>
-                    <div class="me-4">Marcel Roth</div>
-                    <div class="me-4"><a href="https://orcid.org/0000-0002-9340-9600"
-                            class="text-body link-underline-light">Marc E. Latoschik</a></div>
-                </div>
+            <div class="text-center text-secondary">
+                An IEEE VR 2024 workshop paper from
             </div>
+            <div class="authors d-flex fs-5 justify-content-md-center mb-5">
+                <div class="me-4"><a href="https://orcid.org/0000-0002-0022-0711"
+                                     class="text-body link-underline-light">Christian
+                    Rack</a></div>
+                <div class="me-4"><a href="https://nair.me/" class="text-body link-underline-light">Vivek Nair</a>
+                </div>
+                <div class="me-4">Lukas Schach</div>
+                <div class="me-4">Felix Foschum</div>
+                <div class="me-4">Marcel Roth</div>
+                <div class="me-4"><a href="https://orcid.org/0000-0002-9340-9600"
+                                     class="text-body link-underline-light">Marc E. Latoschik</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <figure>
+                <video id="beatsaber-player" class="beatsaber-player" controls autoplay muted>
+                    <source src="samples/boxrr_beatsaber23/beatsaber_replay.mp4" type="video/mp4">
+                    Ihr Browser unterstützt das Video-Tag nicht.
+                </video>
+                <figcaption>A user playing the VR game Beatsaber.</figcaption>
+            </figure>
+        </div>
+        <div class="col-md-4">
+            <figure>
+                <div class="hide-pbar preview motion-player"
+                     data-source-path="samples/boxrr_beatsaber23/negative_coord_mapping_coord_system_rotations.csv"
+                     data-progress="true">
+                </div>
+                <figcaption>The same recording, but the coordinate system has been imported with wrong
+                    specifications into our motion visualization tool.
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row justify-content-md-center lead mt-2">
+        <div class="col-md-8">
+            <p>The above example shows why working with user motion data is hard: kinematic
+                researchers need to know a lot of details about XR motion data before they can actually work with
+                them. In our paper and with this page we explain this issue and why it is dangerous for research,
+                provides a catalogue of already prepared XR motion datasets and provides guidelines and best
+                practices for future work.</p>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mb-5">
+        <div class="col-md-8">
+            <hr class="my-4">
+            <p class="lead">For all details, download <a href="#"><i class="fa-solid fa-file-pdf"></i> our
+                paper</a>. If you want
+                to work or play around with any of these motion datasets, check out <a href="#"><i
+                        class="fa-solid fa-database"></i> our catalogue</a>. For live demos and guidelines for
+                dataset creators, researchers or reviewers,
+                scroll down!</p>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-4">
-                <figure>
-                    <video id="beatsaber-player" class="beatsaber-player" controls autoplay muted>
-                        <source src="samples/boxrr_beatsaber23/beatsaber_replay.mp4" type="video/mp4">
-                        Ihr Browser unterstützt das Video-Tag nicht.
-                    </video>
-                    <figcaption>A user playing the VR game Beatsaber.</figcaption>
-                </figure>
-            </div>
-            <div class="col-md-4">
-                <figure>
-                    <div class="hide-pbar preview motion-player" data-source-path="samples/boxrr_beatsaber23/negative_coord_mapping_coord_system_rotations.csv"
-                        data-progress="true">
-                    </div>
-                    <figcaption>The same recording, but the coordinate system has been imported with wrong
-                        specifications into our motion visualization tool.</figcaption>
-                </figure>
-            </div>
+    <!-- Specifications -->
+    <div class="row justify-content-md-center mt-5">
+        <div class="col-md-8">
+            <h1 class="text-center mt-5 mb-5">Critical Motion Specifications</h1>
         </div>
-        <div class="row justify-content-md-center lead mt-2">
-            <div class="col-md-8">
-                <p>The above example shows why working with user motion data is hard: kinematic
-                    researchers need to know a lot of details about XR motion data before they can actually work with
-                    them. In our paper and with this page we explain this issue and why it is dangerous for research,
-                    provides a catalogue of already prepared XR motion datasets and provides guidelines and best
-                    practices for future work.</p>
-            </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-8 mb-3">
+            <p class="lead">
+                Researchers working with XR motion data require a minimum set of critical information to
+                correctly load and interpret motion recordings. We identify the following mandatory
+                specifications, which are required for any XR motion dataset.
+            </p>
+
+            <p class="lead">
+                Here you can see a correctly loaded example recording from a user throwing a virtual bowling ball
+                from the <a
+                    href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/">LiebersLabStudy21</a>
+                dataset; the animations below show the same recording, but loaded with wrong
+                specifications to showcase the different effects.
+            </p>
         </div>
-        <div class="row justify-content-md-center mb-5">
-            <div class="col-md-8">
-                <hr class="my-4">
-                <p class="lead">For all details, download <a href="#"><i class="fa-solid fa-file-pdf"></i> our
-                        paper</a>. If you want
-                    to work or play around with any of these motion datasets, check out <a href="#"><i
-                            class="fa-solid fa-database"></i> our catalogue</a>. For live demos and guidelines for
-                    dataset creators, researchers or reviewers,
-                    scroll down!</p>
+        <div class="col-md-4">
+            <figure class="d-flex align-items-center flex-column">
+                <b>Correctly Imported Recording</b>
+                <div class="motion-player motion-player-sync"
+                     data-source-path="samples/liebers_labstudy21_bowling/fixed.csv" data-progress="false"></div>
+                <figcaption class="small">
+                    A correctly imported motion recording.
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="specs">
+        <div class="row">
+            <div class="col-md-8 text-center">
+                <h3>Specification</h3>
+                <hr class="border-2 border-dark opacity-100">
+            </div>
+            <div class="col text-center">
+                <h3>Examples</h3>
+                <hr class="border-2 border-dark opacity-100">
             </div>
         </div>
 
-
-        <!-- Specifications -->
-        <div class="row justify-content-md-center mt-5">
-            <div class="col-md-8">
-                <h1 class="text-center mt-5 mb-5">Critical Motion Specifications</h1>
-            </div>
-        </div>
-
-        <div class="row mb-5">
+        <!-- Spec 3 -->
+        <div class="row my-5">
             <div class="col-md-8 mb-3">
-                <p class="lead">
-                    Researchers working with XR motion data require a minimum set of critical information to
-                    correctly load and interpret motion recordings. We identify the following mandatory
-                    specifications, which are required for any XR motion dataset.
-                </p>
-
-                <p class="lead">
-                    Here you can see a correctly loaded example recording from a user throwing a virtual bowling ball
-                    from the <a
-                        href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/">LiebersLabStudy21</a>
-                    dataset; the animations below show the same recording, but loaded with wrong
-                    specifications to showcase the different effects.
-                </p>
+                <div class="d-flex gap-3">
+                    <div>
+                            <span class="fa-stack fa-2x">
+                                <i class="fa-regular fa-stack-2x fa-circle"></i>
+                                <i class="fa-solid fa-stack-1x fa-cube"></i>
+                            </span>
+                    </div>
+                    <div>
+                        <h4>Coordinate System</h4>
+                        <p>Understanding the coordinate system
+                            used in a dataset is essential for accurately interpreting spatial data. If
+                            it is unclear how the X, Y, and Z coordinates correspond to axes like
+                            up, forward, and left/right, spatial relationships cannot be properly
+                            reconstructed. For example, the same motion will suddenly look
+                            very unrealistic if ‘X’ gets interpreted as ‘up’ instead of ‘Y’ – not
+                            only because positions are flipped, but also because rotations will
+                            be misinterpreted. The datasets analyzed for this work all use two
+                            similar coordinate systems, which only slightly differ: one is left-
+                            handed, so Z points ‘right’, the other right-handed, so Z points ‘left’.
+                            Even though this difference is relatively subtle, assuming the wrong
+                            coordinate system will result in highly corrupted motions and will
+                            lead to incorrect conclusions.</p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
                 <figure class="d-flex align-items-center flex-column">
-                    <b>Correctly Imported Recording</b>
+                    <b>Wrong Coordinate System</b>
                     <div class="motion-player motion-player-sync"
-                        data-source-path="samples/liebers_labstudy21_bowling/fixed.csv" data-progress="false"></div>
-                    <figcaption class="small">
-                        A correctly imported motion recording.
+                         data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_system.csv"
+                         data-progress="false"></div>
+                    <figcaption class="small">This recording has been loaded with an inverted Z-axis; this
+                        not
+                        only results
+                        in
+                        mirrored positions of HMD and controllers, but also in broken rotations.
                     </figcaption>
                 </figure>
             </div>
         </div>
 
-        <div class="specs">
-            <div class="row">
-                <div class="col-md-8 text-center">
-                    <h3>Specification</h3>
-                    <hr class="border-2 border-dark opacity-100">
-                </div>
-                <div class="col text-center">
-                    <h3>Examples</h3>
-                    <hr class="border-2 border-dark opacity-100">
-                </div>
-            </div>
-
-            <!-- Spec 3 -->
-            <div class="row my-5">
-                <div class="col-md-8 mb-3">
-                    <div class="d-flex gap-3">
-                        <div>
-                            <span class="fa-stack fa-2x">
-                                <i class="fa-regular fa-stack-2x fa-circle"></i>
-                                <i class="fa-solid fa-stack-1x fa-cube"></i>
-                            </span>
-                        </div>
-                        <div>
-                            <h4>Coordinate System</h4>
-                            <p>Understanding the coordinate system
-                                used in a dataset is essential for accurately interpreting spatial data. If
-                                it is unclear how the X, Y, and Z coordinates correspond to axes like
-                                up, forward, and left/right, spatial relationships cannot be properly
-                                reconstructed. For example, the same motion will suddenly look
-                                very unrealistic if ‘X’ gets interpreted as ‘up’ instead of ‘Y’ – not
-                                only because positions are flipped, but also because rotations will
-                                be misinterpreted. The datasets analyzed for this work all use two
-                                similar coordinate systems, which only slightly differ: one is left-
-                                handed, so Z points ‘right’, the other right-handed, so Z points ‘left’.
-                                Even though this difference is relatively subtle, assuming the wrong
-                                coordinate system will result in highly corrupted motions and will
-                                lead to incorrect conclusions.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <figure class="d-flex align-items-center flex-column">
-                        <b>Wrong Coordinate System</b>
-                        <div class="motion-player motion-player-sync"
-                            data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_system.csv"
-                            data-progress="false"></div>
-                        <figcaption class="small">This recording has been loaded with an inverted Z-axis; this
-                            not
-                            only results
-                            in
-                            mirrored positions of HMD and controllers, but also in broken rotations.</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <!-- Spec 4 -->
-            <div class="row my-5">
-                <div class="col-md-8">
-                    <div class="d-flex gap-3">
-                        <div>
+        <!-- Spec 4 -->
+        <div class="row my-5">
+            <div class="col-md-8">
+                <div class="d-flex gap-3">
+                    <div>
                             <span class="fa-stack fa-2x">
                                 <i class="fa-regular fa-stack-2x fa-circle"></i>
                                 <i class="fa-solid fa-stack-1x fa-ruler"></i>
                             </span>
-                        </div>
-                        <div>
-                            <h4>Units of Measurement</h4>
-                            <p>The units of measurement used
-                                in a dataset, whether meters, centimeters, custom units, etc., are
-                                fundamental for accurately assessing and comparing spatial data.
-                                For example, assuming centimeters instead of meters would lead
-                                to peripherals appearing a 100 times closer and motions 100 times
-                                slower.</p>
-                        </div>
+                    </div>
+                    <div>
+                        <h4>Units of Measurement</h4>
+                        <p>The units of measurement used
+                            in a dataset, whether meters, centimeters, custom units, etc., are
+                            fundamental for accurately assessing and comparing spatial data.
+                            For example, assuming centimeters instead of meters would lead
+                            to peripherals appearing a 100 times closer and motions 100 times
+                            slower.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-
-                    <figure class="d-flex align-items-center flex-column">
-                        <b>Wrong Units</b>
-                        <div class="motion-player motion-player-sync"
-                            data-source-path="samples/liebers_labstudy21_bowling/negative_units.csv"
-                            data-progress="false">
-                        </div>
-                        <figcaption class="small">
-                            This recording has been loaded with a wrong scaling of units (e.g., meters instead of
-                            centimeters).
-                        </figcaption>
-                    </figure>
-                </div>
             </div>
+            <div class="col-md-4">
 
-            <!-- Spec 5 -->
-            <div class="row my-5">
-                <div class="col-md-8">
-                    <div class="d-flex gap-3">
-                        <div>
+                <figure class="d-flex align-items-center flex-column">
+                    <b>Wrong Units</b>
+                    <div class="motion-player motion-player-sync"
+                         data-source-path="samples/liebers_labstudy21_bowling/negative_units.csv"
+                         data-progress="false">
+                    </div>
+                    <figcaption class="small">
+                        This recording has been loaded with a wrong scaling of units (e.g., meters instead of
+                        centimeters).
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Spec 5 -->
+        <div class="row my-5">
+            <div class="col-md-8">
+                <div class="d-flex gap-3">
+                    <div>
                             <span class="fa-stack fa-2x">
                                 <i class="fa-regular fa-stack-2x fa-circle"></i>
                                 <i class="fa-solid fa-stack-1x  fa-rotate"></i>
                             </span>
-                        </div>
-                        <div>
-                            <h4>Representation of Rotations</h4>
-                            <p>Misinterpreting rotations
-                                (e.g., Euler angles, quaternions, or transformation matrices) leads to
-                                incorrect reconstructions of motions. For instance, Euler notation
-                                seems straightforward at first glance, as it defines rotations around
-                                the X, Y, and Z axes. Yet, to apply it correctly, one needs to know
-                                whether the rotations are intrinsic (rotating about the axes of the
-                                moving coordinate system) or extrinsic (rotating about the axes of the
-                                fixed coordinate system), as well as the order of applying rotations
-                                along each axis. Like before, wrong assumptions regarding this are
-                                easy to miss, but will lead to incorrectly reconstructed motions.</p>
-                        </div>
+                    </div>
+                    <div>
+                        <h4>Representation of Rotations</h4>
+                        <p>Misinterpreting rotations
+                            (e.g., Euler angles, quaternions, or transformation matrices) leads to
+                            incorrect reconstructions of motions. For instance, Euler notation
+                            seems straightforward at first glance, as it defines rotations around
+                            the X, Y, and Z axes. Yet, to apply it correctly, one needs to know
+                            whether the rotations are intrinsic (rotating about the axes of the
+                            moving coordinate system) or extrinsic (rotating about the axes of the
+                            fixed coordinate system), as well as the order of applying rotations
+                            along each axis. Like before, wrong assumptions regarding this are
+                            easy to miss, but will lead to incorrectly reconstructed motions.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <figure class="d-flex align-items-center flex-column">
-                        <b>Intrinsic vs. Extrinsic Euler notation</b>
-                        <div class="motion-player motion-player-sync "
-                            data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
-                            data-progress="false"></div>
+            </div>
+            <div class="col-md-4">
+                <figure class="d-flex align-items-center flex-column">
+                    <b>Intrinsic vs. Extrinsic Euler notation</b>
+                    <div class="motion-player motion-player-sync "
+                         data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
+                         data-progress="false"></div>
 
-                        <figcaption class="small">
-                            Euler angles can be intrinsic or extrinsic; if the wrong type gets assumed during import,
-                            rotations are inherently broken.
-                        </figcaption>
-                    </figure>
-                    <figure class="d-flex align-items-center flex-column">
-                        <b>Wrong Euler sequence</b>
-                        <div class="motion-player motion-player-sync "
-                            data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
-                            data-progress="false"></div>
+                    <figcaption class="small">
+                        Euler angles can be intrinsic or extrinsic; if the wrong type gets assumed during import,
+                        rotations are inherently broken.
+                    </figcaption>
+                </figure>
+                <figure class="d-flex align-items-center flex-column">
+                    <b>Wrong Euler sequence</b>
+                    <div class="motion-player motion-player-sync "
+                         data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
+                         data-progress="false"></div>
 
-                        <figcaption class="small">
-                            Three values are needed to represent a rotation with the Euler notation, but it has to be
-                            defined to which axis each of these values is mapped to; X&rightarrow;Y&rightarrow;Z may
-                            seem straightforward, but it can also be ZXY, ZYX, or even something like XZX!
-                        </figcaption>
-                    </figure>
-                    <!-- <div id="carouselExample" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="motion-player motion-player-sync "
-                                        data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
-                                        data-progress="false"></div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="motion-player motion-player-sync "
-                                        data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
-                                        data-progress="false"></div>
-                                </div>
+                    <figcaption class="small">
+                        Three values are needed to represent a rotation with the Euler notation, but it has to be
+                        defined to which axis each of these values is mapped to; X&rightarrow;Y&rightarrow;Z may
+                        seem straightforward, but it can also be ZXY, ZYX, or even something like XZX!
+                    </figcaption>
+                </figure>
+                <!-- <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="motion-player motion-player-sync "
+                                    data-source-path="samples/liebers_labstudy21_bowling/negative_rotations.csv"
+                                    data-progress="false"></div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="motion-player motion-player-sync "
+                                    data-source-path="samples/liebers_labstudy21_bowling/negative_coordinate_mapping.csv"
+                                    data-progress="false"></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="btn-group">
-                                <a class="btn btn-outline-secondary" href="#" data-bs-target="#carouselExample"
-                                    data-bs-slide-to="0" class="small">example
-                                    1</a>
-                                <a class="btn btn-outline-secondary" href="#" data-bs-target="#carouselExample"
-                                    data-bs-slide-to="1" class="small">example 2</a>
-                            </div>
-                        </div> -->
-                </div>
+                    </div>
+                    <div>
+                        <div class="btn-group">
+                            <a class="btn btn-outline-secondary" href="#" data-bs-target="#carouselExample"
+                                data-bs-slide-to="0" class="small">example
+                                1</a>
+                            <a class="btn btn-outline-secondary" href="#" data-bs-target="#carouselExample"
+                                data-bs-slide-to="1" class="small">example 2</a>
+                        </div>
+                    </div> -->
             </div>
+        </div>
 
-            <!-- Spec 6 -->
-            <div class="row my-5">
-                <div class="col-md-8">
-                    <div class="d-flex gap-3">
-                        <div>
+        <!-- Spec 6 -->
+        <div class="row my-5">
+            <div class="col-md-8">
+                <div class="d-flex gap-3">
+                    <div>
                             <span class="fa-stack fa-2x">
                                 <i class="fa-regular fa-stack-2x fa-circle"></i>
                                 <i class="fa-solid fa-stack-1x fa-clock"></i>
                             </span>
-                        </div>
-                        <div>
-                            <h4>Time Encoding</h4>
-                            <p>Accurate timing information is crucial for
-                                understanding the sequence of frames and duration of movements in
-                                motion data. This can be represented through timestamps or a fixed
-                                framerate. Without clear timing data, the dynamics of motion cannot
-                                be accurately analyzed. Assuming the wrong timing of frames will
-                                effectively lead to reconstructed motions to be too fast or too slow.</p>
-                        </div>
+                    </div>
+                    <div>
+                        <h4>Time Encoding</h4>
+                        <p>Accurate timing information is crucial for
+                            understanding the sequence of frames and duration of movements in
+                            motion data. This can be represented through timestamps or a fixed
+                            framerate. Without clear timing data, the dynamics of motion cannot
+                            be accurately analyzed. Assuming the wrong timing of frames will
+                            effectively lead to reconstructed motions to be too fast or too slow.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <figure class="d-flex align-items-center flex-column">
-                        <b>Wrong Time Encoding</b>
-                        <div class="motion-player motion-player-sync"
-                            data-source-path="samples/liebers_labstudy21_bowling/negative_time.csv"
-                            data-progress="false">
-                        </div>
-
-                        <figcaption class="small">
-                            This example shows what happens if the wrong time encoding gets applied to a motion
-                            sequence: the reconstructed animation is either too fast or too slow!
-                        </figcaption>
-                    </figure>
-                </div>
             </div>
+            <div class="col-md-4">
+                <figure class="d-flex align-items-center flex-column">
+                    <b>Wrong Time Encoding</b>
+                    <div class="motion-player motion-player-sync"
+                         data-source-path="samples/liebers_labstudy21_bowling/negative_time.csv"
+                         data-progress="false">
+                    </div>
 
-            <!-- Spec 1 -->
-            <div class="row my-5">
-                <div class="col-md-6 mb-3">
-                    <div class="d-flex gap-3">
-                        <div>
+                    <figcaption class="small">
+                        This example shows what happens if the wrong time encoding gets applied to a motion
+                        sequence: the reconstructed animation is either too fast or too slow!
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Spec 1 -->
+        <div class="row my-5">
+            <div class="col-md-6 mb-3">
+                <div class="d-flex gap-3">
+                    <div>
                             <span class="fa-stack fa-2x">
                                 <i class="fa-regular fa-circle fa-stack-2x"></i>
                                 <i class="fa-solid fa-folder-tree fa-stack-1x"></i>
                             </span>
-                        </div>
-                        <div>
-                            <h4>Structure</h4>
-                            <p>The structure of a dataset, particularly how
-                                recordings are organized, significantly impacts data accessibility. A
-                                poorly structured dataset can lead to confusion about which files
-                                correspond to specific sessions or participants. For example, if
-                                a dataset combines multiple recordings into a single file without
-                                clear demarcation, it becomes challenging to isolate and analyze
-                                individual recordings. Conversely, if every motion sequence is
-                                saved as a separate file without a systematic naming convention
-                                or indexing, researchers might struggle to locate and aggregate
-                                relevant data for their studies. This issue is even more relevant in
-                                large datasets, where the sheer volume of recordings necessitates
-                                a well-defined organizational scheme to facilitate easy access and
-                                selection. Efficient data retrieval and analysis depend on a logical,
-                                well-documented structure that aligns with the research objectives.</p>
-                        </div>
+                    </div>
+                    <div>
+                        <h4>Structure</h4>
+                        <p>The structure of a dataset, particularly how
+                            recordings are organized, significantly impacts data accessibility. A
+                            poorly structured dataset can lead to confusion about which files
+                            correspond to specific sessions or participants. For example, if
+                            a dataset combines multiple recordings into a single file without
+                            clear demarcation, it becomes challenging to isolate and analyze
+                            individual recordings. Conversely, if every motion sequence is
+                            saved as a separate file without a systematic naming convention
+                            or indexing, researchers might struggle to locate and aggregate
+                            relevant data for their studies. This issue is even more relevant in
+                            large datasets, where the sheer volume of recordings necessitates
+                            a well-defined organizational scheme to facilitate easy access and
+                            selection. Efficient data retrieval and analysis depend on a logical,
+                            well-documented structure that aligns with the research objectives.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Spec 2 -->
-            <div class="row my-5">
-                <div class="col-md-6 mb-3">
-                    <div class="d-flex gap-3">
-                        <div>
+        <!-- Spec 2 -->
+        <div class="row my-5">
+            <div class="col-md-6 mb-3">
+                <div class="d-flex gap-3">
+                    <div>
                             <span class="fa-stack fa-2x">
                                 <i class="fa-regular fa-stack-2x fa-circle"></i>
                                 <i class="fa-solid fa-stack-1x fa-file-csv"></i>
                             </span>
-                        </div>
-                        <div>
-                            <h4>File Format</h4>
-                            <p>The file format is vital in determining how
-                                recordings can be loaded and attributes correctly labeled. An unsuit-
-                                able or poorly documented file format can lead to misunderstandings.
-                                This affects the integrity of the research, as conclusions drawn from
-                                improperly interpreted data are likely to be erroneous.</p>
-                        </div>
                     </div>
-                </div>
-            </div>
-
-        </div>
-
-        <hr class="mt-5 mb-2">
-        <!-- Aligned Section Text -->
-        <div class="row justify-content-md-center">
-            <div class="col-md-8 my-5">
-                <h1 class="text-center mb-4" id="sec-aligned-dset">Catalogue of XR Motion Datasets</h1>
-                <p class="lead">
-                    We have compiled a catalogue of XR motion datasets. Originally, each of these datasets comes in a
-                    different format and requires very different approaches to download, read and convert. We
-                    streamlined this process by not only aligning each dataset into a unified format, but also by
-                    hosting each aligned dataset on Hugging Face. Now, you can use each dataset right away with just one
-                    line of code.
-                </p>
-                <p class="lead">
-                    Beneath you find aligned example recordings from each dataset in the catalogue, visualized using our
-                    <a href="#"><i class="fa-brands fa-github"></i> Motion Visualiation Tool</a>.
-                </p>
-            </div>
-        </div>
-
-
-        <!-- Aligned Section Visuals -->
-        <div class="row aligned-1 justify-content-md-center">
-            <!-- LiebersLabStudy21 / Liebers_1 -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/liebers_labstudy21_archery/fixed.csv"
-                        data-progress="true"></div>
-
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>LiebersLabStudy21</h4>
-                        <p>This dataset focuses on users performing specific bowling and
-                            archery motions. The latter is visualized here.</p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body ">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3 specs">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Euler (extrinsic, degrees, sequence is XYZ)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">relative (ms)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">CSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/Paper/Understanding_User_Identification_in_Virtual_Reality_Through_Behavioral_Biometrics_and_the_Effect_of_Body_Normalization.pdf"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LiebersHand22 / Liebers_2 -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/liebers_hand22/fixed_0m5s_to_0m25s.csv"
-                        data-progress="true"></div>
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <h4>LiebersHand22</h4>
-                            <p>This dataset focuses on users performing interactions with
-                            various
-                            interface
-                            elements, such as buttons and sliders,
-                            in AR and VR environments for motion-based user identification.</p>
-                        </div>
-
-                        <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">relative (s and ms)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">TSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                        
-                </div>
-            </div>
-           
-
-            <!-- RMillerBall22 -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>RMillerBall22</h4>
-                        <p>This dataset focuses on capturing the motions of users performing ball throwing actions in VR.</p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">fixed to 45 fps</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">Custom</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WhoIsAlyx -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>Who-Is-Alyx</h4>
-                        <p>This dataset focuses on capturing the motions of users playing
-                            the game <a href="https://www.half-life.com/de/alyx">'Half-Life: Alyx'</a> in VR.</p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Forward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Centimeter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">abs. (ISO 8601)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">CSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.frontiersin.org/articles/10.3389/frvir.2023.1272234/full"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://github.com/cschell/who-is-alyx"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- BOXRR23_Beatsaber -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>BOXRR Beatsaber</h4>
-                        <p>This dataset focuses on users playing the game
-                            <a href="https://beatsaber.com/">Beatsaber</a> in VR and aims to provide a
-                            large-scale
-                            human
-                            motion dataset for researchers and studies.
-                        </p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">relative (s)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">XROR</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BOXRR23_Tiltbrush -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>BOXRR Tiltbrush</h4>
-                        <p>This dataset focuses on users playing the game
-                            <a href="https://www.tiltbrush.com/">Tiltbrush</a> in VR and aims to provide a
-                            large-scale
-                            human
-                            motion dataset for researchers and studies.
-                        </p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">TODO</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">TODO</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">relative (ms)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">XROR</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://arxiv.org/pdf/2310.00430.pdf"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LiebersBeatSaber23 / Liebers_3 -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>LiebersBeatSaber23</h4>
-                        <p>This dataset focuses on users playing the game
-                            <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
-                            identification through motion.
-                        </p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternions</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">90 Hz (presumably fixed)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">CSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/liebers2023vrst.pdf"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper 1
-                            </a>
-                            <a href="https://research.hcigroup.de/Data_Set_for_Exploring_the_Stability_of_Behavioral_Biometrics_in_Virtual_Reality.zip"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                            <a href="https://research.hcigroup.de/Code_for_Exploring_the_Stability_of_Behavioral_Biometrics_in_Virtual_Reality.zip"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Code
-                            </a>
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MooreCrossDomain23 dataset -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>MooreCrossDomain23</h4>
-                        <p>This dataset focuses on users performing assembly tasks in VR
-                            and is also intended for user identification research.
-                        </p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Backward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Euler (extrinsic, degrees, sequence is XYZ), Rotation Matrix and Quaternion</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">relative (s)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">CSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                           
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- VRNet -->
-            <div class="col-md-4 d-flex align-items-stretch">
-                <div class="card mb-5">
-                    <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv" data-progress="true"></div>
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4>VR.net</h4>
-                        <p>This dataset focuses on users playing various VR games and was
-                            designed for
-                            cybersickness research.
-                        </p>
-
-                    </div>
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <h5>Specifications</h5>
-                        <div class="row row-cols-md-3">
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Coordinate System</p>
-                                    <p class="small">X: Right, Y: Up, Z: Forward</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Rotations</p>
-                                    <p class="small">Transformation Matrix</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Units</p>
-                                    <p class="small">Meter</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Time</p>
-                                    <p class="small">absolute (unix)</p>
-                                </div>
-                            </div>
-                            <div class="col d-flex align-items-start">
-                                <div>
-                                    <p class="text-decoration-underline mb-0">Format</p>
-                                    <p class="small">CSV</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="my-0">
-                    <div class="card-body">
-                        <b>Go to</b><br>
-                        <div class="btn-group w-100">
-                            <a href="https://arxiv.org/abs/2306.03381"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-file-pdf"></i>
-                                Paper
-                            </a>
-                            <a href="https://vrnet.ahlab.org"
-                                class="btn btn-sm btn-outline-primary">
-                                <i class="fa-solid fa-database"></i>
-                                Original Dataset
-                            </a>
-                           
-                            <a href="#" class="btn btn-sm btn-outline-primary">
-                                🤗
-                                Aligned Dataset
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <div class="row justify-content-md-center">
-            <div class="col-md-8 my-5">
-                <h1 class="text-center mb-4">Guidelines</h1>
-            </div>
-        </div>
-
-        <div class="row justify-content-center g-5">
-            <div class="col-md-6">
-                <div class="row">
-                    <h3 class="h-auto text-center">For Motion Datasets Creators</h3>
-                    <hr class="border-2 border-dark opacity-100">
-                </div>
-
-
-                <div class="row mb-3">
-                    <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-folder-tree"></i>
-                        </span>
-                    </div>
-                    <div class="col-md-9">
-                        <span class="fw-light fs-4" title="Structure"><b>GC1: Report critical
-                                requirements</b></span>
-                        <p>First and foremost, it is
-                            imperative that future datasets comprehensively report all relevant
-                            specifications discussed above. For file formats, we recommend
-                            adopting common table-based formats like CSV, or binary equiva-
-                            lents such as HDF5 [8] or Parquet [3], ensuring compatibility with
-                            standard data processing tools like Python Pandas, R, or Apache
-                            Spark. This should be accompanied with a thorough documentation
-                            of each data attribute and how it has been labeled. We advocate
-                            using quaternions to represent rotations, as these are less ambiguous
-                            than Euler angles. Providing a timestamp column with the passed
-                            time since the start of the recording in milliseconds offers a clear
-                            way to specify the timing of each frame. Clear documentation of
-                            all of these aspects is crucial for accurate data interpretation and
-                            replication of research.</p>
-                    </div>
-                </div>
-
-                <!-- Spec 2 -->
-                <div class="row mb-3">
-                    <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-file-csv" title="File Format"></i>
-                        </span>
-                    </div>
-                    <div class="col-md-9">
-                        <span class="fw-light fs-4"><b>S2: File Format</b></span>
+                    <div>
+                        <h4>File Format</h4>
                         <p>The file format is vital in determining how
                             recordings can be loaded and attributes correctly labeled. An unsuit-
                             able or poorly documented file format can lead to misunderstandings.
@@ -1112,20 +374,772 @@
                             improperly interpreted data are likely to be erroneous.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mt-5 mb-2">
+    <!-- Aligned Section Text -->
+    <div class="row justify-content-md-center">
+        <div class="col-md-8 my-5">
+            <h1 class="text-center mb-4" id="sec-aligned-dset">Catalogue of XR Motion Datasets</h1>
+            <p class="lead">
+                We have compiled a catalogue of XR motion datasets. Originally, each of these datasets comes in a
+                different format and requires very different approaches to download, read and convert. We
+                streamlined this process by not only aligning each dataset into a unified format, but also by
+                hosting each aligned dataset on Hugging Face. Now, you can use each dataset right away with just one
+                line of code.
+            </p>
+            <p class="lead">
+                Beneath you find aligned example recordings from each dataset in the catalogue, visualized using our
+                <a href="#"><i class="fa-brands fa-github"></i> Motion Visualiation Tool</a>.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Aligned Section Visuals -->
+    <div class="row aligned-1 justify-content-md-center">
+        <!-- LiebersLabStudy21 / Liebers_1 -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/liebers_labstudy21_archery/fixed.csv"
+                     data-progress="true"></div>
+
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>LiebersLabStudy21</h4>
+                    <p>This dataset focuses on users performing specific bowling and
+                        archery motions. The latter is visualized here.</p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body ">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3 specs">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">relative (ms)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">CSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publikationen/understanding-user-identification-in-virtual-reality-through-behavioral-biometrics-and-the-effect-of-body-normalization/"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/Paper/Understanding_User_Identification_in_Virtual_Reality_Through_Behavioral_Biometrics_and_the_Effect_of_Body_Normalization.pdf"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LiebersHand22 / Liebers_2 -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/liebers_hand22/fixed_0m5s_to_0m25s.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>LiebersHand22</h4>
+                    <p>This dataset focuses on users performing interactions with
+                        various
+                        interface
+                        elements, such as buttons and sliders,
+                        in AR and VR environments for motion-based user identification.</p>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">relative (s and ms)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">TSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RMillerBall22 -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>RMillerBall22</h4>
+                    <p>This dataset focuses on capturing the motions of users performing ball throwing actions in
+                        VR.</p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">fixed to 45 fps</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">Custom</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://www.hci.wiwi.uni-due.de/en/publications/identifying-users-by-their-hand-tracking-data-in-augmented-and-virtual-reality"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhoIsAlyx -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>Who-Is-Alyx</h4>
+                    <p>This dataset focuses on capturing the motions of users playing
+                        the game <a href="https://www.half-life.com/de/alyx">'Half-Life: Alyx'</a> in VR.</p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Forward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Centimeter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">abs. (ISO 8601)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">CSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.frontiersin.org/articles/10.3389/frvir.2023.1272234/full"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://github.com/cschell/who-is-alyx"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOXRR23_Beatsaber -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>BOXRR Beatsaber</h4>
+                    <p>This dataset focuses on users playing the game
+                        <a href="https://beatsaber.com/">Beatsaber</a> in VR and aims to provide a
+                        large-scale
+                        human
+                        motion dataset for researchers and studies.
+                    </p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">relative (s)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">XROR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOXRR23_Tiltbrush -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>BOXRR Tiltbrush</h4>
+                    <p>This dataset focuses on users playing the game
+                        <a href="https://www.tiltbrush.com/">Tiltbrush</a> in VR and aims to provide a
+                        large-scale
+                        human
+                        motion dataset for researchers and studies.
+                    </p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">TODO</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">TODO</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">relative (ms)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">XROR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://arxiv.org/pdf/2310.00430.pdf"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://rdi.berkeley.edu/metaverse/boxrr-23/"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LiebersBeatSaber23 / Liebers_3 -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>LiebersBeatSaber23</h4>
+                    <p>This dataset focuses on users playing the game
+                        <a href="https://beatsaber.com/">Beatsaber</a> and is aimed at user
+                        identification through motion.
+                    </p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ) and Quaternions</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">90 Hz (presumably fixed)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">CSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.hci.wiwi.uni-due.de/fileadmin/fileupload/I-HCI/liebers2023vrst.pdf"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper 1
+                        </a>
+                        <a href="https://research.hcigroup.de/Data_Set_for_Exploring_the_Stability_of_Behavioral_Biometrics_in_Virtual_Reality.zip"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+                        <a href="https://research.hcigroup.de/Code_for_Exploring_the_Stability_of_Behavioral_Biometrics_in_Virtual_Reality.zip"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Code
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MooreCrossDomain23 dataset -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>MooreCrossDomain23</h4>
+                    <p>This dataset focuses on users performing assembly tasks in VR
+                        and is also intended for user identification research.
+                    </p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Backward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Euler (extrinsic, degrees, sequence is XYZ), Rotation Matrix and
+                                    Quaternion</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">relative (s)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">CSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://www.computer.org/csdl/proceedings-article/ismar/2023/283800a396/1SBIUJMozjW"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://github.com/tapiralec/Identifying_Virtual_Reality_Users_Across_Domain_Specific_Tasks"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VRNet -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card mb-5">
+                <div class="motion-player" data-source-path="samples/rmiller_ball22/fixed.csv"
+                     data-progress="true"></div>
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h4>VR.net</h4>
+                    <p>This dataset focuses on users playing various VR games and was
+                        designed for
+                        cybersickness research.
+                    </p>
+
+                </div>
+                <hr class="my-0">
+                <div class="card-body">
+                    <h5>Specifications</h5>
+                    <div class="row row-cols-md-3">
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Coordinate System</p>
+                                <p class="small">X: Right, Y: Up, Z: Forward</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Rotations</p>
+                                <p class="small">Transformation Matrix</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Units</p>
+                                <p class="small">Meter</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Time</p>
+                                <p class="small">absolute (unix)</p>
+                            </div>
+                        </div>
+                        <div class="col d-flex align-items-start">
+                            <div>
+                                <p class="text-decoration-underline mb-0">Format</p>
+                                <p class="small">CSV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-0">
+                <div class="card-body">
+                    <b>Go to</b><br>
+                    <div class="btn-group w-100">
+                        <a href="https://arxiv.org/abs/2306.03381"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Paper
+                        </a>
+                        <a href="https://vrnet.ahlab.org"
+                           class="btn btn-sm btn-outline-primary">
+                            <i class="fa-solid fa-database"></i>
+                            Original Dataset
+                        </a>
+
+                        <a href="#" class="btn btn-sm btn-outline-primary">
+                            🤗
+                            Aligned Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guideline Section Header -->
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 my-5">
+                <h1 class="text-center mb-4">Guidelines</h1>
+            </div>
+        </div>
+
+        <!-- Guideline Section Content -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <h3 class="h-auto text-center">For Motion Dataset Creators</h3>
+                    <hr class="border-2 border-dark opacity-100 w-75">
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC1</span>
+                    </div>
+                    <div class="col-md-9">
+                        <span class="fw-light fs-4" title="Structure"><b>Use Accessible Standards and Report Critical
+                            Requirements</b></span>
+                        <p>
+                            First and foremost, it is imperative that future datasets
+                            comprehensively report all relevant specifications as described above.
+                            For file formats, we recommend adopting common formats
+                            like CSV, or binary equivalents such as <a href="https://www.hdfgroup.org/solutions/hdf5/">HDF5</a>
+                            or
+                            <a href="https://parquet.apache.org/">Parquet</a>
+                            for tabular data, or formats like JSON, YAML, or BSON (binary
+                            variant of JSON). Custom formats, like the XROR format used by
+                            the BOXRR-23 dataset, can also be a sensible solution for datasets
+                            with very specific characteristics and unique requirements. Regard-
+                            less of the format chosen, the dataset should be accompanied by a
+                            thorough documentation of each data attribute and how it has been
+                            labeled. We advocate using quaternions to represent rotations, as
+                            Euler angles require additional specifications and are easily misinterpreted.
+                            Providing a timestamp column with the passed time since
+                            the start of the recording in milliseconds offers a clear way to specify
+                            the timing of each frame. Clear documentation of all of these aspects
+                            is crucial for accurate data interpretation and replication of research.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Spec 2 -->
+                <div class="row mb-3">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC2</span>
+                    </div>
+                    <div class="col-md-9">
+                        <span class="fw-light fs-4"><b>Account for Sensible File Structure</b></span>
+                        <p>
+                            Motion recordings should be organized in an accessible and transparent file structure.
+                            Ideally, there is one file per recording and data type. Combined with
+                            a clear naming scheme, this should make it straightforward to select
+                            individual recordings without having to inconveniently extract them
+                            from the rest of the dataset. Not only does this save time, resources
+                            and frustrations, it also makes the routines for importing recordings
+                            less susceptible to bugs.</p>
+                    </div>
+                </div>
 
                 <!-- Spec 3 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-primary fs-5 p-2">
-                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC3</span>
                     </div>
                     <div class="col-md-9">
-                        <span class="fw-light fs-4"><b>GC3: Allow easy and permanent dataset
-                                access</b></span>
-                        <p>Other researchers should be able to easily, and permanently access and
-                            download published datasets. Several of the analyzed datasets re-
-                            quire to download the full data, which is especially cumbersome if
+                        <span class="fw-light fs-4"><b>Allow Easy and Permanent Dataset
+                                Access</b></span>
+                        <p>
+                            Other researchers should be able to easily, and permanently access and
+                            download published datasets. Several of the analyzed datasets require to download
+                            the full data, which is especially cumbersome if
                             the total size is prohibitively large. Often, only certain data types or
                             recordings of a few users are needed, so dataset creators should look
                             for ways to not only provide bulk- but also partial downloads. Tools
@@ -1134,63 +1148,56 @@
                             to single zip archives. For hosting, there are options like Hugging
                             Face, GitHub, Kaggle, Zenodo, etc. that not provide free hosting,
                             but often tooling for up- and downloading datasets, which improves
-                            accessibility for both, creators and users of datasets.</p>
+                            accessibility for both, creators and users of datasets.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Spec 4 -->
                 <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-primary fs-5 p-2">
-                            <i class="fa-solid fa-cube" title="Coordinate System"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC4</span>
                     </div>
                     <div class="col-md-9">
-                        <span class="fw-light fs-4"><b>GC4: Provide Demo Code</b></span>
-                        <p>Additionally, datasets should in-
-                            clude example scripts that demonstrate how to properly load the data
-                            and correctly identify each attribute. These scripts not only serve as
-                            a practical tool for other researchers but also act as a form of docu-
-                            mentation, offering insights into the intended use and interpretation
-                            of the data.</p>
+                        <span class="fw-light fs-4"><b>Provide Demo Code</b></span>
+                        <p>Additionally, datasets should include
+                            example scripts that demonstrate how to properly load the data and
+                            correctly identify each attribute. These scripts not only serve as a
+                            practical tool for other researchers but also act as a form of documentation,
+                            offering insights into the intended use and interpretation of the data.</p>
                     </div>
                 </div>
 
 
                 <!-- Spec 5 -->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-ruler" title="Units of Measurement"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC5</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GC5: Offer Visualizations</b></span>
+                        <span class="fw-light fs-4"><b>Offer Visualizations</b></span>
                         <p>An ideal enhancement for future
-                            datasets is the provision of options for data visualization. To aid
-                            in this, we provide a Python library tailored for visualizing XR
-                            user motion data. Visual tools can significantly ease the process refine
-                            of understanding and analyzing motion data, making datasets more
-                            accessible and user-friendly.</p>
+                            datasets is the provision of options for data visualization. This significantly
+                            eases the process of understanding and analyzing motion
+                            data, making datasets more accessible and user-friendly. To aid
+                            in this, we publish the code for our <a href="TODO">motion visualization tool</a> and
+                            provide instructions for how to set it up.</p>
                     </div>
                 </div>
 
                 <!-- Spec 6 -->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-solid fa-rotate" title="Representation of Rotations"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC6</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GC6: Add Contextual Information</b></span>
-                        <p>Beyond the discussed
-                            fundamental specifications, there is additional contextual informa-
-                            tion that can greatly benefit researchers. For example, providing
-                            background information about the used data source, such as whether
-                            it was collected from Unity, Steam OpenVR, or other platforms, can
-                            give important context information about the dataset’s characteris-
-                            tics. Moreover, awareness of application-specific traits is crucial.
+                        <span class="fw-light fs-4"><b>Add Contextual Information</b></span>
+                        <p>Beyond the discussed fundamental specifications, there is additional contextual information
+                            that can greatly benefit researchers. For example, providing background information
+                            about the used data source, such as whether it
+                            was collected from Unity, Steam OpenVR, or other platforms, can
+                            give important context information about the dataset’s characteristics.
+                            Moreover, awareness of application-specific traits is crucial.
                             For instance, scenarios where users are teleported within a scene
                             can result in abrupt and seemingly inexplicable ‘jumps’ in the data.
                             Similarly, it should be clarified if data for certain peripherals, like
@@ -1210,44 +1217,40 @@
                 </div>
 
                 <!-- Spec 7 -->
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-regular fa-clock" title="Time Encoding"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC7</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GC7: Disclosure of Recording Methods
-                            </b></span>
-                        <p>We highly recom-
-                            mend that dataset creators disclose and discuss the software used
-                            in generating their datasets. This transparency not only allows for
-                            the reproduction, verification, and extension of the datasets but also
-                            fosters an environment of open collaboration and innovation in the
-                            field. By sharing the tools and methods used for data collection, re-
-                            searchers can contribute to a more robust and dynamic understanding
-                            of kinematic data in XR environments.</p>
+                        <span class="fw-light fs-4"><b>Disclose recording methods</b></span>
+                        <p>We highly recommend that
+                            dataset creators disclose and discuss the software used in generating
+                            their datasets. This transparency not only allows for the reproduction,
+                            verification, and extension of the datasets but also fosters an environment
+                            of open collaboration and innovation in the field. By sharing
+                            the tools and methods used for data collection, researchers can contribute
+                            to a more robust and dynamic understanding of kinematic
+                            data in XR environments.</p>
                     </div>
                 </div>
 
                 <!-- Spec 8 -->
                 <div class="row">
                     <div class="col-auto">
-                        <span class="badge bg-secondary fs-5 p-2">
-                            <i class="fa-regular fa-clock" title="Time Encoding"></i>
-                        </span>
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC8</span>
                     </div>
                     <div class="col">
-                        <span class="fw-light fs-4"><b>GC8: Easy Access of Information </b></span>
-                        <p>n line with general best
-                            practices for dataset creation, it is highly advisable to utilize es-
-                            tablished dataset labeling frameworks, such as Dataset Nutrition
-                            Labels [9], Data Cards [20], or Datasheets for Datasets [7]. These
+                        <span class="fw-light fs-4"><b>Make Information Easily Accessible</b></span>
+                        <p>
+                            In line with general
+                            best practices for dataset creation, it is highly advisable to utilize
+                            established dataset labeling frameworks, such as Dataset Nutrition
+                            Labels, Data Cards, or Datasheets for Datasets. These
                             frameworks provide structured and standardized ways to present
                             critical information about datasets, promoting transparency and ease
                             of use. By incorporating these labeling frameworks, dataset creators
-                            can ensure that users are well-informed about the nature and char-
-                            acteristics of the data. These frameworks can easily be augmented
+                            can ensure that users are well-informed about the nature and characteristics
+                            of the data. These frameworks can easily be augmented
                             with the aforementioned specific information relevant to XR user
                             motion studies. This practice not only allows researchers to quickly
                             understand the datasets without spending time and resources for
@@ -1256,6 +1259,31 @@
                             community. Implementing such comprehensive labeling approaches
                             will significantly contribute to the rigor and reproducibility of future
                             research in this field.</p>
+                    </div>
+                </div>
+
+                <!-- Spec 9 -->
+                <div class="row">
+                    <div class="col-auto">
+                        <span class="badge bg-primary fs-5 p-2 fw-semibold">GC9</span>
+                    </div>
+                    <div class="col">
+                        <span class="fw-light fs-4"><b>Consider Ethical Implications</b></span>
+                        <p>
+                            Collecting and sharing
+                            XR motion datasets research entails significant ethical considerations,
+                            particularly regarding participant privacy. As research has
+                            shown, motion data can inadvertently reveal personal information,
+                            making it crucial to implement protective measures. Even if users are fine
+                            with being openly recognized within the
+                            dataset collection study, they should be aware that they could be re-
+                            identified in different scenarios where they want to stay anonymous,
+                            just based on their motion data. Hence, researchers must account
+                            for informed consent, pseudonymize data as soon as possible, and
+                            comply with relevant data protection laws to safeguard participant
+                            privacy. Additionally, Data Use Agreements (DUAs) can regulate
+                            access, outlining specific conditions for data use and ensuring ethical
+                            handling.</p>
                     </div>
                 </div>
             </div>
@@ -1353,43 +1381,44 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script src="assets/bootstrap-5.3-2.2-dist/js/bootstrap.bundle.js"></script>
-    <script type="module" src="bundle.js"></script>
+<script src="assets/bootstrap-5.3-2.2-dist/js/bootstrap.bundle.js"></script>
+<script type="module" src="bundle.js"></script>
 
-    <script>
-        document.getElementById('noCloseItem').addEventListener('click', function (event) {
-            event.stopPropagation();
-        });
-        async function copyToClipboard(text) {
-            try {
-                await navigator.clipboard.writeText(text);
+<script>
+    document.getElementById('noCloseItem').addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
 
-                // Erstellen eines neuen Benachrichtigungselements, falls es noch nicht existiert
-                let notification = document.querySelector('.copied-notification');
-                if (!notification) {
-                    notification = document.createElement('div');
-                    notification.className = 'copied-notification';
-                    notification.textContent = 'Copied to clipboard!';
-                    document.body.appendChild(notification);
-                }
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
 
-                // Zeige die Benachrichtigung an
-                notification.style.display = 'block';
-
-                // Entferne die Benachrichtigung nach 1 Sekunde
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 1000);
-
-            } catch (err) {
-                console.error('Failed to copy: ', err);
+            // Erstellen eines neuen Benachrichtigungselements, falls es noch nicht existiert
+            let notification = document.querySelector('.copied-notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.className = 'copied-notification';
+                notification.textContent = 'Copied to clipboard!';
+                document.body.appendChild(notification);
             }
+
+            // Zeige die Benachrichtigung an
+            notification.style.display = 'block';
+
+            // Entferne die Benachrichtigung nach 1 Sekunde
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 1000);
+
+        } catch (err) {
+            console.error('Failed to copy: ', err);
         }
+    }
 
 
-    </script>
-
+</script>
 </body>
 
 </html>
