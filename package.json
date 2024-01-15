@@ -21,6 +21,6 @@
     "@types/papaparse": "^5.3.10",
     "@types/three": "^0.160",
     "papaparse": "^5.3.10",
-    "three": "~0.160"
+    "three": "^0.158.0"
   }
 }

@@ -15,8 +15,8 @@ dependencies:
     specifier: ^5.3.10
     version: 5.4.1
   three:
-    specifier: ~0.160
-    version: 0.160.0
+    specifier: ^0.158.0
+    version: 0.158.0
 
 devDependencies:
   ts-loader:
@@ -2000,8 +2000,8 @@ packages:
       source-map-support: 0.5.21
     dev: true
 
-  /three@0.160.0:
-    resolution: {integrity: sha512-DLU8lc0zNIPkM7rH5/e1Ks1Z8tWCGRq6g8mPowdDJpw1CFBJMU7UoJjC6PefXW7z//SSl0b2+GCw14LB+uDhng==}
+  /three@0.158.0:
+    resolution: {integrity: sha512-TALj4EOpdDPF1henk2Q+s17K61uEAAWQ7TJB68nr7FKxqwyDr3msOt5IWdbGm4TaWKjrtWS8DJJWe9JnvsWOhQ==}
     dev: false
 
   /thunky@1.1.0:
