@@ -1,4 +1,4 @@
-## Navigating the Kinematic Maze: A Comprehensive Guide to XR Motion Dataset Standard
+## Navigating the Kinematic Maze: Analyzing, Standardizing and Unifying XR Motion Datasets
 
 Welcome to the official repository for the accompanying webpage of our [research paper](#TODO). This repository serves
 as a central hub for various resources and tools related to our paper:
