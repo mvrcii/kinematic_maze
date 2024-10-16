@@ -95,7 +95,11 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# Ignore everything in dist folder
+dist/
+
+# Except for bundle.js
+!dist/bundle.js
 
 # Gatsby files
 .cache/
