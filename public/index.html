@@ -1457,8 +1457,13 @@
     <script type="module" src="bundle.js"></script>
 
     <script>
-        document.getElementById('noCloseItem').addEventListener('click', function (event) {
-            event.stopPropagation();
+        document.addEventListener('DOMContentLoaded', function () {
+            const noCloseItem = document.getElementById('noCloseItem');
+            if (noCloseItem) {
+                noCloseItem.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                });
+            }
         });
 
         async function copyToClipboard(text) {
