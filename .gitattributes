@@ -1,0 +1,2 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+public/samples/boxrr_beatsaber23/beatsaber_replay.mp4 filter=lfs diff=lfs merge=lfs -text
